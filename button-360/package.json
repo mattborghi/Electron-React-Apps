@@ -1,0 +1,15 @@
+{
+  "name": "button-360",
+  "version": "1.0.0",
+  "description": "Button project with effect in 360 display",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Matias Borghi",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^4.0.8",
+    "modernizr": "^3.7.0"
+  }
+}
