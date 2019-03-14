@@ -1,0 +1,17 @@
+{
+  "name": "sysinfoapp",
+  "version": "1.0.0",
+  "description": "Simple system monitor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Matias Borghi",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^4.0.8",
+    "electron-photon": "^1.1.6",
+    "jquery": "^3.3.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
+  }
+}

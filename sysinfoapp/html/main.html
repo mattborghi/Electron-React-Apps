@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+  <head>
+
+    <!-- Insert this line above script imports  -->
+    <!--<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>-->
+
+    <!-- normal script imports etc  -->
+    <!-- using online scripts -->
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+     <!-- <script>window.$ = window.jQuery = require('./../js/jquery-3.3.1.min.js');</script> -->
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+         crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+         crossorigin="anonymous"></script>
+     <!--<script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>-->
+     <script>window.$ = window.jQuery = require('./../js/jquery.mCustomScrollbar.concat.min.js');</script>
+
+     <script type="text/javascript" src="../js/sidebar.js"></script>
+
+     <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+     <!-- Load Photon script-->
+     <script type="text/javascript" src="../js/app.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <!-- <script>if (window.module) module = window.module;</script> -->
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal MC - Workspace</title>
+
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- sidebar -->
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="../css/sidebar.css">
+
+
+
+  </head>
+  <body>
+
+    <ph-window>
+      <!--Top header bar here-->
+      <tool-bar type="header">
+        Toolbar Header
+      </tool-bar>
+      <!--Window content here-->
+      <window-content>
+        <div id="workspace">
+          <div class="pane-group">
+            <div class="pane-sm sidebar">
+              <div w3-include-html="nav-bar.html"></div>
+            </div>
+            <div class="pane theme-gray"></div>
+            <div class="pane">
+              <div w3-include-html="sidebar.html"></div>
+            </div>
+          </div>
+        </div>
+      </window-content>
+      <!--Bottom footer bar here-->
+      <tool-bar type="footer">
+        Footer Header
+      </tool-bar>
+    </ph-window>
+
+
+
+
+    <script>
+      require('./../js/renderer.js')
+    </script>
+    <script>
+      w3IncludeHTML();
+    </script>
+
+
+  </body>
+</html>
