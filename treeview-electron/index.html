@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+
+    <meta charset="UTF-8">
+    <title>Hello World!</title>    
+
+    <link rel='stylesheet' href='https://cdn.metroui.org.ua/v4/css/metro-all.min.css'>
+
+  </head>
+  <body>
+
+
+    <ul data-role="treeview">
+    <li data-icon="<span class='mif-star-full'></span>" data-caption="Favorites">
+        <ul>
+            <li data-icon="<span class='mif-library'></span>" data-caption="Projects"></li>
+            <li data-icon="<span class='mif-download'></span>" data-caption="Downloads"></li>
+            <li data-icon="<span class='mif-display'></span>" data-caption="Desktop"></li>
+        </ul>
+    </li>
+    <li data-icon="<span class='mif-onedrive'></span>" data-caption="OneDrive" data-collapsed="true">
+        <ul>
+            <li data-caption="Documents"></li>
+            <li data-caption="Projects">
+                <ul>
+                    <li data-caption="Web"></li>
+                    <li data-caption="Android"></li>
+                    <li data-caption="Windows"></li>
+                    <li data-caption="iOS"></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- normal script imports etc  -->
+    <!-- using online scripts -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <script src='https://cdn.metroui.org.ua/v4/js/metro.min.js'></script>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script> 
+
+  </body>
+</html>
