@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal MC - Workspace</title>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.27.0/skin-lion/ui.fancytree.css'>
+
+    <link rel="stylesheet" href="../css/tree-style.css">
+
+    <!-- Styles split pane -->
+    <link rel='stylesheet' href='https://unpkg.com/splitpanes/dist/splitpanes.css'>
+
+      <link rel="stylesheet" href="../css/splitpane-style.css">
+
+  </head>
+  <body>
+
+    <div id="app">
+    <splitpanes class="default-theme"><span splitpanes-min="20"><div class="ex1">This div element has width: 500px;</div></span> <!-- <div class="tree" id="tree"></div> -->
+      <splitpanes class="default-theme" horizontal="horizontal"><span splitpanes-min="20">2</span><span>3</span><span>4</span></splitpanes><span>5</span>
+    </splitpanes>
+  </div>
+   
+
+    <script>
+      require('./../js/renderer.js')
+    </script>
+
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/jquery.fancytree/dist/jquery.fancytree-all-deps.min.js'></script>
+
+    <!-- side pane scripts -->
+    <script src='https://unpkg.com/vue'></script>
+    <script src='https://unpkg.com/splitpanes@latest/dist/splitpanes.umd.min.js'></script>
+
+  
+
+    <script  src="../js/splitpane-index.js"></script>
+
+
+     <script src="http://www.w3schools.com/lib/w3data.js"></script>
+       <script  src="../js/tree-index.js"></script>
+
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+
+    <script>
+      w3IncludeHTML();
+    </script>
+
+
+  </body>
+</html>

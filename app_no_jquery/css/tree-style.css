@@ -1,0 +1,17 @@
+.fancytree-container {
+  outline: none;
+  /*height: 300px;
+  width: 100%;*/
+}
+div.ex1 {
+	position: relative;
+	width: 100%;
+	padding: 0px;
+	margin: auto;
+}
+ul.fancytree-container {
+	/*height: 100%;
+	width: 100%;*/
+	overflow: auto;
+	background-color: transparent;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal MC</title>
+
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+
+    <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
+    <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
+    <meta name="author" content="Matias Borghi" />
+
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/component2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/square_btn.css" />
+    <script src="../js/modernizr-2.6.2.min.js"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script type="text/javascript" src="../js/domain.js"></script>
+
+  </head>
+  <body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="title-bar">
+      <a class="navbar-brand" href="#">Universal MC</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <br><br>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <br><br>
+    <a href="#" class="square_btn">BUTTON</a>
+
+    <button class="cn-button" id="cn-button"><input type="image" src="../imag/favicon2.ico"/></button>
+    <!-- <input type="image" src="../imag/favicon.ico"/> -->
+
+    <div class="cn-wrapper" id="cn-wrapper">
+       <ul>
+           <li><a href="main.html"><span class="fas fa-camera"></span></a></li>
+           <li><a href="#"><span class="fas fa-headphones"></span></a></li>
+           <li><a href="#"><span class="fas fa-home"></span></a></li>
+           <li><a href="#"><span class="fas fa-video"></span></a></li>
+           <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+           <li><a href="#"><span class="fas fa-home"></span></a></li>
+           <li><a href="#"><span class="fas fa-video"></span></a></li>
+           <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+       </ul>
+    </div>
+    <div id="cn-overlay" class="cn-overlay"></div>
+
+    <script>
+      require('./../js/renderer.js')
+    </script>
+    <script src="../js/polyfills.js"></script>
+    <script src="../js/demo2.js"></script>
+  </body>
+</html>

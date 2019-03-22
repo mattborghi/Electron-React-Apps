@@ -1,0 +1,35 @@
+{
+  "name": "accordion-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@bosket/core": "^0.4.4",
+    "@bosket/react": "^0.4.4",
+    "@bosket/tools": "^0.4.4",
+    "directory-tree": "^2.2.1",
+    "object-keys": "^1.1.0",
+    "path-absolute": "^1.0.1",
+    "react": "^16.8.4",
+    "react-accessible-accordion": "^2.4.5",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "react-transition-group": "^1.2.1",
+    "react-treebeard": "^3.1.0",
+    "typescript": "^3.3.4000"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

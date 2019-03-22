@@ -1,0 +1,24 @@
+{
+  "name": "sysinfoapp",
+  "version": "1.0.0",
+  "description": "Simple system monitor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Matias Borghi",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "electron": "^4.0.8",
+    "electron-photon": "^1.1.6",
+    "jquery": "^3.3.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "metro4": "^4.2.38",
+    "popper.js": "^1.14.7",
+    "react": "^16.8.4",
+    "react-accessible-accordion": "^2.4.5",
+    "react-dom": "^16.8.4",
+    "react-transition-group": "^1.2.1"
+  }
+}
