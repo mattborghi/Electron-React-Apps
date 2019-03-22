@@ -1,6 +1,6 @@
-React app -> C:\Users\matiasb\Desktop\Projects\electron-apps\react\sth\my-app
+
 from: https://medium.com/@brockhoff/using-electron-with-react-the-basics-e93f9761f86f
-try to use create-react-app
+
 
 list globally installed npm pakcages
 
@@ -48,4 +48,4 @@ instead tryied by setting the proxy
 
 $ npm install --proxy http://user:pass@host:port
 
-worked, but not running in electron my app.
+worked.
