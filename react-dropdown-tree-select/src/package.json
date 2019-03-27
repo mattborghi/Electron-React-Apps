@@ -1,0 +1,15 @@
+{
+  "name": "using-material-design-with-react-dropdown-tree-select",
+  "version": "1.0.0",
+  "description": "React Dropdown Tree Select component with material design styles. https://github.com/dowjones/react-dropdown-tree-select",
+  "keywords": [
+    "react-dropdown-tree-select"
+  ],
+  "homepage": "https://codesandbox.io/s/l765q6lmrq",
+  "main": "index.js",
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-dropdown-tree-select": "1.12.3"
+  }
+}

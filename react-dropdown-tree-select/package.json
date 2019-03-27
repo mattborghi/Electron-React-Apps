@@ -1,0 +1,26 @@
+{
+  "name": "using-material-design-with-react-dropdown-tree-select",
+  "version": "0.0.48",
+  "description": "React Dropdown Tree Select component with material design styles. https://github.com/dowjones/react-dropdown-tree-select",
+  "keywords": [
+    "react-dropdown-tree-select"
+  ],
+  "homepage": "https://codesandbox.io/s/l765q6lmrq",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-dropdown-tree-select": "^1.12.3",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
