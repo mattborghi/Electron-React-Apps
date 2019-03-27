@@ -46,6 +46,10 @@ npm ERR! code EINTEGRITY
 
 instead tryied by setting the proxy
 
-$ npm install --proxy http://user:pass@host:port
+$ npm install --proxy http://user:pass@host:port --save <package-name>
 
 worked.
+
+Installation of react-scripts: Simply install it in dev mode
+
+$ npm install --proxy http://user:pass@host:port react-scripts --save-dev
