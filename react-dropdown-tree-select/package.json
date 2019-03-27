@@ -10,7 +10,7 @@
   "dependencies": {
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.8.5",
     "react-dropdown-tree-select": "^1.12.3",
     "rx": "^4.1.0"
   },
