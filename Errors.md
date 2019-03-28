@@ -44,6 +44,8 @@ which can be bypassed by using instead
 
 $ npm init react-app <app_name> --proxy http://user:pass@host:port
 
+sometimes this is a problem of just only changing the proxy.
+
 $ npm install
 
 > npm ERR! Unexpected end of JSON input while parsing near '...mium-1.3.8.tgz"}},"1.'
