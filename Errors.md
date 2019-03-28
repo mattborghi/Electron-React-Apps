@@ -16,17 +16,18 @@ $ npm outdated
 
 $ npx create-react-app first-app
 
-Missing dependencies in package.json
+> Missing dependencies in package.json
 
 $ npx create-react-app first-app --use-npm
 
-npm ERR! Error: EPERM: operation not permitted, unlink 'C:\Users\matiasb\Desktop\Projects\electron-apps\react\first-app\node_modules\.staging\cacache-dc3ec49b\README.md'
+> npm ERR! Error: EPERM: operation not permitted, unlink
+> 'C:\Users\matiasb\Desktop\Projects\electron-apps\react\first-app\node_modules\.staging\cacache-dc3ec49b\README.md'
 
-npm ERR! The operation was rejected by your operating system.
-npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
-npm ERR! or that you lack permissions to access it.
+> npm ERR! The operation was rejected by your operating system.
+> npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
+> npm ERR! or that you lack permissions to access it.
 
-npm install --save --save-exact --loglevel error react react-dom react-scripts has failed
+> npm install --save --save-exact --loglevel error react react-dom react-scripts > has failed
 
 $ npm config set unsafe-perm=true
 
@@ -34,15 +35,22 @@ same error
 
 $ npm init react-app <app_name>
 
-worked!
+worked! But sometimes this error arises
+
+> npm ERR! code E407
+> npm ERR! 407 Proxy Authorization Required - GET http://registry.npmjs.org/util.promisify/-/util.promisify-1.0.0.tgz
+
+which can be bypassed by using instead
+
+$ npm init react-app <app_name> --proxy http://user:pass@host:port
 
 $ npm install
 
-npm ERR! Unexpected end of JSON input while parsing near '...mium-1.3.8.tgz"}},"1.'
+> npm ERR! Unexpected end of JSON input while parsing near '...mium-1.3.8.tgz"}},"1.'
 
 $ npm cache clean --force
 
-npm ERR! code EINTEGRITY
+> npm ERR! code EINTEGRITY
 
 instead tryied by setting the proxy
 
