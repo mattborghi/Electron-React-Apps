@@ -8,6 +8,7 @@ import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 
+
 class SplitPanes extends React.Component {
     render() {
         return (
