@@ -12,15 +12,14 @@ class SplitPanes extends React.Component {
     render() {
         return (
             <div>
-                {/* Check this values with merging-react app */}
-                <SplitPane split="vertical" minSize="15%" defaultSize="15%">
+                <SplitPane split="vertical" minSize={200} maxSize={300} defaultSize="15%">
                     <div>
                         <NestedList />
                     </div>
                     <div>
-                        <SplitPane split="vertical" minSize="30%" defaultSize="80%">
+                        <SplitPane split="vertical" defaultSize="20%" primary="second" allowResize={false}>
                             <div>
-                                <SplitPane split="horizontal" defaultSize="80%">
+                                <SplitPane split="horizontal" defaultSize="20%" primary="second" minSize={150} maxSize={300}>
                                     <div>
                                         <SplitPane split="vertical" defaultSize="50%">
                                             <div>
