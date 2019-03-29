@@ -7,7 +7,18 @@ import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
+import FullScreenDialog from './Components/PopUp/pop-up';
 
+const popUpStyle = {
+    position: "absolute",
+    bottom: 10, // I should be using item app bar length
+    left: 0,
+    marginLeft: 10,
+    // width: "100%",
+    // '&:hover': {
+    //     backgroundColor: "green",
+    // },
+}
 
 class SplitPanes extends React.Component {
     render() {
@@ -43,6 +54,9 @@ class SplitPanes extends React.Component {
                         </SplitPane>
                     </div>
                 </SplitPane>
+                <div style={popUpStyle}>
+                    <FullScreenDialog/>
+                </div>
             </div>
         );
     }
