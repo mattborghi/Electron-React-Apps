@@ -61,3 +61,11 @@ React app using a slider panel as base incorporating material ui desings from [h
 ## monaco-editor-material-ui
 
 React app using material ui components and integrating monaco editor.
+
+## material-ui-tables
+
+React app with material-ui incorporating tables as main window.
+
+## react-drag
+
+React app incorporating draggable items.
