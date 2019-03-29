@@ -2,14 +2,33 @@
 
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// import MonacoEditor from './App';
 
-const render = Component => ReactDOM.render(<Component />, window.root);
+import './splitpane.js';
 
-render(App);
+import SimpleAppBar from './Components/AppBar/appbar';
+import MonacoEditor from './App';
 
-/* $FlowFixMe */
-if (module.hot) {
-  /* $FlowFixMe */
-  module.hot.accept('./App', () => render(App));
+// App Bar 
+class AppBar extends React.Component {
+    render() {
+        return(
+            <div>
+                <SimpleAppBar/>
+            </div>
+        );
+    }
 }
+const content = document.getElementById('appbar');
+ReactDOM.render(<AppBar/>, content);
+
+
+// Monaco Editor
+// const render = Component => ReactDOM.render(<Component />, window.root);
+// render(MonacoEditor);
+
+// /* $FlowFixMe */
+// if (module.hot) {
+//   /* $FlowFixMe */
+//   module.hot.accept('./App', () => render(MonacoEditor));
+// }

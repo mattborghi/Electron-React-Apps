@@ -85,7 +85,7 @@ type State = {
   current: string,
 };
 
-export default class App extends React.Component<{}, State> {
+export default class MonacoEditor extends React.Component<{}, State> {
   state = {
     files,
     current: 'App.js',
