@@ -57,3 +57,7 @@ A react app with tables using material desing.
 ## material-ui
 
 React app using a slider panel as base incorporating material ui desings from [here](https://github.com/mui-org/material-ui).
+
+## monaco-editor-material-ui
+
+React app using material ui components and integrating monaco editor.
