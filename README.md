@@ -1,4 +1,4 @@
-# electron-apps
+# Electron-React-apps
 
 Packages to follow:
 
