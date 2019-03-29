@@ -69,3 +69,7 @@ React app with material-ui incorporating tables as main window.
 ## react-drag
 
 React app incorporating draggable items.
+
+## material-ui-pop-up
+
+React app incorporating material desing objects and a pop up displaying a [Lucas Bebber's Gooey Menu](http://codepen.io/lbebber/pen/rawQKR).
