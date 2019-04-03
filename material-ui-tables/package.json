@@ -5,13 +5,18 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
+    "@mdi/font": "^3.5.95",
     "core-js": "^3.0.0",
+    "material-table": "^1.29.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-pdf": "^4.0.5",
+    "react-read-pdf": "^2.0.9",
     "react-scripts": "2.1.8",
     "react-split-pane": "^0.1.87",
     "react-swipeable-views": "^0.13.1",
     "react-virtualized": "^9.21.0",
+    "simple-react-pdf": "^1.0.9",
     "typescript": "^3.3.4000"
   },
   "scripts": {

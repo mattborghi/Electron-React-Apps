@@ -7,8 +7,9 @@ import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
-import EnhancedTable from './Components/Table/table';
-import ReactVirtualizedTable from './Components/Table/virtual-table';
+// import EnhancedTable from './Components/Table/table';
+// import ReactVirtualizedTable from './Components/Table/virtual-table';
+import NewTable from './Components/Table/material-table';
 
 class SplitPanes extends React.Component {
     render() {
@@ -23,8 +24,9 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitPane split="horizontal" defaultSize="20%" primary="second" minSize={150} maxSize={300}>
                                     <div>
-                                        
-                                            <ReactVirtualizedTable/>
+                                            {/* <EnhancedTable/> */}
+                                            {/* <ReactVirtualizedTable/> */}
+                                            <NewTable/>
                                                 
                                     </div>
                                     <div>
