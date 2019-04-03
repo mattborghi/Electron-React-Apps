@@ -72,4 +72,8 @@ React app incorporating draggable items.
 
 ## material-ui-pop-up
 
-React app incorporating material desing objects and a pop up displaying a [Lucas Bebber's Gooey Menu](http://codepen.io/lbebber/pen/rawQKR).
+React app incorporating material desing objects and a sliding window displaying the [Lucas Bebber's Gooey Menu](http://codepen.io/lbebber/pen/rawQKR).
+
+## material-ui-window-small
+
+React App incorporating material desing objects and a pop up window.
