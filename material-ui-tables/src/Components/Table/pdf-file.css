@@ -1,0 +1,8 @@
+.SimplePDF {
+    width: 350px; /* width of pdf document box should be != 0 */
+    height: 500px; /* height of pdf document box should be != 0 */
+    border: 1px dashed red; /* optional */
+    margin: 15px; /* optional */
+    padding: 15px; /* optional */
+    float: left; /* optional */
+  }
