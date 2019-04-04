@@ -1,11 +1,18 @@
 {
-  "name": "pdf-viewer",
+  "name": "splitpane-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "core-js": "^3.0.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-pdf": "^4.0.5",
+    "react-scripts": "2.1.8",
+    "react-split-pane": "^0.1.87",
+    "react-swipeable-views": "^0.13.1",
+    "typescript": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,28 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Document, Page } from "react-pdf";
+import test from './test.pdf';
 
-class App extends Component {
+export default class App extends Component {
+  state = { numPages: null, pageNumber: 1 };
+
+  onDocumentLoadSuccess = ({ numPages }) => {
+    this.setState({ numPages });
+  };
+
+  goToPrevPage = () =>
+    this.setState(state => ({ pageNumber: state.pageNumber - 1 }));
+  goToNextPage = () =>
+    this.setState(state => ({ pageNumber: state.pageNumber + 1 }));
+
   render() {
+    const { pageNumber, numPages } = this.state;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div>
+        <nav>
+          <button onClick={this.goToPrevPage}>Prev</button>
+          <button onClick={this.goToNextPage}>Next</button>
+        </nav>
+
+        <div style={{ width: 600 }}>
+          <Document
+            file={test}
+            onLoadSuccess={this.onDocumentLoadSuccess}
           >
-            Learn React
-          </a>
-        </header>
+            <Page pageNumber={pageNumber} width={600} />
+          </Document>
+        </div>
+
+        <p>
+          Page {pageNumber} of {numPages}
+        </p>
       </div>
     );
   }
 }
-
-export default App;
