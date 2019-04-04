@@ -100,4 +100,8 @@ React app that incorporates model rsik score.
 
 ## directory-tree
 
-React app that displays the current directory tree as a json file for a menu.
+React app that displays the current directory tree as a json file for a menu using [directory-tree](https://www.npmjs.com/package/directory-tree).
+
+## material-ui-scroll
+
+React app that incorporates long components and uses [scroll](https://material-ui.com/demos/dialogs/#scrolling-long-content).
