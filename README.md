@@ -58,6 +58,10 @@ A react app with tables using material desing.
 
 React app using a slider panel as base incorporating material ui desings from [here](https://github.com/mui-org/material-ui).
 
+![first-screen](screens/material-ui-1.png)
+
+![second-screen](screens/material-ui-2.png)
+
 ## monaco-editor-material-ui
 
 React app using material ui components and integrating monaco editor.
@@ -77,3 +81,23 @@ React app incorporating material desing objects and a sliding window displaying 
 ## material-ui-window-small
 
 React App incorporating material desing objects and a pop up window.
+
+## material-ui-sign-in
+
+React app incorporating material design objects with a sign in feature.
+
+## pdf-viwer 
+
+React app that incorporates a pdf viewer.
+
+##  inherent-risk
+
+React app that incorporates inherent risk score.
+
+## model-risk
+
+React app that incorporates model rsik score.
+
+## directory-tree
+
+React app that displays the current directory tree as a json file for a menu.
