@@ -14,12 +14,12 @@ import { withStyles } from '@material-ui/core/styles';
 // import parse from "autosuggest-highlight/umd/parse";
 
 const suggestions = [
-  { label: 'Callable Note' },
+  { label: 'CallableNote' },
   { label: 'BasketAsianCorrelatedMMFlatVolAnalytic' },
   { label: 'KOCapuccino' },
   { label: 'MCHybridParserDoubleMonitor' },
-  { label: 'CrossCurrency Callable Swap' },
-  { label: 'Rolling Basket VolFuture Amercan FVA' },
+  { label: 'CrossCurrencyCallableSwap' },
+  { label: 'RollingBasketVolFutureAmercanFVA' },
 ];
 
 function renderInputComponent(inputProps) {
@@ -90,7 +90,7 @@ function getSuggestionValue(suggestion) {
 
 const styles = theme => ({
   root: {
-    height: 250,
+    height: 150,
     flexGrow: 1,
   },
   container: {
