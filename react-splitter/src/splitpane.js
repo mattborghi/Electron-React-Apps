@@ -9,6 +9,7 @@ import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
+import ScrollDialog from './Components/Scroll/autosizer';
 
 
 
@@ -41,7 +42,7 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
                                     <div>
-                                        1st horizontal
+                                        <ScrollDialog />
                                     </div>
                                     <div>
                                         <FullWidthTabs />
