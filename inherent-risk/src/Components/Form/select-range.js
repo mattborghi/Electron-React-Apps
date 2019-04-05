@@ -8,7 +8,7 @@ import Materiality from './materiality';
 import Use from './use';
 import Uncertainty from './uncertainty';
 import Complexity from './complexity';
-import { Paper } from '@material-ui/core';
+// import { Paper } from '@material-ui/core';
 
 const styles = theme => ({
   container: {

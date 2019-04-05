@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SplitPane from 'react-split-pane';
+// import SplitPane from 'react-split-pane';
 import './index.css'
 import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list';
@@ -10,7 +10,22 @@ import FullWidthTabs from './Components/Tabs/tabs';
 import TextFields from './Components/Form/select-range';
 import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
+import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
+import Fab from '@material-ui/core/Fab';
 
+
+const styles = {
+    // button: {
+    //     position: "absolute",
+    //     right: 0,
+    //     top: "50%",
+    //   },
+    buttonLeft: {
+        position: "absolute",
+        left: -30,
+        top: "50%",
+    }
+  }
 
 class SplitPanes extends React.Component {
 
@@ -24,6 +39,7 @@ class SplitPanes extends React.Component {
 
     toggleSidebar() {
         this.setState(state => ({ sidebarVisible: !state.sidebarVisible }));
+        
     }
 
     render() {
@@ -34,14 +50,28 @@ class SplitPanes extends React.Component {
                     {this.state.sidebarVisible &&
                     (
                         <div>
+                            {/* <button 
+                            type="button" 
+                            onClick={this.toggleSidebar}
+                            style={styles.button}
+                            >
+                                {this.state.sidebarVisible && 'Hide Sidebar'}
+                                {!this.state.sidebarVisible && 'Show Sidebar'}
+                            </button> */}
                             <NestedList />
                         </div>
+
                     )}
                     <div>
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20}>
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
                                     <div>
+                                    <Fab color="inherit" aria-label="Add" style={styles.buttonLeft} onClick={this.toggleSidebar} size="medium">
+                                        {/* {this.state.sidebarVisible && 'Hide Sidebar'}
+                                        {!this.state.sidebarVisible && 'Show Sidebar'} */}
+                                        <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/>
+                                    </Fab>
                                         <TextFields />
                                     </div>
                                     <div>
@@ -51,10 +81,6 @@ class SplitPanes extends React.Component {
                                 </SplitterLayout>
                             </div>
                             <div>
-                                <button type="button" onClick={this.toggleSidebar}>
-                                    {this.state.sidebarVisible && 'Hide Sidebar'}
-                                    {!this.state.sidebarVisible && 'Show Sidebar'}
-                                </button>
                                 <ExpansionPanel />
                             </div>
                         </SplitterLayout>

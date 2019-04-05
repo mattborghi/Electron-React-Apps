@@ -30,7 +30,7 @@ class Use extends React.Component {
   render() {
     const { classes } = this.props;
     const { officialPricing, marketRisk, volkerRule } = this.state;
-    const error = [officialPricing, marketRisk, volkerRule].filter(v => v).length !== 2;
+    // const error = [officialPricing, marketRisk, volkerRule].filter(v => v).length !== 2;
 
     return (
       <div className={classes.root}>
