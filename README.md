@@ -96,7 +96,7 @@ React app that incorporates inherent risk score.
 
 ## model-risk
 
-React app that incorporates model rsik score.
+React app that incorporates model risk score.
 
 ## directory-tree
 
@@ -105,3 +105,7 @@ React app that displays the current directory tree as a json file for a menu usi
 ## material-ui-scroll
 
 React app that incorporates long components and uses [scroll](https://material-ui.com/demos/dialogs/#scrolling-long-content).
+
+## react-splitter
+
+React app incorporating a better splitter ([react-splitter-layout](https://github.com/zesik/react-splitter-layout)) than the one used before([react-split-pane](https://github.com/tomkp/react-split-pane)).
