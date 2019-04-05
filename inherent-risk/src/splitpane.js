@@ -8,20 +8,39 @@ import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 import TextFields from './Components/Form/select-range';
+import SplitterLayout from 'react-splitter-layout';
+import 'react-splitter-layout/lib/index.css';
 
 
 class SplitPanes extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.toggleSidebar = this.toggleSidebar.bind(this);
+        this.state = {
+            sidebarVisible: true
+        };
+    }
+
+    toggleSidebar() {
+        this.setState(state => ({ sidebarVisible: !state.sidebarVisible }));
+    }
+
     render() {
         return (
             <div>
-                <SplitPane split="vertical" minSize={200} maxSize={300} defaultSize="15%">
+                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage>
+                    {/* Hiding sidebar */}
+                    {this.state.sidebarVisible &&
+                    (
+                        <div>
+                            <NestedList />
+                        </div>
+                    )}
                     <div>
-                        <NestedList />
-                    </div>
-                    <div>
-                        <SplitPane split="vertical" defaultSize="20%" primary="second" allowResize={false}>
+                        <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20}>
                             <div>
-                                <SplitPane split="horizontal" defaultSize="20%" primary="second" minSize={150} maxSize={300}>
+                                <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
                                     <div>
                                         <TextFields />
                                     </div>
@@ -29,14 +48,18 @@ class SplitPanes extends React.Component {
                                         <FullWidthTabs />
                                     </div>
                                     
-                                </SplitPane>
+                                </SplitterLayout>
                             </div>
                             <div>
+                                <button type="button" onClick={this.toggleSidebar}>
+                                    {this.state.sidebarVisible && 'Hide Sidebar'}
+                                    {!this.state.sidebarVisible && 'Show Sidebar'}
+                                </button>
                                 <ExpansionPanel />
                             </div>
-                        </SplitPane>
+                        </SplitterLayout>
                     </div>
-                </SplitPane>
+                </SplitterLayout>
             </div>
         );
     }

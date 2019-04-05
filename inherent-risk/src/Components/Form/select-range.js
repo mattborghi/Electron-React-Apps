@@ -62,9 +62,9 @@ class TextFields extends React.Component {
 
         <Use />
 
-        {/* <Uncertainty /> */}
+        <Uncertainty /> 
 
-        {/* <Complexity />  */}
+        <Complexity /> 
 
       </div> 
     );

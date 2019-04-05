@@ -38,10 +38,12 @@ class Use extends React.Component {
           <FormLabel component="legend">Use</FormLabel>
           <FormGroup>
             <FormControlLabel
+              label="Official pricing, risk manage, Basel, etc"
+              labelPlacement="end"
               control={
                 <Checkbox checked={officialPricing} onChange={this.handleChange('officialPricing')} value="officialPricing" />
               }
-              label="Official pricing, risk manage, Basel, etc"
+              
             />
             <FormControlLabel
               control={
