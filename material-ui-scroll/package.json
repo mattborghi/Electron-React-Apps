@@ -9,8 +9,10 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
+    "react-scroll-to": "^2.0.5",
     "react-split-pane": "^0.1.87",
     "react-swipeable-views": "^0.13.1",
+    "react-virtualized": "^9.21.0",
     "typescript": "^3.4.1"
   },
   "scripts": {

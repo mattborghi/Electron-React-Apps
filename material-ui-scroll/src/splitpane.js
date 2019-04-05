@@ -8,6 +8,9 @@ import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 
+import ScrollDialog from './Components/Scroll/autosizer';
+
+import MyComponent from './Components/Scroll/react-scroll';
 
 class SplitPanes extends React.Component {
     render() {
@@ -22,14 +25,9 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitPane split="horizontal" defaultSize="20%" primary="second" minSize={150} maxSize={300}>
                                     <div>
-                                        <SplitPane split="vertical" defaultSize="50%">
-                                            <div>
-                                                <h3>Second horizontal pane</h3>
-                                            </div>
-                                            <div>
-                                                <h3>Third horizontal pane</h3>
-                                            </div>    
-                                        </SplitPane>
+                                        {/* <ScrollDialog /> */}
+                                        {/* <MyComponent />
+                                        <ScrollDialog /> */}
                                     </div>
                                     <div>
                                         <FullWidthTabs />
