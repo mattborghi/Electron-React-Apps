@@ -9,6 +9,7 @@ import Use from './use';
 import Uncertainty from './uncertainty';
 import Complexity from './complexity';
 // import { Paper } from '@material-ui/core';
+// import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   container: {
@@ -53,19 +54,19 @@ class TextFields extends React.Component {
 
     return (
       <div className={classes.root}>
-        
-        <Formulae />
-        
-        <Ranking />
-        
-        <Materiality />
+        {/* <Grid container> */}
+            <Formulae />
+            
+            <Ranking />
+            
+            <Materiality />
 
-        <Use />
+            <Use />
 
-        <Uncertainty /> 
+            <Uncertainty /> 
 
-        <Complexity /> 
-
+            <Complexity /> 
+        {/* </Grid> */}
       </div> 
     );
   }

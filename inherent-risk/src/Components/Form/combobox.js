@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import CreatableSelect from 'react-select/lib/Creatable';
 
 type State = {
@@ -12,10 +11,10 @@ const createOption = (label: string) => ({
   value: label.toLowerCase().replace(/\W/g, ''),
 });
 
+
 const defaultOptions = [
-  createOption('One'),
-  createOption('Two'),
-  createOption('Three'),
+  createOption('MF * &radic; ( Increasers )'),
+  createOption('0.5* MF * &radic; ( Increasers ^ 2 )'),
 ];
 
 export default class CreatableAdvanced extends Component<*, State> {

@@ -15,7 +15,7 @@ const styles = theme => ({
     textField: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
-      width: 200,
+      width: 100,
     },
     Typography: {
       marginLeft: theme.spacing.unit,
@@ -48,80 +48,109 @@ const styles = theme => ({
     render() {
         const { classes } = this.props;
         return(
-        
-        <Grid
-        container
-        spacing={24}
-        direction="row"
-        justify="center"
-        alignItems="flex-start"
-        > 
-
-        <Grid item xs={12}>  
+        <div className="ranking">
 
         <Typography className={classes.Typography} component="h1" variant="h5">
-        Ranking:
+          Ranking:
         </Typography>
-
+      
+        
+        <Grid container spacing={24} justify="center" alignItems="center"> 
+        <Grid item xs={2}>  
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            Negligible	
+          </Typography>
+        </Grid>
+        <Grid item xs={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            &le;
+          </Typography>
+        </Grid>
+        <Grid item xs={4}> 
+          <TextField
+            id="standard-number"
+            label="Number"
+            value={this.state.age}
+            onChange={this.handleChange('age')}
+            type="number"
+            className={classNames(classes.textField, classes.dense)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
         </Grid>
 
-        {/* <Grid item xs={12}>   */}
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Negligible 	&le;
-        </Typography>
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={2}>  
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            Low	
+          </Typography>
+        </Grid>
+        <Grid item xs={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            &le;
+          </Typography>
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            id="standard-number"
+            label="Number"
+            value={this.state.age}
+            onChange={this.handleChange('age')}
+            type="number"
+            className={classNames(classes.textField, classes.dense)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
 
-        <TextField
-          id="standard-number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classNames(classes.textField, classes.dense)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-        />
-        {/* </Grid> */}
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={2}>  
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            Medium	
+          </Typography>
+        </Grid>
+        <Grid item xs={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            &le;
+          </Typography>
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            id="standard-number"
+            label="Number"
+            value={this.state.age}
+            onChange={this.handleChange('age')}
+            type="number"
+            className={classNames(classes.textField, classes.dense)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
 
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Low 	&le;
-        </Typography>
-
-        <TextField
-          id="standard-number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classNames(classes.textField, classes.dense)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-        />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Medium 	&le;
-        </Typography>
-
-        <TextField
-          id="standard-number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classNames(classes.textField, classes.dense)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-        />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          High 	&le;
-        </Typography>
-
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={2}>  
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            High	
+          </Typography>
+        </Grid>
+        <Grid item xs={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            &le;
+          </Typography>
+        </Grid>
+        <Grid item xs={4}>
           <TextField
           id="standard-number"
           label="Number"
@@ -135,6 +164,9 @@ const styles = theme => ({
           margin="normal"
         />
         </Grid>
+        {/* End container */}
+        </Grid>
+        </div>
         );
     }
 

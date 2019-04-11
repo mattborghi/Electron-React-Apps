@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
+    // width: "90%"
   },
   input: {
     display: 'none',
@@ -16,7 +17,7 @@ function TextButtons(props) {
   const { classes } = props;
   return (
     <div>
-      <Button className={classes.button}>Default</Button>
+      <Button className={classes.button} color={props.color} fullWidth={true} variant="contained">{props.name}</Button>
     </div>
   );
 }

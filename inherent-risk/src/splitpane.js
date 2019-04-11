@@ -12,6 +12,7 @@ import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
 import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
 import Fab from '@material-ui/core/Fab';
+// import ToolBox from './Components/Accordion/toolbox';
 
 
 const styles = {
@@ -77,12 +78,18 @@ class SplitPanes extends React.Component {
                                     <div>
                                         <FullWidthTabs />
                                     </div>
-                                    
                                 </SplitterLayout>
                             </div>
-                            <div>
-                                <ExpansionPanel />
-                            </div>
+                            
+                                {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
+                                    <div>
+                                        <ToolBox />
+                                    </div>
+                                    <div> */}
+                                        <ExpansionPanel />
+                                    {/* </div> */}
+                                {/* </SplitterLayout> */}
+                            
                         </SplitterLayout>
                     </div>
                 </SplitterLayout>

@@ -16,7 +16,7 @@ const styles = theme => ({
     textField: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
-      width: 200,
+      width: 100,
     },
     Typography: {
       marginLeft: theme.spacing.unit,
@@ -49,105 +49,123 @@ const styles = theme => ({
     render() {
         const { classes } = this.props;
         return(
-            <Grid
-        container
-        spacing={24}
-        // direction="row"
-        justify="center"
-        alignItems="flex-start"
-        > 
+        <div className="materiality">
+        
 
-        <Grid
-        item 
-        xs={12}
-        >  
-          <Typography className={classes.Typography} component="h1" variant="h5">
+        
+        <Typography className={classes.Typography} component="h1" variant="h5">
           Materiality ($M):
         </Typography>
         
-        </Grid>
-
         {/* Immaterial */}
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Immaterial
-        </Typography>
-
-        <FormattedInputs />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          MF =
-        </Typography>
-
-        <TextField
-          id="standard-name"
-          label="MF"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-
-        {/* Low */}
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Low
-        </Typography>
-
-        <FormattedInputs />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          MF =
-        </Typography>
-
-        <TextField
-          id="standard-name"
-          label="MF"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-
-        {/* Medium */}
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          Medium
-        </Typography>
-
-        <FormattedInputs />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          MF =
-        </Typography>
-
-        <TextField
-          id="standard-name"
-          label="MF"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-
-        {/* High */}
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          High
-        </Typography>
-
-        <FormattedInputs />
-
-        <Typography className={classes.Typography} component="h3" variant="h6">
-          MF =
-        </Typography>
-
-        <TextField
-          id="standard-name"
-          label="MF"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={6} sm={2}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            Immaterial
+          </Typography>
         </Grid>
+        <Grid item xs={6} sm={1}>
+          <FormattedInputs />
+        </Grid>
+        <Grid item xs={2} sm={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            MF =
+          </Typography>
+        </Grid>
+        <Grid item xs={2} sm={2}>
+          <TextField
+            id="standard-name"
+            label=""
+            className={classes.textField}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
+        {/* Low */}
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={6} sm={2}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary"> 
+            Low
+          </Typography>
+        </Grid>
+        <Grid item xs={6} sm={1}>
+          <FormattedInputs />
+        </Grid>
+        <Grid item xs={2} sm={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            MF =
+          </Typography>
+        </Grid>
+        <Grid item xs={2} sm={2}>
+          <TextField
+            id="standard-name"
+            label=""
+            className={classes.textField}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
+        {/* Medium */}
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={6} sm={2}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            Medium
+          </Typography>
+        </Grid>
+        <Grid item xs={6} sm={1}>
+          <FormattedInputs />
+        </Grid>
+        <Grid item xs={2} sm={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            MF =
+          </Typography>
+        </Grid>
+        <Grid item xs={2} sm={2}>
+          <TextField
+            id="standard-name"
+            label=""
+            className={classes.textField}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
+        {/* High */}
+        <Grid container spacing={24} justify="center" alignItems="center">
+        <Grid item xs={6} sm={2}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            High
+          </Typography>
+        </Grid>
+        <Grid item xs={6} sm={1}>
+          <FormattedInputs />
+        </Grid>
+        <Grid item xs={2} sm={1}>
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+            MF =
+          </Typography>
+        </Grid>
+        <Grid item xs={2} sm={2}>
+          <TextField
+            id="standard-name"
+            label=""
+            className={classes.textField}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin="normal"
+          />
+        </Grid>
+        {/* End container */}
+        </Grid>
+        </div>
         );
     }
 
