@@ -104,8 +104,16 @@ React app that displays the current directory tree as a json file for a menu usi
 
 ## material-ui-scroll
 
-React app that incorporates long components and uses [scroll](https://material-ui.com/demos/dialogs/#scrolling-long-content).
+React app that incorporates long components and uses [scroll](https://material-ui.com/demos/dialogs/#scrolling-long-content). Instead of using this, I prefer to use a better splitter that auto scrolls components as seen in react-splitter.
 
 ## react-splitter
 
 React app incorporating a better splitter ([react-splitter-layout](https://github.com/zesik/react-splitter-layout)) than the one used before([react-split-pane](https://github.com/tomkp/react-split-pane)).
+
+## latex-equations
+
+React app that renders latex equations using katex, following [this repo](https://github.com/scalebig/react-mathjax2).
+
+## create-select-latex
+
+React app that renders latex equations in a material-ui select list with a button that creates new elements.
