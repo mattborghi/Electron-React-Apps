@@ -7,7 +7,13 @@ import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
+import TreeView from './Components/Directory/treeview';
+import Dropzone from './Components/Directory/dropzone';
+// import dirTree from 'directory-tree';
 
+// let root = "c:\\";
+// const tree = dirTree(root);
+// console.log(tree);
 
 class SplitPanes extends React.Component {
     render() {
@@ -24,7 +30,8 @@ class SplitPanes extends React.Component {
                                     <div>
                                         <SplitPane split="vertical" defaultSize="50%">
                                             <div>
-                                                <h3>Second horizontal pane</h3>
+                                                {/* <TreeView root='.' /> */}
+                                                <Dropzone />
                                             </div>
                                             <div>
                                                 <h3>Third horizontal pane</h3>
