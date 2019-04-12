@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import CreatableAdvanced from './combobox';
+// import CreatableAdvanced from './combobox';
 import FormulaeElem from './formulae.jsx';
 
 const styles = theme => ({

@@ -105,7 +105,7 @@ p {
           box-shadow: 0 2px 5px -1px #e8e8e8;
   font-weight: 700;
   padding: 15px 0;
-  max-height: 215px;
+  max-height: 300px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -113,7 +113,7 @@ p {
   width: 100%;
   font-size: 1.5rem;
   padding: 8px 10px;
-  line-height: 1.6rem;
+  line-height: 3.5rem;
   cursor: default;
   display: inline-block;
   white-space: nowrap;

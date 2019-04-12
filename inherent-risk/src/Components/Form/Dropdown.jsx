@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import '../styles/global.css';
-import LaTeX from './block-latex';
+// import LaTeX from './block-latex';
 import Ascii from './block-ascii';
 import Grid from '@material-ui/core/Grid'
 
