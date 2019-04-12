@@ -8,6 +8,49 @@
 *:focus {
   outline: none;
 }
+
+/* body */
+#custom-scrollbar {
+  overflow: auto;
+  color: rgb(68, 68, 68);
+  border: 1px solid #ddd;
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  height: 200px;
+}
+/* body:hover
+#custom-scrollbar:hover {
+  overflow: scroll;
+} */
+
+/* ***************************** */
+/* ** CSS Scrollbar selectors ** */
+/* ***************************** */
+/* ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;    
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: grey;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: grey;
+} */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar:horizontal { display: none; }
+::-webkit-scrollbar-track { background: #f2f2f2; }
+::-webkit-scrollbar-thumb { background: rgb(221, 221, 221); }
+:hover::-webkit-scrollbar-thumb { background: rgb(187, 187, 187); }
+::-webkit-scrollbar-thumb:horizontal:hover,
+::-webkit-scrollbar-thumb:vertical:hover { background: #999; }
+::-webkit-scrollbar-thumb:horizontal:active,
+::-webkit-scrollbar-thumb:vertical:active { background: #777; }
+
 /* html {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 70%;

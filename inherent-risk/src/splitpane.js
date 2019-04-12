@@ -91,7 +91,7 @@ class SplitPanes extends React.Component {
 
         return (
             <div>
-                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage>
+                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage customClassName="custom-scrollbar">
                     {/* Hiding sidebar */}
                     {this.state.sidebarLeftVisible &&
                     (
@@ -109,10 +109,10 @@ class SplitPanes extends React.Component {
 
                     )}
                     <div>
-                        <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20}>
+                        <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
-                                <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
-                                    <div>
+                                <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
+                                    <div style={{maxWidth: "100%",}}>
                                         {/* Left Arrow */}    
                                         <Fab 
                                             color="inherit" 
@@ -152,7 +152,7 @@ class SplitPanes extends React.Component {
                                 </div>*/}
                             {this.state.sidebarRightVisible &&
                             (
-                                <div> 
+                                <div style={{marginRight: 20,}} > 
                                     <ExpansionPanel />
                                 </div>
                             )}
