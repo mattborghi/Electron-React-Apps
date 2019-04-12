@@ -16,7 +16,7 @@ import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
 import ToolBox from './toolbox';
 import TextField from '@material-ui/core/TextField';
-// import Example from './block-latex';
+import LaTeX from './block-latex';
 
 
 const styles = {
@@ -36,6 +36,7 @@ class FullScreenDialog extends React.Component {
   state = {
     open: false,
     equation: '',
+    eqLatex: <LaTeX tex=''/>,
     prevKeys: [],
   };
 

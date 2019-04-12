@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import '../styles/global.css';
 import LaTeX from '../block-latex';
+import Ascii from '../block-ascii';
 import Grid from '@material-ui/core/Grid'
 
 class Dropdown extends Component{
@@ -63,16 +64,14 @@ class Dropdown extends Component{
         </div>
         {listOpen && <ul className="dd-list" onClick={e => e.stopPropagation()}>
           {list.map((item)=> (
-            <li className="dd-list-item" key={item.id} onClick={() => this.selectItem(item.title, item.id, item.key)}>
-              <Grid container justify="center" alignItems="baseline">
-              
-              </Grid>
+            <li className="dd-list-item" key={item.id} onClick={() => this.selectItem(item.title, item.id, item.key)}>              
               <Grid container justify="space-evenly" alignItems="baseline">
                 <Grid item>
                   {item.selected && <FontAwesome name="check"/>} 
                 </Grid>
                 <Grid item>
-                  <LaTeX tex={item.title}/> 
+                  {/* <LaTeX tex={item.title}/>  */}
+                  <Ascii ascii={item.title} />
                 </Grid>
               </Grid>
             </li>

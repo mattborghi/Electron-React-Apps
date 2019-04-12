@@ -12,31 +12,32 @@ class App3 extends Component {
       equations: [
         {
           id: 0,
-          title: '\\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi',
+          title:  'U = 1/(R_(si) + sum_(i=1)^n(s_n/lambda_n) + R_(se))',
+           //'\\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi',
           selected: false,
           key: 'equations'
         },
         {
           id: 1,
-          title: 'Orange',
+          title: 'MF*sum(Increasers)',
           selected: false,
           key: 'equations'
         },
         {
           id: 2,
-          title: 'Grape',
+          title: 'MF*sum(Increasers^2)',
           selected: false,
           key: 'equations'
         },
         {
           id: 3,
-          title: 'Pomegranate',
+          title: 'sqrt(MF^2*sum(Increasers^2))',
           selected: false,
           key: 'equations'
         },
         {
           id: 4,
-          title: 'Strawberry',
+          title: '1/2*sqrt(MF^2*sum(Increasers^2))',
           selected: false,
         }
       ]
