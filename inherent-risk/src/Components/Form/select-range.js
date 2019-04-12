@@ -56,15 +56,15 @@ class TextFields extends React.Component {
       <div className={classes.root}>
         {/* <Grid container> */}
             <Formulae />
-            <hr />
+            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
             <Ranking />
-            <hr />
+            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
             <Materiality />
-            <hr />
+            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
             <Use />
-            <hr />
+            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
             <Uncertainty /> 
-            <hr />
+            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
             <Complexity /> 
         {/* </Grid> */}
       </div> 

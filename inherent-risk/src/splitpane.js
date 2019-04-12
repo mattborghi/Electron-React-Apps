@@ -22,9 +22,9 @@ class SplitPanes extends React.Component {
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.state = {
             sidebarLeftVisible: true,
-            alphaLeft: 0,
+            alphaLeft: 0.3,
             sidebarRightVisible: true,
-            alphaRight: 0,
+            alphaRight: 0.3,
         };
     }
 
@@ -32,8 +32,8 @@ class SplitPanes extends React.Component {
         let currentLeftAlpha = this.state.alphaLeft;
         if (currentLeftAlpha === 1){
             this.setState({
-                alphaLeft: 0,
-                alphaRight: 0,
+                alphaLeft: 0.3,
+                alphaRight: 0.3,
             })
         }else{
             this.setState({
