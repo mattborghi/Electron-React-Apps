@@ -28,17 +28,7 @@ class SplitPanes extends React.Component {
         };
     }
 
-    toggleSidebar = (pane) => {
-        if (pane === 'left'){
-            // console.log(this.props.children)
-            this.setState(state => ({ sidebarLeftVisible: !state.sidebarLeftVisible }));
-        }
-        if (pane === 'right'){
-            this.setState(state => ({ sidebarRightVisible: !state.sidebarRightVisible }));
-        }        
-    }
-
-    hoverMouse = () => {
+    toggleAlpha = () => {
         let currentLeftAlpha = this.state.alphaLeft;
         if (currentLeftAlpha === 1){
             this.setState({
@@ -51,10 +41,36 @@ class SplitPanes extends React.Component {
                 alphaRight: 1,
             })
         }
-        
-        // console.log(this.props)
-        // this.props.style.opacity = 0
     }
+
+    toggleSidebar = (pane) => {
+        if (pane === 'left'){
+            // console.log(this.props.children)
+            this.setState(state => ({ sidebarLeftVisible: !state.sidebarLeftVisible }));
+        }
+        if (pane === 'right'){
+            this.setState(state => ({ sidebarRightVisible: !state.sidebarRightVisible }));
+        } 
+        this.toggleAlpha();
+    }
+
+    // hoverMouse = () => {
+    //     let currentLeftAlpha = this.state.alphaLeft;
+    //     if (currentLeftAlpha === 1){
+    //         this.setState({
+    //             alphaLeft: 0,
+    //             alphaRight: 0,
+    //         })
+    //     }else{
+    //         this.setState({
+    //             alphaLeft: 1,
+    //             alphaRight: 1,
+    //         })
+    //     }
+        
+    //     // console.log(this.props)
+    //     // this.props.style.opacity = 0
+    // }
 
     render() {
         // Moved inside render in order to modify it
@@ -97,50 +113,50 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
                                     <div>
-                                    {/* Left Arrow */}    
-                                    <Fab 
-                                        color="inherit" 
-                                        aria-label="Add" 
-                                        style={styles.buttonLeft} 
-                                        onClick={() => this.toggleSidebar('left')} 
-                                        size="medium" 
-                                        onMouseEnter={() => this.hoverMouse()}
-                                        onMouseLeave={() => this.hoverMouse()}
-                                    >
-                                     <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> 
-                                    </Fab>
-                                     
-                                    {/* Right Arrow */}
-                                    <Fab 
-                                        color="inherit" 
-                                        aria-label="Add" 
-                                        style={styles.buttonRight} 
-                                        onClick={() => this.toggleSidebar('right')} 
-                                        size="medium" 
-                                        onMouseEnter={() => this.hoverMouse()}
-                                        onMouseLeave={() => this.hoverMouse()}
-                                    >
-                                        <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/>  
-                                    </Fab>
-                                        <TextFields />
-                                    </div>
+                                        {/* Left Arrow */}    
+                                        <Fab 
+                                            color="inherit" 
+                                            aria-label="Add" 
+                                            style={styles.buttonLeft} 
+                                            onClick={() => this.toggleSidebar('left')} 
+                                            size="medium" 
+                                            onMouseEnter={() => this.toggleAlpha()}
+                                            onMouseLeave={() => this.toggleAlpha()}
+                                        >
+                                        {this.state.sidebarLeftVisible? <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> : <ArrowForwardIosIcon style={{left: 16, position: "relative"}}/> }
+                                        </Fab>
+                                        
+                                        {/* Right Arrow */}
+                                        <Fab 
+                                            color="inherit" 
+                                            aria-label="Add" 
+                                            style={styles.buttonRight} 
+                                            onClick={() => this.toggleSidebar('right')} 
+                                            size="medium" 
+                                            onMouseEnter={() => this.toggleAlpha()}
+                                            onMouseLeave={() => this.toggleAlpha()}
+                                        >
+                                            {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
+                                        </Fab>
+                                            <TextFields />
+                                        </div>
                                     <div>
                                         <FullWidthTabs />
                                     </div>
                                 </SplitterLayout>
                             </div>
                                 
-                                {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
-                                    <div>
-                                        <ToolBox />
-                                    </div>*/}
-                                {this.state.sidebarRightVisible &&
-                                (
-                                    <div> 
-                                        <ExpansionPanel />
-                                    </div>
-                                )}
-                                {/* </SplitterLayout> */}
+                            {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
+                                <div>
+                                    <ToolBox />
+                                </div>*/}
+                            {this.state.sidebarRightVisible &&
+                            (
+                                <div> 
+                                    <ExpansionPanel />
+                                </div>
+                            )}
+                            {/* </SplitterLayout> */}
                             
                         </SplitterLayout>
                     </div>
