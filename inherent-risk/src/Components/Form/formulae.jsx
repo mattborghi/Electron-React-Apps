@@ -68,7 +68,7 @@ class FormulaeElem extends Component {
     let temp = JSON.parse(JSON.stringify(this.state[key]));
     // Dont add the element if the equation is already in the list
     let exit = false;
-    for(var i=0;i<this.state.equations.length;i++){
+    for(var i=0; i<this.state.equations.length; i++){
       if(this.state.equations[i].title === equation){
         exit = true;
       }

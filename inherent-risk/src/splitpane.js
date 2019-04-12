@@ -11,22 +11,9 @@ import TextFields from './Components/Form/select-range';
 import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
 import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Fab from '@material-ui/core/Fab';
 // import ToolBox from './Components/Accordion/toolbox';
-
-
-const styles = {
-    // button: {
-    //     position: "absolute",
-    //     right: 0,
-    //     top: "50%",
-    //   },
-    buttonLeft: {
-        position: "absolute",
-        left: -30,
-        top: "50%",
-    }
-  }
 
 class SplitPanes extends React.Component {
 
@@ -34,21 +21,63 @@ class SplitPanes extends React.Component {
         super(props);
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.state = {
-            sidebarVisible: true
+            sidebarLeftVisible: true,
+            alphaLeft: 0,
+            sidebarRightVisible: true,
+            alphaRight: 0,
         };
     }
 
-    toggleSidebar() {
-        this.setState(state => ({ sidebarVisible: !state.sidebarVisible }));
+    toggleSidebar = (pane) => {
+        if (pane === 'left'){
+            // console.log(this.props.children)
+            this.setState(state => ({ sidebarLeftVisible: !state.sidebarLeftVisible }));
+        }
+        if (pane === 'right'){
+            this.setState(state => ({ sidebarRightVisible: !state.sidebarRightVisible }));
+        }        
+    }
+
+    hoverMouse = () => {
+        let currentLeftAlpha = this.state.alphaLeft;
+        if (currentLeftAlpha === 1){
+            this.setState({
+                alphaLeft: 0,
+                alphaRight: 0,
+            })
+        }else{
+            this.setState({
+                alphaLeft: 1,
+                alphaRight: 1,
+            })
+        }
         
+        // console.log(this.props)
+        // this.props.style.opacity = 0
     }
 
     render() {
+        // Moved inside render in order to modify it
+        const styles = {
+            buttonRight: {
+                position: "absolute",
+                right: -30,
+                top: "50%",
+                opacity: this.state.alphaRight,
+              },
+            buttonLeft: {
+                position: "absolute",
+                left: -30,
+                top: "50%",
+                opacity: this.state.alphaLeft,
+            }
+        }
+
         return (
             <div>
                 <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage>
                     {/* Hiding sidebar */}
-                    {this.state.sidebarVisible &&
+                    {this.state.sidebarLeftVisible &&
                     (
                         <div>
                             {/* <button 
@@ -68,10 +97,30 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10}>
                                     <div>
-                                    <Fab color="inherit" aria-label="Add" style={styles.buttonLeft} onClick={this.toggleSidebar} size="medium">
-                                        {/* {this.state.sidebarVisible && 'Hide Sidebar'}
-                                        {!this.state.sidebarVisible && 'Show Sidebar'} */}
-                                        <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/>
+                                    {/* Left Arrow */}    
+                                    <Fab 
+                                        color="inherit" 
+                                        aria-label="Add" 
+                                        style={styles.buttonLeft} 
+                                        onClick={() => this.toggleSidebar('left')} 
+                                        size="medium" 
+                                        onMouseEnter={() => this.hoverMouse()}
+                                        onMouseLeave={() => this.hoverMouse()}
+                                    >
+                                     <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> 
+                                    </Fab>
+                                     
+                                    {/* Right Arrow */}
+                                    <Fab 
+                                        color="inherit" 
+                                        aria-label="Add" 
+                                        style={styles.buttonRight} 
+                                        onClick={() => this.toggleSidebar('right')} 
+                                        size="medium" 
+                                        onMouseEnter={() => this.hoverMouse()}
+                                        onMouseLeave={() => this.hoverMouse()}
+                                    >
+                                        <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/>  
                                     </Fab>
                                         <TextFields />
                                     </div>
@@ -80,14 +129,17 @@ class SplitPanes extends React.Component {
                                     </div>
                                 </SplitterLayout>
                             </div>
-                            
+                                
                                 {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
                                     <div>
                                         <ToolBox />
-                                    </div>
-                                    <div> */}
+                                    </div>*/}
+                                {this.state.sidebarRightVisible &&
+                                (
+                                    <div> 
                                         <ExpansionPanel />
-                                    {/* </div> */}
+                                    </div>
+                                )}
                                 {/* </SplitterLayout> */}
                             
                         </SplitterLayout>
