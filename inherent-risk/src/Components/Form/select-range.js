@@ -48,23 +48,34 @@ class TextFields extends React.Component {
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
-
+  
   render() {
     const { classes } = this.props;
+
+    const hrStyle = {
+      horizontalRule: {
+        height:"3px", 
+        border:"none", 
+        color:"rgb(60,90,180)", 
+        backgroundColor:"rgb(60,90,180)", 
+        textAlign:"left", 
+        margin: "50 auto 0 0",
+      },
+    }
 
     return (
       <div className={classes.root}>
         {/* <Grid container> */}
             <Formulae />
-            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
+            <hr style={hrStyle.horizontalRule} />
             <Ranking />
-            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
+            <hr style={hrStyle.horizontalRule} />
             <Materiality />
-            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
+            <hr style={hrStyle.horizontalRule} />
             <Use />
-            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
+            <hr style={hrStyle.horizontalRule} />
             <Uncertainty /> 
-            <hr style={{height:"3px", border:"none", color:"rgb(60,90,180)", backgroundColor:"rgb(60,90,180)", textAlign:"left", margin: "50 auto 0 0"}} />
+            <hr style={hrStyle.horizontalRule} />
             <Complexity /> 
         {/* </Grid> */}
       </div> 
