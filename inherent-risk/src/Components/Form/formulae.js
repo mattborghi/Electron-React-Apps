@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import CreatableAdvanced from './combobox';
+import FormulaeElem from './formulae.jsx';
 
 const styles = theme => ({
     container: {
@@ -15,12 +16,12 @@ const styles = theme => ({
     textField: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
-      width: 300,
+      // width: 1000,
     },
     Typography: {
       marginLeft: theme.spacing.unit,
       marginRight: theme.spacing.unit,
-      width: 200,
+      // width: 200,
     },
     dense: {
       marginTop: 19,
@@ -52,14 +53,19 @@ const styles = theme => ({
         container
         direction="row"
         justify="flex-start"
-        alignItems="flex-start"
+        alignItems="baseline"
         > 
-        <Typography className={classNames(classes.Typography, classes.dense)} component="h1" variant="h5">
-          Formulae: 
-        </Typography>
-        <div className={classNames(classes.textField, classes.dense)}>
-          <CreatableAdvanced  />
-        </div> 
+        <Grid item xs={3} >
+          <Typography className={classNames(classes.Typography, classes.dense)} component="h1" variant="h5">
+            Formulae: 
+          </Typography>
+        </Grid>
+        <Grid item xs={9}>
+          {/* <div className={classNames(classes.textField, classes.dense)}> */}
+            {/* <CreatableAdvanced  /> */}
+            <FormulaeElem />
+          {/* </div>  */}
+        </Grid>
 
         </Grid>
         );

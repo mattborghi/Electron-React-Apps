@@ -56,15 +56,15 @@ class TextFields extends React.Component {
       <div className={classes.root}>
         {/* <Grid container> */}
             <Formulae />
-            
+            <hr />
             <Ranking />
-            
+            <hr />
             <Materiality />
-
+            <hr />
             <Use />
-
+            <hr />
             <Uncertainty /> 
-
+            <hr />
             <Complexity /> 
         {/* </Grid> */}
       </div> 
