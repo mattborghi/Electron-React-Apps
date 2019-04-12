@@ -21,27 +21,27 @@ const content = document.getElementById('appbar');
 ReactDOM.render(<AppBar/>, content);
 
 
-const style = {
-    position: "absolute",
-    bottom: -30, // I should be using item app bar length
-    width: "100%",
+// const style = {
+//     position: "absolute",
+//     bottom: -30, // I should be using item app bar length
+//     width: "100%",
     // '&:hover': {
     //     backgroundColor: "green",
     // },
-}
+// }
 
 // Progress Bar
-class ProgressBar extends React.Component {
-    render() {
-        return(
-            <div style={style}>
-                <LinearDeterminate/>
-            </div>
-        );
-    }
-}
+// class ProgressBar extends React.Component {
+//     render() {
+//         return(
+//             <div style={style}>
+//                 <LinearDeterminate/>
+//             </div>
+//         );
+//     }
+// }
 const contents = document.getElementById('progress-bar');
-ReactDOM.render(<ProgressBar/>, contents);
+ReactDOM.render(<LinearDeterminate/>, contents);
 
 
 // If you want your app to work offline and load faster, you can change

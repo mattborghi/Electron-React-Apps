@@ -10,9 +10,16 @@ const styles = {
 };
 
 class LinearDeterminate extends React.Component {
-  state = {
-    completed: 0,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      completed: 0,
+      overBar: false,
+      heightSize: 10,
+      opacity: 1,
+    };
+  }
+  
 
   componentDidMount() {
     this.timer = setInterval(this.progress, 500);
@@ -32,11 +39,43 @@ class LinearDeterminate extends React.Component {
     }
   };
 
+  toggleAlpha = () => {
+    let status = this.state.overBar;
+    // var newHeight;
+    // var newOpacity;
+    // if (status === 'false')
+    // {
+      this.setState({
+        overBar: !status,
+        heightSize: status ? 10 : 20,
+        opacity: status ? 1 : 0.7,
+      });
+    // } else {
+    //   newHeight = 50;
+    //   newOpacity = 1;
+    // }
+
+    // this.setState({
+    //   overBar: !status,
+    //   heightSize: newHeight,
+    //   opacity: newOpacity,
+    // });
+    // console.log(this.state.heightSize, this.state.overBar, this.state.opacity)
+  };
+
   render() {
     const { classes } = this.props;
+
+    const style = {
+      position: "absolute",
+      bottom: -30,
+      width: "100%",
+      height: this.state.heightSize,
+      opacity: this.state.opacity,
+    }
     return (
-      <div className={classes.root}>
-        <LinearProgress variant="determinate" value={70} />
+      <div className={classes.root} onMouseEnter={this.toggleAlpha} onMouseLeave={this.toggleAlpha}>
+        <LinearProgress variant="determinate" value={70} style={style}/>
         {/* <br />
         <LinearProgress color="secondary" variant="determinate" value={this.state.completed} /> */}
       </div>
