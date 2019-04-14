@@ -7,12 +7,14 @@
     "@material-ui/icons": "^3.0.2",
     "core-js": "^3.0.0",
     "directory-tree": "^2.2.1",
+    "json-dir-tree-react": "^1.0.3",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-dropzone": "^10.1.0",
     "react-scripts": "2.1.8",
     "react-split-pane": "^0.1.87",
     "react-swipeable-views": "^0.13.1",
+    "readdirp": "^2.2.1",
     "typescript": "^3.4.1"
   },
   "scripts": {

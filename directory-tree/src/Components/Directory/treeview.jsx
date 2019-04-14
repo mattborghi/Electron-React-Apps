@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import dirTree from 'directory-tree'; // use this istead of 'readdirp`
+import dirTree from 'directory-tree'; // use this instead of 'readdirp`
 
 
 export default class TreeView extends Component {
