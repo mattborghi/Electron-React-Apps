@@ -86,11 +86,11 @@ React App incorporating material desing objects and a pop up window.
 
 React app incorporating material design objects with a sign in feature.
 
-## pdf-viwer 
+## pdf-viwer
 
 React app that incorporates a pdf viewer.
 
-##  inherent-risk
+## inherent-risk
 
 React app that incorporates inherent risk score.
 
@@ -117,3 +117,11 @@ React app that renders latex equations using katex, following [this repo](https:
 ## create-select-latex
 
 React app that renders latex equations in a material-ui select list with a button that creates new elements.
+
+## react-d3
+
+React app for implementing d3 graphics.
+
+## react-dash
+
+React app for implmenting dash/plotly graphics.
