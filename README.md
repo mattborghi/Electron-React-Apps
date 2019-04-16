@@ -86,7 +86,7 @@ React App incorporating material desing objects and a pop up window.
 
 React app incorporating material design objects with a sign in feature.
 
-## pdf-viwer
+## pdf-viewer
 
 React app that incorporates a pdf viewer.
 
@@ -125,3 +125,7 @@ React app for implementing d3 graphics.
 ## react-dash
 
 React app for implmenting dash/plotly graphics.
+
+## react-electron
+
+Working environment of electron with react.
