@@ -13,6 +13,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 const styles = theme => ({
   main: {
     width: 'auto',
@@ -46,9 +48,21 @@ const styles = theme => ({
 });
 
 function SignIn(props) {
+  
+
   const { classes } = props;
+  
+  let theme = createMuiTheme({
+    palette: {
+      type: props.themeColor,
+    },
+    typography: { 
+        useNextVariants: true
+    }
+  });
 
   return (
+    <MuiThemeProvider theme = { theme }>
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
@@ -83,6 +97,7 @@ function SignIn(props) {
         </form>
       </Paper>
     </main>
+    </MuiThemeProvider>
   );
 }
 
