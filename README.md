@@ -129,3 +129,7 @@ React app for implmenting dash/plotly graphics.
 ## react-electron
 
 Working environment of electron with react.
+
+## material-ui-new-project-window
+
+React app that incorporates a main window when you can create a new project or load an old one. It also implements react-router for navigating between pages.
