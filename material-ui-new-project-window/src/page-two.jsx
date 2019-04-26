@@ -15,6 +15,8 @@ import PlusLogo from './icons/PlusLogo'
 import OpenFolder from './icons/open-folder'
 // import IconButton from '@material-ui/core/IconButton';
 import FolderList from './components/left-pane'
+// import { unstable_Box as Box } from '@material-ui/core/Box'
+import { Link } from "react-router-dom"
 
 const theme = createMuiTheme({
   palette: {
@@ -66,9 +68,9 @@ function PageTwo(props) {
   return (
     <MuiThemeProvider theme = { theme }>
   
-    <Grid container spacing={24}>
+    <Grid container>
 
-    <Grid item id="root" style={{backgroundColor: black2}} xs={3}>
+    <Grid item id="root" style={{backgroundColor: black2, height: '100vh'}} xs={3}>
       <FolderList />
     </Grid>
 
@@ -83,6 +85,7 @@ function PageTwo(props) {
         <img src={UniversalMC} alt="universal-mc-logo" height={100} ></img>
       </div>
       <Typography style={{color:'white', fontSize:30}}>Universal MC</Typography>
+      <Typography style={{color:'white', fontSize:20, fontStyle: 'italic'}} >Version 2019.0.1</Typography>
     </Grid>
 
 
@@ -90,6 +93,8 @@ function PageTwo(props) {
         justify="flex-start"
         alignItems="center"
         direction="column"
+        style={{marginTop: 50}}
+        id="button-container"
       >
         <Button style={style} className={classes.margin}>
           <PlusLogo fill={orange} style={logoClass} />
@@ -100,12 +105,19 @@ function PageTwo(props) {
           <OpenFolder fill={orange} style={logoClass} />
           <Typography>Load Project</Typography>
         </Button >
-      </Grid>
-      <Button size="large">
-        <TLogo fill={orange} style={logoClass} />
-        Checkout version 1!
-      </Button>
 
+        <div style={{marginTop:200}}>
+        <Link to='/'>
+            <Button size="large">
+              <TLogo fill={orange} style={logoClass} />
+              Checkout version 1!
+            </Button>
+        </Link>
+        </div>
+        
+      
+      </Grid>       
+      
       {/* End grid item */}
       </Grid>
       {/* End row container */}
