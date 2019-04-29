@@ -65,13 +65,14 @@ function PageOne() {
         </Button>
       </Grid>
 
-      
+      <div style={{bottom:10, left: 30, position: "absolute",}} >
       <Link to='/second'>
         <Button size="large">
           <TLogo fill={orange} style={logoClass} />
           Checkout version 2!
         </Button>
       </Link>
+      </div>
 
     </Grid>
 

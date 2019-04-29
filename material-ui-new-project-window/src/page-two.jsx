@@ -1,22 +1,18 @@
 import React from 'react'
-// import './App.css';
 import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import UniversalMC from './img/universal-mc-logo.png'
+import UniversalMCOrange from './img/universal-mc-logo-orange.png'
+import UniversalMCBlue from './img/universal-mc-logo-blue.png'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-// import Fab from '@material-ui/core/Fab'
-// import PlusIcon from './icons/PlusIcon.svg'
-// import glamorous from "glamorous"
 import TLogo from './icons/nyt-logo'
 import PlusLogo from './icons/PlusLogo'
 import OpenFolder from './icons/open-folder'
-// import IconButton from '@material-ui/core/IconButton';
 import FolderList from './components/left-pane'
-// import { unstable_Box as Box } from '@material-ui/core/Box'
 import { Link } from "react-router-dom"
+import MenuListComposition from './components/menu-button'
 
 const theme = createMuiTheme({
   palette: {
@@ -31,6 +27,7 @@ const white = 'white'
 const orange = '#ff5722'
 // const black = '#303030'
 const black2 = '#424242'
+const blue = '#4b6eaf'
 
 const styles = theme => ({
     margin: {
@@ -53,19 +50,42 @@ const logoClass = theme => ({
   marginRight: theme.spacing.unit,
 })
 
-function PageTwo(props) {
+const style = {
+  color: white,
+  width: 250,
+  height: 50,
+  fontSize: 16,
+  marginLeft: 570,
+}
 
-  const { classes } = props;
-
-  const style = {
-    color: white,
-    width: 250,
-    height: 50,
-    fontSize: 16,
-    // marginTop: 200,
+class PageTwo extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      overImage : false
+    }
   }
 
+    changeColor = (enterORleave) => {
+      // console.log(word, number)
+      if (enterORleave === 'enter'){
+        this.setState ({
+            overImage: true
+        });
+      }
+      if (enterORleave === 'leave'){
+        this.setState ({
+          overImage: false
+      }); 
+    }
+    // console.log(this.state.overImage)
+}
+
+
+render(){
+// const { classes } = props;
   return (
+
     <MuiThemeProvider theme = { theme }>
   
     <Grid container>
@@ -81,32 +101,43 @@ function PageTwo(props) {
       justify="center"
       alignItems="center"
     >
-      <div style={{marginTop: 100}}>
-        <img src={UniversalMC} alt="universal-mc-logo" height={100} ></img>
+      <div style={{marginTop: 100}}
+      onMouseEnter={() => this.changeColor('enter')} onMouseLeave={() => this.changeColor('leave')}>
+        {!this.state.overImage && 
+          <img src={UniversalMCOrange} alt="universal-mc-logo" height={100}></img>
+        }
+        {this.state.overImage && 
+          <img src={UniversalMCBlue} alt="universal-mc-logo" height={100}></img>
+        }
+        
+        
       </div>
-      <Typography style={{color:'white', fontSize:30}}>Universal MC</Typography>
-      <Typography style={{color:'white', fontSize:20, fontStyle: 'italic'}} >Version 2019.0.1</Typography>
+      <Typography style={{color: this.state.overImage ? blue : 'white', fontSize:30}}>Universal MC</Typography>
+      <Typography style={{color:'grey', fontSize:18, fontStyle: 'italic', fontFamily: 'Roboto'}} >Version 2019.0.1</Typography>
     </Grid>
 
 
       <Grid container
         justify="flex-start"
-        alignItems="center"
+        alignItems="flex-start"
         direction="column"
         style={{marginTop: 50}}
         id="button-container"
       >
-        <Button style={style} className={classes.margin}>
-          <PlusLogo fill={orange} style={logoClass} />
-          <Typography>New Project</Typography>
+
+        <Button style={style} >
+        {/* className={classes.margin} */}
+          <div style={{paddingRight: 25, marginTop: theme.spacing.unit}} ><PlusLogo fill={orange} style={logoClass} /></div>
+          <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Create New Project</Typography>
         </Button >
 
-        <Button  style={style} className={classes.margin}>
-          <OpenFolder fill={orange} style={logoClass} />
-          <Typography>Load Project</Typography>
+        <Button  style={style} >
+        {/* className={classes.margin} */}
+        <div style={{paddingRight: 25, marginTop: theme.spacing.unit, marginLeft: -130}}><OpenFolder fill={orange} style={logoClass} /></div>
+          <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Open</Typography>
         </Button >
 
-        <div style={{marginTop:200}}>
+        <div style={{bottom:10, left: 500, position: "absolute",}}>
         <Link to='/'>
             <Button size="large">
               <TLogo fill={orange} style={logoClass} />
@@ -114,7 +145,13 @@ function PageTwo(props) {
             </Button>
         </Link>
         </div>
-        
+      
+      <div style={{bottom:10, right: 30, position: "absolute",}}>
+      <Grid container>
+        <MenuListComposition logo='Information'/>
+        <MenuListComposition logo='Settings'/>
+      </Grid>
+      </div>
       
       </Grid>       
       
@@ -125,7 +162,7 @@ function PageTwo(props) {
     </MuiThemeProvider>
   );
 }
-
+}
 PageTwo.propTypes = {
     classes: PropTypes.object.isRequired,
   };

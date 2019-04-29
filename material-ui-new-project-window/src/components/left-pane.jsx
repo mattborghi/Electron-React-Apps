@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-
+const blue = '#4b6eaf'
 
 class FolderList extends React.Component {
     constructor(props){
@@ -39,17 +39,17 @@ class FolderList extends React.Component {
             switch(number){
                 case 'one':
                     this.setState ({
-                        backButtonColor_one: '#4b6eaf'
+                        backButtonColor_one: blue
                     });
                     break;
                 case 'two':
                     this.setState ({
-                        backButtonColor_two: '#4b6eaf'
+                        backButtonColor_two: blue
                     });
                     break;
                 case 'three':
                     this.setState ({
-                        backButtonColor_three: '#4b6eaf'
+                        backButtonColor_three: blue
                     });
                     break;
                 default: console.log('there was an error with project button value')
@@ -92,7 +92,7 @@ class FolderList extends React.Component {
         <Avatar>
           <FolderIcon />
         </Avatar>
-        <ListItemText primary="CallableNote" secondary="~/Models/CallableNote/" />
+        <ListItemText primary="CallableNote" secondary="~/Models/CallableNote/"/>
       </ListItem>
       </Button>
       <Button style={{width: '100%', textTransform: "none", backgroundColor: this.state.backButtonColor_two}} onMouseEnter={() => this.handleChange('enter','two')} onMouseLeave={() => this.handleChange('exit', 'two')}>
