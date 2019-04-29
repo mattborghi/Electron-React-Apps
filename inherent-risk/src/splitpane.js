@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // import SplitPane from 'react-split-pane';
 import './index.css'
@@ -14,6 +13,7 @@ import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Fab from '@material-ui/core/Fab';
 // import ToolBox from './Components/Accordion/toolbox';
+import SimpleAppBar from './Components/AppBar/appbar';
 
 class SplitPanes extends React.Component {
 
@@ -113,6 +113,7 @@ class SplitPanes extends React.Component {
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
                                     <div style={{maxWidth: "100%",}}>
+                                        <SimpleAppBar />
                                         {/* Left Arrow */}    
                                         <Fab 
                                             color="inherit" 
@@ -166,5 +167,4 @@ class SplitPanes extends React.Component {
     }
 }
 
-const content = document.getElementById('pane');
-ReactDOM.render(<SplitPanes/>, content);
+export default SplitPanes;
