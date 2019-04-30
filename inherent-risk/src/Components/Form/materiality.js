@@ -60,7 +60,7 @@ const styles = theme => ({
         {/* Immaterial */}
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={6} sm={2}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             Immaterial
           </Typography>
         </Grid>
@@ -68,7 +68,7 @@ const styles = theme => ({
           <FormattedInputs />
         </Grid>
         <Grid item xs={2} sm={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             MF =
           </Typography>
         </Grid>
@@ -87,7 +87,7 @@ const styles = theme => ({
         {/* Low */}
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={6} sm={2}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary"> 
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error"> 
             Low
           </Typography>
         </Grid>
@@ -95,7 +95,7 @@ const styles = theme => ({
           <FormattedInputs />
         </Grid>
         <Grid item xs={2} sm={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             MF =
           </Typography>
         </Grid>
@@ -114,7 +114,7 @@ const styles = theme => ({
         {/* Medium */}
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={6} sm={2}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             Medium
           </Typography>
         </Grid>
@@ -122,7 +122,7 @@ const styles = theme => ({
           <FormattedInputs />
         </Grid>
         <Grid item xs={2} sm={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             MF =
           </Typography>
         </Grid>
@@ -141,7 +141,7 @@ const styles = theme => ({
         {/* High */}
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={6} sm={2}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             High
           </Typography>
         </Grid>
@@ -149,7 +149,7 @@ const styles = theme => ({
           <FormattedInputs />
         </Grid>
         <Grid item xs={2} sm={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             MF =
           </Typography>
         </Grid>

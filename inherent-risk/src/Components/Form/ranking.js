@@ -57,12 +57,12 @@ const styles = theme => ({
         
         <Grid container spacing={24} justify="center" alignItems="center"> 
         <Grid item xs={2}>  
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             Negligible	
           </Typography>
         </Grid>
         <Grid item xs={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             &le;
           </Typography>
         </Grid>
@@ -85,12 +85,12 @@ const styles = theme => ({
 
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={2}>  
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             Low	
           </Typography>
         </Grid>
         <Grid item xs={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             &le;
           </Typography>
         </Grid>
@@ -113,12 +113,12 @@ const styles = theme => ({
 
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={2}>  
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             Medium	
           </Typography>
         </Grid>
         <Grid item xs={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             &le;
           </Typography>
         </Grid>
@@ -141,12 +141,12 @@ const styles = theme => ({
 
         <Grid container spacing={24} justify="center" alignItems="center">
         <Grid item xs={2}>  
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             High	
           </Typography>
         </Grid>
         <Grid item xs={1}>
-          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="secondary">
+          <Typography className={classes.Typography} component="h3" variant="h6" align="justify" color="error">
             &le;
           </Typography>
         </Grid>

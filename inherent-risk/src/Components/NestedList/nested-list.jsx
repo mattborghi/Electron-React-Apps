@@ -18,7 +18,8 @@ const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: this.props.toggleFunc ? theme.palette.background.paper : 'white',
+    // 
   },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
@@ -26,9 +27,12 @@ const styles = theme => ({
 });
 
 class NestedList extends React.Component {
-  state = {
-    open: true,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      open: true,
+    };
+  }
 
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
@@ -36,11 +40,12 @@ class NestedList extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    
     return (
+      <div style={{backgroundColor: this.props.bgColor}}>
       <List
         component="nav"
-        subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
+        subheader={<ListSubheader component="div">Project</ListSubheader>}
         className={classes.root}
       >
         <ListItem button>
@@ -73,6 +78,7 @@ class NestedList extends React.Component {
           </List>
         </Collapse>
       </List>
+      </div>
     );
   }
 }
