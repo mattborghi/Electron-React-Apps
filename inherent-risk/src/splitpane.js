@@ -1,8 +1,8 @@
 import React from 'react';
 
 // import SplitPane from 'react-split-pane';
-import './index.css'
-import './splitpane.css'
+// import './index.css'
+// import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list.jsx';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
@@ -36,7 +36,8 @@ class SplitPanes extends React.Component {
             alphaLeft: 0.3,
             sidebarRightVisible: true,
             alphaRight: 0.3,
-            isToggled: false
+            isToggled: false,
+            // secondaryPaneSize: -1, 
         };
     }
     
@@ -73,6 +74,10 @@ class SplitPanes extends React.Component {
         // console.log(this.state.isToggled)
     }
 
+    // onSecondaryPaneSizeChange = (secondaryPaneSize) => {
+    //     this.setState({ secondaryPaneSize });
+    //     console.log(this.state.secondaryPaneSize)
+    //     }
 
     render() {
         // Moved inside render in order to modify it
@@ -127,7 +132,10 @@ class SplitPanes extends React.Component {
                     {this.state.sidebarLeftVisible && 
                     (
                         <div id="outside-nested-list" style={{height: '100vh', backgroundColor: this.state.isToggled ? white : black2 }} >
-                            <NestedList bgColor={this.state.isToggled ? white : black2}/>
+                            <NestedList 
+                                bgColor={this.state.isToggled ? white : black2}  
+                                textColor={this.state.isToggled ? black2 : white}    
+                            />
                         </div>
 
                     )}
@@ -135,6 +143,7 @@ class SplitPanes extends React.Component {
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
+                                {/* onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}  */}
                                     <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
                                         <SimpleAppBar toggleFunc={this.onToggle}/>
                                         {/* Left Arrow */}    
