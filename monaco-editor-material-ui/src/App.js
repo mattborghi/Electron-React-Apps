@@ -40,6 +40,78 @@ const files = {
       textAlign: 'center',
       color: '#34495e',
     },
+  });
+  
+  import React, { Component } from 'react';
+  import { Text, View, StyleSheet } from 'react-native';
+  import { Constants } from 'expo';
+  import AssetExample from './AssetExample';
+
+  export default class App extends Component {
+    render() {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.paragraph}>
+            Change code in the editor and watch it change on your phone!
+            Save to get a shareable url.
+          </Text>
+          <AssetExample />
+        </View>
+      );
+    }
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: Constants.statusBarHeight,
+      backgroundColor: '#ecf0f1',
+    },
+    paragraph: {
+      margin: 24,
+      fontSize: 18,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      color: '#34495e',
+    },
+  });
+  
+  import React, { Component } from 'react';
+  import { Text, View, StyleSheet } from 'react-native';
+  import { Constants } from 'expo';
+  import AssetExample from './AssetExample';
+
+  export default class App extends Component {
+    render() {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.paragraph}>
+            Change code in the editor and watch it change on your phone!
+            Save to get a shareable url.
+          </Text>
+          <AssetExample />
+        </View>
+      );
+    }
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: Constants.statusBarHeight,
+      backgroundColor: '#ecf0f1',
+    },
+    paragraph: {
+      margin: 24,
+      fontSize: 18,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      color: '#34495e',
+    },
   });`,
   'AssetExample.js': dedent`import React, { Component } from 'react';
   import { Text, View, StyleSheet, Image } from 'react-native';
@@ -107,12 +179,12 @@ export default class MonacoEditor extends React.Component<{}, State> {
         style={{
           display: 'flex',
           height: '100vh',
-          width: '100vw',
+          // width: '100vw',
           fontFamily: 'sans-serif',
         }}
       >
-        <div
-          style={{ width: 180, borderRight: '1px solid rgba(0, 0, 0, .08)' }}
+        {/* <div
+          style={{  width: 180, borderRight: '1px solid rgba(0, 0, 0, .08)' }}
         >
           {Object.keys(this.state.files).map(name => (
             <div
@@ -130,14 +202,20 @@ export default class MonacoEditor extends React.Component<{}, State> {
               {name}
             </div>
           ))}
-        </div>
+        </div> */}
         <Editor
           files={this.state.files}
           path={this.state.current}
           value={this.state.files[this.state.current]}
           onOpenPath={this._handleOpenPath}
           onValueChange={this._handleValueChange}
-        />
+          theme="ayu-dark"
+          scrollBeyondLastLine="true"
+          minimap={{ enabled: "true",
+                     side: "right",
+                     showSlider: "mouseover",
+                       }}
+          />
       </div>
     );
   }
