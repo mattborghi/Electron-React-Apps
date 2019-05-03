@@ -23,8 +23,11 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     // backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: "100%",
   },
+  tab: {
+    textTransform: "none"
+  }
 });
 
 class FullWidthTabs extends React.Component {
@@ -65,9 +68,10 @@ class FullWidthTabs extends React.Component {
             textColor="primary"
             variant="fullWidth"
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="ToDo" className={classes.tab} />
+            <Tab label="Terminal" className={classes.tab} />
+            <Tab label="Python Shell" className={classes.tab} />
+            <Tab label="Error Console" className={classes.tab} />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -75,9 +79,19 @@ class FullWidthTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}> 
+            {/* ToDo */}
+            Complete
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            {/* Terminal */}
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            {/* Python Shell */}
+          </TabContainer>
+          <TabContainer dir={theme.direction}>
+            {/* Error Console */}
+          </TabContainer>
         </SwipeableViews>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 // import { withStyles } from '@material-ui/core/styles';
-import { makeStyles, withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
@@ -9,12 +9,15 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import DraftsIcon from '@material-ui/icons/Drafts';
+// import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+// import StarBorder from '@material-ui/icons/StarBorder';
+import FolderLogo from '../icons/open-folder'
+import ClosedFolderLogo from '../icons/closed-folder'
+import DocLogo from '../icons/doc-logo'
 
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];
@@ -59,35 +62,24 @@ const styles = {
 
 
 function NestedList(props) {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     open: true,
-  //   };
-  // }
+
   const [open, setOpen] = useState(true)
 
   const handleClick = () => {
-    // this.setState(state => ({ open: !state.open }));
     setOpen(!open)
   };
 
-  // render() {
-    // const { classes } = props
-    // const classes = useStyles(props.isToggled);
     const { classes, isToggled, ...other } = props
-    // this.props;
-    // console.log()
+
     return (
       <div className={classes.root} {...other} > 
-      {/* style={{ color: isToggled ? '#424242' : 'white'}} */}
-        {/* style={{backgroundColor: this.props.bgColor, color: this.props.textColor}} */}
+
       <List
         component="nav"
         subheader={<ListSubheader component="div" className={classes.title}>Project</ListSubheader>}
         className={classes.root}
       >
-        <ListItem button>
+        {/* <ListItem button>
           <ListItemIcon>
             <SendIcon className={classes.icon}/>
           </ListItemIcon>
@@ -98,21 +90,28 @@ function NestedList(props) {
             <DraftsIcon className={classes.icon} />
           </ListItemIcon>
           <ListItemText inset primary="Drafts" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-        </ListItem>
+        </ListItem> */}
         <ListItem button onClick={handleClick}>
           <ListItemIcon>
-            <InboxIcon className={classes.icon} />
+            {open ? <ClosedFolderLogo className={classes.icon} /> : <FolderLogo className={classes.icon} /> }
           </ListItemIcon>
-          <ListItemText inset primary="Inbox" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+          
+          <ListItemText inset primary="CallableNote" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem button className={classes.nested}>
               <ListItemIcon>
-                <StarBorder className={classes.icon} />
+                <DocLogo className={classes.icon} />
               </ListItemIcon>
-              <ListItemText inset primary="Starred" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+              <ListItemText inset primary="ProductSample" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemIcon>
+                <DocLogo className={classes.icon} />
+              </ListItemIcon>
+              <ListItemText inset primary="Sth" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
             </ListItem>
           </List>
         </Collapse>
@@ -122,9 +121,4 @@ function NestedList(props) {
   // }
 }
 
-// NestedList.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
 export default withStyles(styles)(NestedList);
-// export default NestedList
