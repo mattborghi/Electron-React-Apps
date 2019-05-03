@@ -1,18 +1,25 @@
 import React from 'react';
 
-import TextButtons from './button';
+import Button from '@material-ui/core/Button';
+import styled from 'styled-components'
 
 
-function CustomizedExpansionPanel() {
+const StyledButton = styled(Button)`
+  color: ${props => props.text};
+  display: block;
+  width: 100%;
+  border: none;
+  background : ${props => props.color};
+`;
 
-   
 
+function CustomizedExpansionPanel(props) {
     return (
-      <div style={{width: '90%'}}>
-        <TextButtons name="Save"/>
-        <TextButtons name="Load" />
-        <TextButtons name="Calculate Risk" />
-        <TextButtons name="Generate Report" />
+      <div >
+        <StyledButton color={props.bgColor} text={props.textColor} >Save</StyledButton>
+        <StyledButton color={props.bgColor} text={props.textColor} >Load</StyledButton>
+        <StyledButton color={props.bgColor} text={props.textColor} >Calculate Risk</StyledButton>
+        <StyledButton color={props.bgColor} text={props.textColor} >Generate Report</StyledButton>
       </div>
     );
   // }

@@ -4,7 +4,7 @@ import React from 'react';
 // import './index.css'
 // import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list.jsx';
-import ExpansionPanel from './Components/Accordion/accordion';
+import CustomizedExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 import TextFields from './Components/Form/select-range';
 import SplitterLayout from 'react-splitter-layout';
@@ -186,7 +186,10 @@ class SplitPanes extends React.Component {
                             {this.state.sidebarRightVisible &&
                             (
                                 <div style={{marginRight: 20, height:'100vh', width: '100%', backgroundColor: this.state.isToggled ? white : black2}} > 
-                                    <ExpansionPanel />
+                                    <CustomizedExpansionPanel 
+                                        bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
+                                        textColor={this.state.isToggled ? 'primary' : 'secondary'} 
+                                    />
                                 </div>
                             )}
                             {/* </SplitterLayout> */}

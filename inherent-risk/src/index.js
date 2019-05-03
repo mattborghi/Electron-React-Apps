@@ -1,3 +1,4 @@
+import './bootstrap'
 import './index.css';
 import SplitPanes from './splitpane.js';
 import * as serviceWorker from './serviceWorker';
