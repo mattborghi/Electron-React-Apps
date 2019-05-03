@@ -24,7 +24,7 @@ const white = '#ffffff'
 const black2 = '#424242'
 // const black = '#000000'
 const blue = '#4b6eaf'
-// const grey = '#505050';
+// const grey = 'rgb(200,200,200)'
 
 class SplitPanes extends React.Component {
 
@@ -131,10 +131,11 @@ class SplitPanes extends React.Component {
                     {/* Hiding sidebar */}
                     {this.state.sidebarLeftVisible && 
                     (
-                        <div id="outside-nested-list" style={{height: '100vh', backgroundColor: this.state.isToggled ? white : black2 }} >
+                        <div id="outside-nested-list" style={{height: '100vh', backgroundColor: this.state.isToggled ? white : black2  }} >
                             <NestedList 
-                                bgColor={this.state.isToggled ? white : black2}  
-                                textColor={this.state.isToggled ? black2 : white}    
+                                isToggled={this.state.isToggled}
+                                // bgColor={this.state.isToggled ? white : black2}  
+                                // textColor={this.state.isToggled ? black2 : white}    
                             />
                         </div>
 
