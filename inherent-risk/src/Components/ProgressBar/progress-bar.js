@@ -68,7 +68,7 @@ class LinearDeterminate extends React.Component {
 
     const style = {
       position: "absolute",
-      bottom: -30,
+      bottom: 0,
       width: "100%",
       height: this.state.heightSize,
       opacity: this.state.opacity,

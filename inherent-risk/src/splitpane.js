@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // import SplitPane from 'react-split-pane';
-import './index.css'
-import './splitpane.css'
-import  NestedList from './Components/NestedList/nested-list';
+// import './index.css'
+// import './splitpane.css'
+import  NestedList from './Components/NestedList/nested-list.jsx';
 import ExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 import TextFields from './Components/Form/select-range';
@@ -14,6 +13,18 @@ import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Fab from '@material-ui/core/Fab';
 // import ToolBox from './Components/Accordion/toolbox';
+import SimpleAppBar from './Components/AppBar/appbar';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+// import { palette } from '@material-ui/system';
+// import grey from '@material-ui/colors/grey'
+
+const white = '#ffffff'
+// const orange = '#ff5722'
+// const black = '#303030'
+const black2 = '#424242'
+// const black = '#000000'
+const blue = '#4b6eaf'
+// const grey = '#505050';
 
 class SplitPanes extends React.Component {
 
@@ -25,9 +36,11 @@ class SplitPanes extends React.Component {
             alphaLeft: 0.3,
             sidebarRightVisible: true,
             alphaRight: 0.3,
+            isToggled: false,
+            // secondaryPaneSize: -1, 
         };
     }
-
+    
     toggleAlpha = () => {
         let currentLeftAlpha = this.state.alphaLeft;
         if (currentLeftAlpha === 1){
@@ -54,23 +67,17 @@ class SplitPanes extends React.Component {
         this.toggleAlpha();
     }
 
-    // hoverMouse = () => {
-    //     let currentLeftAlpha = this.state.alphaLeft;
-    //     if (currentLeftAlpha === 1){
-    //         this.setState({
-    //             alphaLeft: 0,
-    //             alphaRight: 0,
-    //         })
-    //     }else{
-    //         this.setState({
-    //             alphaLeft: 1,
-    //             alphaRight: 1,
-    //         })
+    onToggle = (toggleVar) => {
+        this.setState(state => ({
+            isToggled: toggleVar
+        }))
+        // console.log(this.state.isToggled)
+    }
+
+    // onSecondaryPaneSizeChange = (secondaryPaneSize) => {
+    //     this.setState({ secondaryPaneSize });
+    //     console.log(this.state.secondaryPaneSize)
     //     }
-        
-    //     // console.log(this.props)
-    //     // this.props.style.opacity = 0
-    // }
 
     render() {
         // Moved inside render in order to modify it
@@ -88,23 +95,47 @@ class SplitPanes extends React.Component {
                 opacity: this.state.alphaLeft,
             }
         }
+        
+        let theme = createMuiTheme({
+            palette: {
+                type: 'dark',
+                primary: {
+                  light: blue,
+                  main: white,
+                  dark: black2,
+                  contrastText: white,
+                },
+                secondary: {
+                  light: black2,
+                  main: black2,
+                  dark: black2,
+                  contrastText: black2,
+                },
+                error: {
+                  light: blue,
+                  main: blue,
+                  dark: blue,
+                  contrastText: blue,
+                },
+              },
+            // props.themeColor
+            typography: { 
+                useNextVariants: true
+            }
+          });
 
         return (
-            <div>
-                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage customClassName="custom-scrollbar">
+            <MuiThemeProvider theme = { theme }>
+            <div id="first-separator">
+                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage customClassName="custom-scrollbar" >
                     {/* Hiding sidebar */}
-                    {this.state.sidebarLeftVisible &&
+                    {this.state.sidebarLeftVisible && 
                     (
-                        <div>
-                            {/* <button 
-                            type="button" 
-                            onClick={this.toggleSidebar}
-                            style={styles.button}
-                            >
-                                {this.state.sidebarVisible && 'Hide Sidebar'}
-                                {!this.state.sidebarVisible && 'Show Sidebar'}
-                            </button> */}
-                            <NestedList />
+                        <div id="outside-nested-list" style={{height: '100vh', backgroundColor: this.state.isToggled ? white : black2 }} >
+                            <NestedList 
+                                bgColor={this.state.isToggled ? white : black2}  
+                                textColor={this.state.isToggled ? black2 : white}    
+                            />
                         </div>
 
                     )}
@@ -112,7 +143,9 @@ class SplitPanes extends React.Component {
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
                                 <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
-                                    <div style={{maxWidth: "100%",}}>
+                                {/* onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}  */}
+                                    <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
+                                        <SimpleAppBar toggleFunc={this.onToggle}/>
                                         {/* Left Arrow */}    
                                         <Fab 
                                             color="inherit" 
@@ -138,10 +171,10 @@ class SplitPanes extends React.Component {
                                         >
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
                                         </Fab>
-                                            <TextFields />
+                                            <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
                                         </div>
-                                    <div>
-                                        <FullWidthTabs />
+                                    <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
+                                        <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
                                     </div>
                                 </SplitterLayout>
                             </div>
@@ -152,7 +185,7 @@ class SplitPanes extends React.Component {
                                 </div>*/}
                             {this.state.sidebarRightVisible &&
                             (
-                                <div style={{marginRight: 20,}} > 
+                                <div style={{marginRight: 20, height:'100vh', width: '100%', backgroundColor: this.state.isToggled ? white : black2}} > 
                                     <ExpansionPanel />
                                 </div>
                             )}
@@ -162,9 +195,9 @@ class SplitPanes extends React.Component {
                     </div>
                 </SplitterLayout>
             </div>
+            </MuiThemeProvider>
         );
     }
 }
 
-const content = document.getElementById('pane');
-ReactDOM.render(<SplitPanes/>, content);
+export default SplitPanes;

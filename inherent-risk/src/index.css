@@ -8,3 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto', sans-serif;
 }
+
+/* .all {
+  overflow-y:hidden;
+} */

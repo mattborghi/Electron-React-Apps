@@ -22,16 +22,19 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     width: 500,
   },
 });
 
 class FullWidthTabs extends React.Component {
-  state = {
-    value: 0,
-  };
-
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+    };
+  }
+  
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -40,12 +43,21 @@ class FullWidthTabs extends React.Component {
     this.setState({ value: index });
   };
 
+  getColor = (color)  => {
+    console.log(color)
+    if(color === 'black2'){
+      return "secondary"
+    }else{
+      return "primary"
+    }
+  }
+
   render() {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
+      <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
+        <AppBar position="static" color={this.props.toggleValue ? 'primary' : 'secondary'}>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}

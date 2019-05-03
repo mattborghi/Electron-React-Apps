@@ -3,17 +3,19 @@ import React from 'react';
 import TextButtons from './button';
 
 
-class CustomizedExpansionPanel extends React.Component {
-  render() {
+function CustomizedExpansionPanel() {
+
+   
+
     return (
-      <div>
-        <TextButtons name="Save" color="primary"/>
-        <TextButtons name="Load" color="primary"/>
-        <TextButtons name="Calculate Risk" color="primary"/>
-        <TextButtons name="Generate Report" color="primary" />
+      <div style={{width: '90%'}}>
+        <TextButtons name="Save"/>
+        <TextButtons name="Load" />
+        <TextButtons name="Calculate Risk" />
+        <TextButtons name="Generate Report" />
       </div>
     );
-  }
+  // }
 }
 
 export default CustomizedExpansionPanel;

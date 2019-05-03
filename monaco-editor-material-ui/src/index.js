@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import './splitpane.js';
 
 import SimpleAppBar from './Components/AppBar/appbar';
-import MonacoEditor from './App';
+import MonacoEditor from './App.js';
 
 // App Bar 
 class AppBar extends React.Component {

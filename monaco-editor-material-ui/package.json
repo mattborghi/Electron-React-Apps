@@ -51,6 +51,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-split-pane": "^0.1.87",
+    "react-splitter-layout": "^4.0.0",
     "react-swipeable-views": "^0.13.1",
     "typescript": "^3.3.4000"
   }

@@ -1,16 +1,33 @@
-import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react'
+import Button from '@material-ui/core/Button'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import UniversalMC from './img/universal-mc-logo.png'
+import UniversalMCOrange from './img/universal-mc-logo-orange.png'
+import UniversalMCBlue from './img/universal-mc-logo-blue.png'
 import Grid from '@material-ui/core/Grid'
-import { Typography } from '@material-ui/core';
-import Fab from '@material-ui/core/Fab';
-import PlusIcon from './icons/PlusIcon.svg'
-import glamorous from "glamorous";
+import { Typography } from '@material-ui/core'
+import TLogo from './icons/nyt-logo'
+import PlusLogo from './icons/PlusLogo'
+import OpenFolder from './icons/open-folder'
+import FolderList from './components/left-pane'
+import { Link } from "react-router-dom"
+import MenuListComposition from './components/menu-button'
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+  typography: { 
+     useNextVariants: true
+  }
+});
+
+const white = 'white'
+const orange = '#ff5722'
+// const black = '#303030'
+const black2 = '#424242'
+const blue = '#4b6eaf'
 
 const styles = theme => ({
     margin: {
@@ -21,84 +38,131 @@ const styles = theme => ({
     },
   });
 
-const WhiteSystem = glamorous(PlusIcon)({
-    "> path": {
-      fill: "white"
+// const WhiteSystem = glamorous(PlusIcon)({
+//     "> path": {
+//       fill: "white"
+//     }
+//   });
+
+const logoClass = theme => ({
+  height: 24,
+  width: 24,
+  marginRight: theme.spacing.unit,
+})
+
+const style = {
+  color: white,
+  width: 250,
+  height: 50,
+  fontSize: 16,
+  marginLeft: 570,
+}
+
+class PageTwo extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      overImage : false
     }
-  });
-
-function PageTwo(props) {
-
-  const { classes } = props;
-
-  const style = {
-    color: '#ff5722',
-    width: 250,
-    height: 50,
-    fontSize: 20,
-    marginTop: 200,
-    // textColor: '#ff5722',
-    // backgroundColor: '#ff5722',
   }
 
-  const theme = createMuiTheme({
-    palette: {
-      type: 'dark',
-    },
-    typography: { 
-       useNextVariants: true
+    changeColor = (enterORleave) => {
+      // console.log(word, number)
+      if (enterORleave === 'enter'){
+        this.setState ({
+            overImage: true
+        });
+      }
+      if (enterORleave === 'leave'){
+        this.setState ({
+          overImage: false
+      }); 
     }
-  });
+    // console.log(this.state.overImage)
+}
 
+
+render(){
+// const { classes } = props;
   return (
-    <MuiThemeProvider theme = { theme }>
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
 
+    <MuiThemeProvider theme = { theme }>
+  
+    <Grid container>
+
+    <Grid item id="root" style={{backgroundColor: black2, height: '100vh'}} xs={3}>
+      <FolderList />
+    </Grid>
+
+    <Grid item xs={9}>
     <Grid
       container
       direction="column"
       justify="center"
       alignItems="center"
     >
-      <div style={{marginTop: 100}}>
-        <img src={UniversalMC} alt="universal-mc-logo" height={100} ></img>
+      <div style={{marginTop: 100}}
+      onMouseEnter={() => this.changeColor('enter')} onMouseLeave={() => this.changeColor('leave')}>
+        {!this.state.overImage && 
+          <img src={UniversalMCOrange} alt="universal-mc-logo" height={100}></img>
+        }
+        {this.state.overImage && 
+          <img src={UniversalMCBlue} alt="universal-mc-logo" height={100}></img>
+        }
+        
+        
       </div>
-      <Typography style={{color:'white', fontSize:30}}>Universal MC</Typography>
+      <Typography style={{color: this.state.overImage ? blue : 'white', fontSize:30}}>Universal MC</Typography>
+      <Typography style={{color:'grey', fontSize:18, fontStyle: 'italic', fontFamily: 'Roboto'}} >Version 2019.0.1</Typography>
     </Grid>
 
 
       <Grid container
-        justify="space-evenly"
-        alignItems="center"
-        direction="row"
+        justify="flex-start"
+        alignItems="flex-start"
+        direction="column"
+        style={{marginTop: 50}}
+        id="button-container"
       >
-        <Fab variant="extended" style={style} aria-label="Add" className={classes.margin}>
-          {/* <plus className={classes.extendedIcon} /> */}
-          {/* <img src={PlusIcon} alt="plus-icon" style={{marginRight: 4}}></img> */}
-          <WhiteSystem />
-          Extended
-        </Fab>
-        <Button variant="outlined" size="large" style={style}>
-          New Project
-        </Button>
-        <Button variant="outlined" size="large" style={style}>
-          Load Project
-        </Button>
-      </Grid>
-      <Button variant="outlined" size="large">
-          Checkout version 2!
-      </Button>
-    </Grid>
 
+        <Button style={style} >
+        {/* className={classes.margin} */}
+          <div style={{paddingRight: 25, marginTop: theme.spacing.unit}} ><PlusLogo fill={orange} style={logoClass} /></div>
+          <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Create New Project</Typography>
+        </Button >
+
+        <Button  style={style} >
+        {/* className={classes.margin} */}
+        <div style={{paddingRight: 25, marginTop: theme.spacing.unit, marginLeft: -130}}><OpenFolder fill={orange} style={logoClass} /></div>
+          <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Open</Typography>
+        </Button >
+
+        <div style={{bottom:10, left: 500, position: "absolute",}}>
+        <Link to='/'>
+            <Button size="large">
+              <TLogo fill={orange} style={logoClass} />
+              Checkout version 1!
+            </Button>
+        </Link>
+        </div>
+      
+      <div style={{bottom:10, right: 30, position: "absolute",}}>
+      <Grid container>
+        <MenuListComposition logo='Information'/>
+        <MenuListComposition logo='Settings'/>
+      </Grid>
+      </div>
+      
+      </Grid>       
+      
+      {/* End grid item */}
+      </Grid>
+      {/* End row container */}
+      </Grid>
     </MuiThemeProvider>
   );
 }
-
+}
 PageTwo.propTypes = {
     classes: PropTypes.object.isRequired,
   };

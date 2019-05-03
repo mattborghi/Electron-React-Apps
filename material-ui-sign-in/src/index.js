@@ -61,7 +61,6 @@ class SignComponent extends React.Component {
     }  
 
     onChange = () => {
-        // console.log(event)
         let turnedState = this.state.turnedOn;
         if (turnedState){
             this.setState(

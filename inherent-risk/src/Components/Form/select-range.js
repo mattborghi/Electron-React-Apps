@@ -38,13 +38,16 @@ const styles = theme => ({
 });
 
 class TextFields extends React.Component {
-  state = {
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
-  };
-
+  constructor(props){
+    super(props)
+    this.state = {
+      name: 'Cat in the Hat',
+      age: '',
+      multiline: 'Controlled',
+      currency: 'EUR',
+    };
+  }
+  
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
@@ -62,9 +65,9 @@ class TextFields extends React.Component {
         margin: "50 auto 0 0",
       },
     }
-
+    
     return (
-      <div className={classes.root}>
+      <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
         {/* <Grid container> */}
             <Formulae />
             <hr style={hrStyle.horizontalRule} />
