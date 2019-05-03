@@ -6,6 +6,9 @@ import CircularIntegration from './compile-file';
 // import test from './test.pdf';
 // import spdf from "simple-react-pdf";
 // import './pdf-file.css'
+import OneDimension from '../Plots/oneDimension';
+import Contourplot from '../Plots/contourPlot';
+import DiffPlot from '../Plots/diffPlot';
 
 class NewTable extends Component {
   render() {
@@ -21,7 +24,7 @@ class NewTable extends Component {
             {
             title: 'Birth Place',
             field: 'birthCity',
-            lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
+            lookup: { 34: 'İstanbul', 63: 'Şanlıurfa', 10: 'San Martin City'},
             },
             {
             title: 'Progress',
@@ -50,18 +53,28 @@ class NewTable extends Component {
         ]}
         data={[
             {
-            name: 'Mehmet',
-            surname: 'Baran',
+            name: 'One Dimension',
+            surname: 'Plot',
             birthYear: 1987,
             birthCity: 63,
             successScore: 58,
+            plot: <OneDimension /> ,
             },
             {
-            name: 'Zerya Betül',
-            surname: 'Baran',
+            name: 'Contour',
+            surname: 'Plot',
             birthYear: 2017,
             birthCity: 34,
             successScore: 90,
+            plot: <Contourplot /> ,
+            },
+            {
+            name: 'Comparison',
+            surname: 'Plot',
+            birthYear: 1986,
+            birthCity: 10,
+            successScore: 70,
+            plot: <DiffPlot /> ,
             },
         ]}
         title="Custom Render Example"
@@ -82,39 +95,35 @@ class NewTable extends Component {
         // ]}
 
         detailPanel={[
-            {
-                tooltip: 'Show Row info',
-                render: rowData => {
-                return (
-                    <div
-                    style={{
-                        fontSize: 100,
-                        textAlign: 'center',
-                        color: 'white',
-                        backgroundColor: '#43A047',
-                    }}
-                    >
-                    {rowData.name}
-                    </div>
-                )
-                },
-            //     render: () => {
-            //         alert('Previewing file ')
-            //    },
-            },
+            // {
+            //     tooltip: 'Show Row info',
+            //     render: rowData => {
+            //     return (
+            //         <div style={{fontSize: 100,textAlign: 'center',color: 'white',backgroundColor: '#43A047',}}>
+            //         {rowData.birthYear}                    
+            //         </div>
+            //     )
+            //     },              
+            // //     render: () => {
+            // //         alert('Previewing file ')
+            // //    },
+            // },
+
             {
                 icon: 'search',
                 tooltip: 'Show Preview',
                 render: rowData => {
                 return (
-                    <div>
-                        <CircularIntegration />
+                    <div>               
+                        {rowData.plot}  
+                        {/* <CircularIntegration /> */}
                         {/* <PDFFile /> */}
                         {/* <spdf.SimplePDF file="./test.pdf"/> */}
                     </div>
                 )
                 },
             },
+
             // rowData => ({
             //     disabled: rowData.name === 'ax',
             //     icon: 'favorite_border',
@@ -122,14 +131,7 @@ class NewTable extends Component {
             //     tooltip: 'Show Both',
             //     render: rowData => {
             //     return (
-            //         <div
-            //         style={{
-            //             fontSize: 100,
-            //             textAlign: 'center',
-            //             color: 'white',
-            //             backgroundColor: '#FDD835',
-            //         }}
-            //         >
+            //         <div style={{fontSize: 100,textAlign: 'center',color: 'white',backgroundColor: '#FDD835',}}>
             //         {rowData.name} {rowData.surname}
             //         </div>
             //     )
