@@ -6,10 +6,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+// import TerminalShell from '../shell/Shell'
+import TerminalSh from '../shell/Terminal'
+import XTerminal from '../shell/xterm-react'
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir} > 
+    {/* style={{ padding: 8 * 3 }} */}
       {children}
     </Typography>
   );
@@ -83,14 +87,18 @@ class FullWidthTabs extends React.Component {
             {/* ToDo */}
             Complete
           </TabContainer>
-          <TabContainer dir={theme.direction}>
+          <TabContainer dir={theme.direction} style={{margin:0, postion: "absolute"}}>
             {/* Terminal */}
+            <TerminalSh />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            {/* Python Shell */}
+            Python Shell
+            {/* <TerminalShell /> */}
+            <XTerminal />
           </TabContainer>
           <TabContainer dir={theme.direction}>
             {/* Error Console */}
+            Complete
           </TabContainer>
         </SwipeableViews>
       </div>
