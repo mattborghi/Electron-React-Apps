@@ -3,6 +3,7 @@ import * as React from 'react';
 import { XTerm, Terminal } from "react-xterm";
 import {ResizableBox} from 'react-resizable';
 import * as throttle from 'lodash.throttle';
+import './xterm.css'
 
 interface IState {
 }
@@ -15,9 +16,9 @@ interface IRefs {
 
 export default class XTerminal extends React.Component<IProps, IState> {
   
-  // constructor(props?: IProps, context?: any) {
-  //   super(props, context);
-  // }
+  constructor(props?: IProps, context?: any) {
+    super(props, context);
+  }
   componentDidMount() {
     runFakeTerminal(this.refs.xterm);
   }
@@ -30,7 +31,8 @@ export default class XTerminal extends React.Component<IProps, IState> {
     this.refs.xterm && this.refs.xterm.fit();
   }, 50)
   render() {
-    return <div>
+    return( 
+    <div style={{width:'100%', height: '100%'}}>
       <ResizableBox width={200} height={200} onResize={this.throttleConsoleResize} style={{
         overflow: 'hidden'
       }} >
@@ -38,11 +40,12 @@ export default class XTerminal extends React.Component<IProps, IState> {
           addons:['fit', 'fullscreen', 'search'],
           overflow: 'hidden',
           position: 'relative',
-          width: '100%',
-          height: '100%'
+          width: '90%',
+          // height: '100%'
         }} />
       </ResizableBox>
     </div>
+    );
   }
 }
 

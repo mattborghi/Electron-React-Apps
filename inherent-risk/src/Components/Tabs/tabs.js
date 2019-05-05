@@ -7,8 +7,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 // import TerminalShell from '../shell/Shell'
-import TerminalSh from '../shell/Terminal'
-import XTerminal from '../shell/xterm-react'
+// import TerminalSh from '../shell/Terminal'
+import XTerminal from '../shell/xterm-reactv2'
 
 function TabContainer({ children, dir }) {
   return (
@@ -70,7 +70,7 @@ class FullWidthTabs extends React.Component {
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
-            variant="fullWidth"
+            centered
           >
             <Tab label="ToDo" className={classes.tab} />
             <Tab label="Terminal" className={classes.tab} />
@@ -87,12 +87,12 @@ class FullWidthTabs extends React.Component {
             {/* ToDo */}
             Complete
           </TabContainer>
-          <TabContainer dir={theme.direction} style={{margin:0, postion: "absolute"}}>
-            {/* Terminal */}
-            <TerminalSh />
+          <TabContainer dir={theme.direction}>
+            Terminal
+            {/* <TerminalSh /> */}
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            Python Shell
+            {/* Python Shell */}
             {/* <TerminalShell /> */}
             <XTerminal />
           </TabContainer>
