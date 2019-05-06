@@ -24,6 +24,7 @@ const white = '#ffffff'
 const black2 = '#424242'
 // const black = '#000000'
 const blue = '#4b6eaf'
+const green = 'rgb(150,200,150)'
 // const grey = 'rgb(200,200,200)'
 
 class SplitPanes extends React.Component {
@@ -119,7 +120,7 @@ class SplitPanes extends React.Component {
             palette: {
                 type: 'dark',
                 primary: {
-                  light: blue,
+                  light: green,
                   main: white,
                   dark: black2,
                   contrastText: white,
@@ -131,10 +132,10 @@ class SplitPanes extends React.Component {
                   contrastText: black2,
                 },
                 error: {
-                  light: blue,
-                  main: blue,
-                  dark: blue,
-                  contrastText: blue,
+                  light: green,
+                  main: green,
+                  dark: green,
+                  contrastText: green,
                 },
               },
             // props.themeColor

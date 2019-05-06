@@ -57,10 +57,10 @@ class TextFields extends React.Component {
 
     const hrStyle = {
       horizontalRule: {
-        height:"3px", 
+        height:"2px", 
         border:"none", 
-        color:"rgb(60,90,180)", 
-        backgroundColor:"rgb(60,90,180)", 
+        // color:"rgb(150,200,150)", 
+        backgroundColor:"rgb(150,200,150)", 
         textAlign:"left", 
         margin: "50 auto 0 0",
       },
