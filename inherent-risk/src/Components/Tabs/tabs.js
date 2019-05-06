@@ -9,6 +9,10 @@ import Typography from '@material-ui/core/Typography';
 // import TerminalShell from '../shell/Shell'
 // import TerminalSh from '../shell/Terminal'
 import XTerminal from '../shell/xterm-reactv2'
+import ListIcon from '../icons/list-icon'
+import ErrorIcon from '../icons/error-icon'
+import TerminalIcon from '../icons/terminal-icon'
+import PythonIcon from '../icons/python-icon'
 
 function TabContainer({ children, dir }) {
   return (
@@ -30,7 +34,13 @@ const styles = theme => ({
     width: "100%",
   },
   tab: {
-    textTransform: "none"
+    textTransform: "none",
+    height: '10px',
+  },
+  icon: {
+    height: '12px',
+    width: '12px',
+    marginRight: '4px',
   }
 });
 
@@ -61,21 +71,27 @@ class FullWidthTabs extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    const data = [
+      { label: "Todo", logo: ListIcon},
+      { label: "Terminal", logo: TerminalIcon},
+      { label: "Python Shell", logo: PythonIcon},
+      { label: "Error Console", logo: ErrorIcon},
+    ]
 
+    const tabItems = data.map( (Row, index) => {
+      return <Tab label={<><Row.logo className={classes.icon}/> {Row.label} </>} key={Row.label} className={classes.tab} />
+    })
     return (
-      <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
+      <div className={classes.root} style={{backgroundColor: this.props.bgColor,}}>
         <AppBar position="static" color={this.props.toggleValue ? 'primary' : 'secondary'}>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
-            centered
+            // centered
           >
-            <Tab label="ToDo" className={classes.tab} />
-            <Tab label="Terminal" className={classes.tab} />
-            <Tab label="Python Shell" className={classes.tab} />
-            <Tab label="Error Console" className={classes.tab} />
+            {tabItems}
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -88,13 +104,13 @@ class FullWidthTabs extends React.Component {
             Complete
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            Terminal
+            {/* Terminal */}
             {/* <TerminalSh /> */}
+            <XTerminal />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            {/* Python Shell */}
+            Python Shell
             {/* <TerminalShell /> */}
-            <XTerminal />
           </TabContainer>
           <TabContainer dir={theme.direction}>
             {/* Error Console */}
