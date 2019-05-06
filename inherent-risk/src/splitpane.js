@@ -37,7 +37,8 @@ class SplitPanes extends React.Component {
             sidebarRightVisible: true,
             alphaRight: 0.3,
             isToggled: false,
-            // secondaryPaneSize: -1, 
+            tabSize: 20,
+            secondaryPaneSizeSet: -1,
         };
     }
     
@@ -74,10 +75,28 @@ class SplitPanes extends React.Component {
         // console.log(this.state.isToggled)
     }
 
-    // onSecondaryPaneSizeChange = (secondaryPaneSize) => {
-    //     this.setState({ secondaryPaneSize });
-    //     console.log(this.state.secondaryPaneSize)
-    //     }
+    onChangeSize = (toggled) => {
+        // console.log(toggled)
+        // console.log(this.state.tabSize)
+        if (toggled){
+            this.setState({
+                tabSize: 6,
+                secondaryPaneSize: 6,
+            })
+        } else{
+            this.setState({
+                tabSize: 20,
+                secondaryPaneSize: 20,
+            })
+        }
+    }
+
+    onSecondaryPaneSizeChange = (secondaryPaneSize) => {
+        this.setState({ 
+            secondaryPaneSizeSet: secondaryPaneSize 
+        });
+        // console.log(this.state.secondaryPaneSizeSet)
+        }
 
     render() {
         // Moved inside render in order to modify it
@@ -143,8 +162,16 @@ class SplitPanes extends React.Component {
                     <div>
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
-                                <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
-                                {/* onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}  */}
+                                <SplitterLayout 
+                                    vertical percentage 
+                                    primaryIndex={0} 
+                                    secondaryInitialSize={this.state.tabSize} 
+                                    primaryMinSize={60} 
+                                    secondaryMinSize={6} 
+                                    customClassName="custom-scrollbar"
+                                    onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
+                                >
+                                
                                     <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
                                         <SimpleAppBar toggleFunc={this.onToggle}/>
                                         {/* Left Arrow */}    
@@ -175,7 +202,7 @@ class SplitPanes extends React.Component {
                                             <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
                                         </div>
                                     <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
-                                        <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
+                                        <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} changeSize={this.onChangeSize} />
                                     </div>
                                 </SplitterLayout>
                             </div>

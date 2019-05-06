@@ -5,7 +5,7 @@ import { Terminal } from 'vscode-xterm';
 import * as fit from 'xterm/lib/addons/fit/fit';
 import 'xterm/dist/xterm.css';
 
-import './styles.css';
+// import './styles.css';
 
 Terminal.applyAddon(fit);
 
@@ -77,7 +77,7 @@ class XTerminal extends React.PureComponent {
         //     background: '#333',
         //   }}
         // >
-          <div id="xterm" style={{ height: '100%', width: '100%'}} />
+          <div id="xterm" style={{ height: '100%', width: '100%'}}/>
       //    </div>
       // </div>
     );

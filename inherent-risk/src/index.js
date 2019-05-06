@@ -1,6 +1,7 @@
 import './bootstrap'
 import './index.css';
 import SplitPanes from './splitpane.js';
+// import SplitPanes from './Components/Pane/split'
 import * as serviceWorker from './serviceWorker';
 
 // import SimpleAppBar from './Components/AppBar/appbar';
