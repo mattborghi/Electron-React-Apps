@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components'
 import { withStyles } from '@material-ui/styles';
 import MovePaneIcon from '../icons/move-pane'
+import UpArrowIcon from '../icons/up-arrow'
+import SaveFileIcon from '../icons/save-file'
+import CalculateIcon from '../icons/calculate'
+import GenerateIcon from '../icons/generate'
 
+const black="#424242"
+const white="#ffffff"
 
 const StyledButton = styled(Button)`
   color: ${props => props.text};
@@ -46,10 +52,26 @@ function CustomizedExpansionPanel(props) {
       </StyledButton>
 
       {/* Buttons */}
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Save</StyledButton>
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Load</StyledButton>
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Calculate Risk</StyledButton>
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Generate Report</StyledButton>
+    
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+        Save
+        <div style={{ marginRight: 20}}><SaveFileIcon fill={white}/></div>
+      </StyledButton>
+
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+        Load
+        <div style={{ marginRight: 20}}><UpArrowIcon fill={white}/></div>
+      </StyledButton>
+
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+        Calculate Risk
+        <div style={{marginRight: 20}}><CalculateIcon fill={white}/></div>
+      </StyledButton>
+
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+        Generate Report
+        <div style={{marginRight: 20}}><GenerateIcon fill={white}/></div>
+      </StyledButton>
       
     </div>
   );
