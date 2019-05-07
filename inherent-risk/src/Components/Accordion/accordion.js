@@ -32,36 +32,27 @@ function CustomizedExpansionPanel(props) {
   const {classes} = props
   const [isMoved, setIsMoved] = useState(false)
 
-
   function movePane() {
-    // console.log('moving')
-    // let isToggled = isMoved 
-    // if(isToggled){
-    //   setIsMoved(true)
-    // }else {
-    //   setIsMoved(false)
-    // }
-    setIsMoved(!isMoved)
-    // console.log(isMoved)
-    props.movingButtons(isMoved);
+    let newValue = !isMoved
+    setIsMoved(newValue)
+    props.movingButtons(newValue);
   }
 
-    return (
-      <div>
-        {/* Move pane button */}
-        <StyledButton onClick={() => movePane()} >
-          <MovePaneIcon style={{position: "relative", top: 0, left: 0}} />
-        </StyledButton>
+  return (
+    <div>
+      {/* Move pane button */}
+      <StyledButton onClick={() => movePane()} >
+        <MovePaneIcon style={{position: "relative", top: 0, left: 0}} />
+      </StyledButton>
 
-        {/* Buttons */}
-        <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Save</StyledButton>
-        <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Load</StyledButton>
-        <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Calculate Risk</StyledButton>
-        <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Generate Report</StyledButton>
-        
-      </div>
-    );
-
+      {/* Buttons */}
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Save</StyledButton>
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Load</StyledButton>
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Calculate Risk</StyledButton>
+      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >Generate Report</StyledButton>
+      
+    </div>
+  );
 }
 
 export default withStyles(styles)(CustomizedExpansionPanel);

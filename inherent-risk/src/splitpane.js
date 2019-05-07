@@ -228,7 +228,6 @@ class SplitPanes extends React.Component {
                                         >
                                         {this.state.sidebarLeftVisible? <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> : <ArrowForwardIosIcon style={{left: 16, position: "relative"}}/> }
                                         </Fab>
-                                        
                                         {/* Right Arrow */}
                                         <Fab 
                                             color="inherit" 
@@ -250,11 +249,6 @@ class SplitPanes extends React.Component {
                                     }
                                 </SplitterLayout>
                             </div>
-                                
-                            {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
-                                <div>
-                                    <ToolBox />
-                                </div>*/}
                             {this.state.sidebarRightVisible &&
                             (
                                 <SplitterLayout vertical >
@@ -274,8 +268,6 @@ class SplitPanes extends React.Component {
                                     </div>
                                 </SplitterLayout>
                             )}
-                            {/* </SplitterLayout> */}
-                            
                         </SplitterLayout>
                     </div>
                 </SplitterLayout>
