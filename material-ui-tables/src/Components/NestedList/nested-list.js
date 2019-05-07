@@ -24,11 +24,14 @@ const styles = theme => ({
   nested: {
     paddingLeft: theme.spacing.unit * 4,
   },
+  item: {
+    marginBottom: 0,
+  },
 });
 
 class NestedList extends React.Component {
   state = {
-    open: true,
+    open: false,
   };
 
   handleClick = () => {
@@ -41,43 +44,44 @@ class NestedList extends React.Component {
     return (
       <List
         component="nav"
-        subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
+        subheader={<ListSubheader component="div">Tests and Contracts List</ListSubheader>}
         className={classes.root}
       >
-        <ListItem button>
-          
+        {/* <ListItem button>          
           <Checkbox/>
-          {/* <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon> */}
           <ListItemText inset primary="Sent mail" />
-        </ListItem>
-        <ListItem button>
-          {/* <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon> */}
+        </ListItem> */}
+
+        <ListItem button onClick={this.handleClick} >
           <Checkbox/>
-          <ListItemText inset primary="Drafts" />
-        </ListItem>
-        <ListItem button onClick={this.handleClick}>
-          {/* <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon> */}
-          <Checkbox/>
-          <ListItemText inset primary="Inbox" />
+          <ListItemText inset primary="Test A" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              {/* <ListItemIcon>
-                <StarBorder />
-              </ListItemIcon> */}
+            <ListItem button className={classes.nested}> 
               <Checkbox/>
-              <ListItemText inset primary="Starred" />
+              <ListItemText inset primary="Contract A" />
             </ListItem>
           </List>
         </Collapse>
+
+        <ListItem button onClick={this.handleClick}>    
+          <Checkbox/>
+          <ListItemText inset primary="Test B" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}>  
+              <Checkbox/>
+              <ListItemText inset primary="Contract B" />
+            </ListItem>
+          </List>
+        </Collapse>
+
       </List>
     );
   }
