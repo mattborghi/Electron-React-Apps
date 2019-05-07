@@ -4,10 +4,11 @@ import React from 'react';
 // import './index.css'
 // import './splitpane.css'
 import  NestedList from './Components/NestedList/nested-list.jsx';
-import ExpansionPanel from './Components/Accordion/accordion';
+import CustomizedExpansionPanel from './Components/Accordion/accordion';
 import FullWidthTabs from './Components/Tabs/tabs';
 import TextFields from './Components/Form/select-range';
 import SplitterLayout from 'react-splitter-layout';
+import Settings from './Components/Settings/settings'
 import 'react-splitter-layout/lib/index.css';
 import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -23,8 +24,9 @@ const white = '#ffffff'
 // const black = '#303030'
 const black2 = '#424242'
 // const black = '#000000'
-const blue = '#4b6eaf'
-// const grey = '#505050';
+// const blue = '#4b6eaf'
+const green = 'rgb(150,200,150)'
+// const grey = 'rgb(200,200,200)'
 
 class SplitPanes extends React.Component {
 
@@ -37,7 +39,11 @@ class SplitPanes extends React.Component {
             sidebarRightVisible: true,
             alphaRight: 0.3,
             isToggled: false,
-            // secondaryPaneSize: -1, 
+            tabSize: 20,
+            secondaryPaneSizeSet: -1,
+            movingButtonsValue: false,
+            toggleProject: true,
+            toggleTerminal: true,
         };
     }
     
@@ -71,13 +77,51 @@ class SplitPanes extends React.Component {
         this.setState(state => ({
             isToggled: toggleVar
         }))
-        // console.log(this.state.isToggled)
     }
 
-    // onSecondaryPaneSizeChange = (secondaryPaneSize) => {
-    //     this.setState({ secondaryPaneSize });
-    //     console.log(this.state.secondaryPaneSize)
-    //     }
+    onToggleRightPane = (toggleVar) => {
+        this.setState(state => ({
+            sidebarRightVisible: toggleVar
+        }))
+    }
+
+    onMovingButtons = (toggleVar) => {
+        this.setState(state => ({
+            movingButtonsValue: toggleVar
+        }))
+    }
+
+    onToggleProject = (toggleVar) => {
+        this.setState(state => ({
+            toggleProject: toggleVar
+        }))
+    }
+
+    onToggleTerminal = (toggleVar) => {
+        this.setState(state => ({
+            toggleTerminal: toggleVar
+        }))
+    }
+
+    onChangeSize = (toggled) => {
+        if (toggled){
+            this.setState({
+                tabSize: 6,
+                secondaryPaneSize: 6,
+            })
+        } else{
+            this.setState({
+                tabSize: 20,
+                secondaryPaneSize: 20,
+            })
+        }
+    }
+
+    onSecondaryPaneSizeChange = (secondaryPaneSize) => {
+        this.setState({ 
+            secondaryPaneSizeSet: secondaryPaneSize 
+        });
+    }
 
     render() {
         // Moved inside render in order to modify it
@@ -100,7 +144,7 @@ class SplitPanes extends React.Component {
             palette: {
                 type: 'dark',
                 primary: {
-                  light: blue,
+                  light: green,
                   main: white,
                   dark: black2,
                   contrastText: white,
@@ -112,10 +156,10 @@ class SplitPanes extends React.Component {
                   contrastText: black2,
                 },
                 error: {
-                  light: blue,
-                  main: blue,
-                  dark: blue,
-                  contrastText: blue,
+                  light: green,
+                  main: green,
+                  dark: green,
+                  contrastText: green,
                 },
               },
             // props.themeColor
@@ -131,21 +175,47 @@ class SplitPanes extends React.Component {
                     {/* Hiding sidebar */}
                     {this.state.sidebarLeftVisible && 
                     (
-                        <div id="outside-nested-list" style={{height: '100vh', backgroundColor: this.state.isToggled ? white : black2 }} >
-                            <NestedList 
-                                bgColor={this.state.isToggled ? white : black2}  
-                                textColor={this.state.isToggled ? black2 : white}    
-                            />
+                        <div style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }}>
+                            <SplitterLayout vertical>
+                                { this.state.toggleProject &&
+                                    <div id="outside-nested-list" style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }} >
+                                        <NestedList 
+                                            isToggled={this.state.isToggled} 
+                                        />
+                                    </div>
+                                }
+                                { this.state.movingButtonsValue &&
+                                    <div style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }}>
+                                        <CustomizedExpansionPanel 
+                                            bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
+                                            textColor={this.state.isToggled ? 'primary' : 'secondary'} 
+                                            movingButtons={this.onMovingButtons}
+                                        />
+                                    </div>
+                                }
+                            </SplitterLayout>
                         </div>
-
                     )}
                     <div>
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
-                                <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={20} primaryMinSize={60} secondaryMinSize={10} customClassName="custom-scrollbar">
-                                {/* onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}  */}
+                                <SplitterLayout 
+                                    vertical percentage 
+                                    primaryIndex={0} 
+                                    secondaryInitialSize={this.state.tabSize} 
+                                    primaryMinSize={60} 
+                                    secondaryMinSize={6} 
+                                    customClassName="custom-scrollbar"
+                                    onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
+                                >
+                                
                                     <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
-                                        <SimpleAppBar toggleFunc={this.onToggle}/>
+                                        <SimpleAppBar 
+                                                themeSelected={this.state.isToggled}
+                                                toggleRightPane={this.onToggleRightPane}
+                                                toggleTerminal={this.onToggleTerminal}
+                                                toggleProject={this.onToggleProject}
+                                        />
                                         {/* Left Arrow */}    
                                         <Fab 
                                             color="inherit" 
@@ -173,9 +243,11 @@ class SplitPanes extends React.Component {
                                         </Fab>
                                             <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
                                         </div>
-                                    <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
-                                        <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
-                                    </div>
+                                    { this.state.toggleTerminal && 
+                                        <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
+                                            <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} changeSize={this.onChangeSize} />
+                                        </div>
+                                    }
                                 </SplitterLayout>
                             </div>
                                 
@@ -185,9 +257,22 @@ class SplitPanes extends React.Component {
                                 </div>*/}
                             {this.state.sidebarRightVisible &&
                             (
-                                <div style={{marginRight: 20, height:'100vh', width: '100%', backgroundColor: this.state.isToggled ? white : black2}} > 
-                                    <ExpansionPanel />
-                                </div>
+                                <SplitterLayout vertical >
+                                    { !this.state.movingButtonsValue &&
+                                        <div style={{marginRight: 20, height:'100%', width: '100%', backgroundColor: this.state.isToggled ? white : black2}} > 
+                                            <CustomizedExpansionPanel 
+                                                bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
+                                                textColor={this.state.isToggled ? 'primary' : 'secondary'} 
+                                                movingButtons={this.onMovingButtons}
+                                            />
+                                        </div>
+                                    }
+                                    <div style={{height:'100%', width: '100%', color: white, backgroundColor: this.state.isToggled ? white : black2}}>
+                                        <Settings
+                                            toggleFunc={this.onToggle} 
+                                        />
+                                    </div>
+                                </SplitterLayout>
                             )}
                             {/* </SplitterLayout> */}
                             

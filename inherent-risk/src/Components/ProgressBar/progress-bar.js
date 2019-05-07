@@ -6,7 +6,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 const styles = {
   root: {
     flexGrow: 1,
-  },
+  }
 };
 
 class LinearDeterminate extends React.Component {
@@ -72,10 +72,11 @@ class LinearDeterminate extends React.Component {
       width: "100%",
       height: this.state.heightSize,
       opacity: this.state.opacity,
+      // color: 'rgb(150,200,150)'
     }
     return (
       <div className={classes.root} onMouseEnter={this.toggleAlpha} onMouseLeave={this.toggleAlpha}>
-        <LinearProgress variant="determinate" value={70} style={style}/>
+        <LinearProgress color="primary" variant="determinate" value={70} style={style}/>
         {/* <br />
         <LinearProgress color="secondary" variant="determinate" value={this.state.completed} /> */}
       </div>

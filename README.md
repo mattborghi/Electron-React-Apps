@@ -133,3 +133,17 @@ Working environment of electron with react.
 ## material-ui-new-project-window
 
 React app that incorporates a main window when you can create a new project or load an old one. It also implements react-router for navigating between pages.
+
+## electron-react-ant-boilerplate
+
+Electron app that incorporates React and Webpack among others. Repo is [here](https://github.com/kevoj/electron-react-ant-boilerplate).
+
+![electron-react-ant-boilerplate](https://camo.githubusercontent.com/3f816547ff277ad21dbd423d817de8bc50eb8c1e/68747470733a2f2f692e696d6775722e636f6d2f70697358426b472e706e67)
+
+## electron-react-python
+
+Electron + React + Python project.
+
+## node-react-xterm
+
+As the name suggest, react front-end app that connects with node back-end and uses xterm.js. Guided through [this blog](https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0) and [this one](https://www.ctolib.com/topics-137727.html).
