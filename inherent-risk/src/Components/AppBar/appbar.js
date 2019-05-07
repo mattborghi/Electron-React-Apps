@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import CustomizedSwitches from '../switch/on-off-button';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 // import TerminalNewIcon from '../icons/terminal-new'
 import ConsoleIcon from '../icons/console'
 import StructureIcon from '../icons/project-structure'
@@ -28,24 +27,12 @@ const styles = {
 };
 
 function SimpleAppBar(props) {
-  const { classes } = props;
+  const { classes } = props
 
-  const [toggleOn, setToggleOn] = useState(true)
   const [toggleRightPane, setToggleRightPane] = useState(true)
   const [toggleProject, setToggleProject] = useState(true)
   const [toggleTerminal, setToggleTerminal] = useState(true)
   
-  function onChange() {
-    let isToggled = toggleOn 
-    if(isToggled){
-      setToggleOn(false)
-    }else {
-      setToggleOn(true)
-    }
-    // console.log(toggleOn)
-    props.toggleFunc(toggleOn);
-  }
-
   function rightSidebar() {
     let isToggledRightPane = toggleRightPane
     if (isToggledRightPane)
@@ -53,7 +40,6 @@ function SimpleAppBar(props) {
     else
       setToggleRightPane(true)
     props.toggleRightPane(toggleRightPane)
-    
   }
 
   function projectToggle() {
@@ -73,16 +59,16 @@ function SimpleAppBar(props) {
       setToggleTerminal(true)
     props.toggleTerminal(toggleTerminal)
   }
-
+  
   return (
     <div className={classes.root}>
-        <AppBar className={classes.appbar} position="static" color={toggleOn ? "secondary" : "primary"}>
+        <AppBar className={classes.appbar} position="static" color={props.themeSelected ? "primary" : "secondary"}>
             <Toolbar>
-            <Typography className={classes.typography} variant="h6" color={toggleOn ? "primary" : "secondary"}>
+            <Typography className={classes.typography} variant="h6" color={props.themeSelected ? "secondary" : "primary"}>
                 MODEL INHERENT RISK
             </Typography>
             </Toolbar>
-            <div style={{position: "absolute", left: 0, top: 0 }} >
+            <div style={{position: "absolute", left: 0, top: 10 }} >
               <Button onClick={() => projectToggle()}> 
                 { toggleProject ? <StructureIcon fill={green} /> : <StructureIcon fill={white} /> }
               </Button>
@@ -94,9 +80,7 @@ function SimpleAppBar(props) {
               </Button>
             </div>
 
-            <div onChange={() => onChange()}>
-                <CustomizedSwitches />
-            </div>
+            
         </AppBar>
     </div>
   );

@@ -8,11 +8,11 @@ import On from './img/on_dark.png'
 import Off from './img/off.png'
 
 
-const styleTopRight = {
-    position: "absolute",
-    right: 20,
-    top: 0,
-}
+// const styleTopRight = {
+//     position: "absolute",
+//     right: 20,
+//     top: 0,
+// }
 
 const styles = theme => ({
   colorSwitchBase: {
@@ -81,7 +81,7 @@ class CustomizedSwitches extends React.Component {
     const { classes } = this.props;
 
     return (
-        <div style={styleTopRight}>
+        // <div style={styleTopRight}>
             <Grid
                 container
                 direction="row"
@@ -116,7 +116,7 @@ class CustomizedSwitches extends React.Component {
             {/* </Grid> */}
             {/* End of grid container */}
             </Grid>
-        </div>  
+        //  </div>   
     );
   }
 }

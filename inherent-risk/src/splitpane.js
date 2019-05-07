@@ -94,7 +94,6 @@ class SplitPanes extends React.Component {
     onToggleProject = (toggleVar) => {
         this.setState(state => ({
             toggleProject: toggleVar
-            // maybe change: toggleProject -> sidebarLeftVisible?
         }))
     }
 
@@ -181,9 +180,7 @@ class SplitPanes extends React.Component {
                                 { this.state.toggleProject &&
                                     <div id="outside-nested-list" style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }} >
                                         <NestedList 
-                                            isToggled={this.state.isToggled}
-                                            // bgColor={this.state.isToggled ? white : black2}  
-                                            // textColor={this.state.isToggled ? black2 : white}    
+                                            isToggled={this.state.isToggled} 
                                         />
                                     </div>
                                 }
@@ -214,7 +211,7 @@ class SplitPanes extends React.Component {
                                 
                                     <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
                                         <SimpleAppBar 
-                                                toggleFunc={this.onToggle} 
+                                                themeSelected={this.state.isToggled}
                                                 toggleRightPane={this.onToggleRightPane}
                                                 toggleTerminal={this.onToggleTerminal}
                                                 toggleProject={this.onToggleProject}
@@ -271,7 +268,9 @@ class SplitPanes extends React.Component {
                                         </div>
                                     }
                                     <div style={{height:'100%', width: '100%', color: white, backgroundColor: this.state.isToggled ? white : black2}}>
-                                        <Settings />
+                                        <Settings
+                                            toggleFunc={this.onToggle} 
+                                        />
                                     </div>
                                 </SplitterLayout>
                             )}
