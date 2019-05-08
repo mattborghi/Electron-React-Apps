@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
-// import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography'
 import ListSubheader from '@material-ui/core/ListSubheader'
-import CustomizedSwitches from '../switch/on-off-button';
+import CustomizedSwitches from '../switch/on-off-button'
+import SwitchButton from '../switch/switch-button'
 import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
+import FileLogo from '../icons/file'
+import InformationLogo from '../icons/information'
+import LoupeIcon from '../icons/loupe'
 
 function Settings(props){
 
+    const white="#ffffff"
+    const grey = "rgb(200,200,200)"
+    // const green = "rgb(200,150,200)"
     // const { classes } = props
     const [toggleOn, setToggleOn] = useState(true)
+    const [switchToggleOn, setSwitchToggleOn] = useState(true)
 
     function onChange() {
         let isToggled = toggleOn 
@@ -16,12 +25,15 @@ function Settings(props){
         }else {
         setToggleOn(true)
         }
-        props.toggleFunc(toggleOn);
-        console.log('changed')
-  }
+        props.toggleFunc(toggleOn)
+    }
 
+    function onStatusChange() {
+        let isToggled = !switchToggleOn 
+        setSwitchToggleOn(isToggled)
+        props.toggleSwitch(isToggled)
+    }
 
-    const grey = "rgb(200,200,200)"
 
     return(
         <Grid 
@@ -30,6 +42,7 @@ function Settings(props){
             justify="flex-start"
             alignItems="flex-start"
         >
+            {/* Settings Title */}
             <Grid item xs={12}>
                 <ListSubheader 
                     component="div" 
@@ -38,22 +51,80 @@ function Settings(props){
                     SETTINGS
                 </ListSubheader>
             </Grid>
-
+            {/* Theme */}
             <Grid 
                 container
                 direction="row"
                 justify="space-around"
                 alignItems="center"
-                // style={{marginLeft: 10}}
             >
                 <Grid item >
-                    Theme
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>Theme</Typography>
                 </Grid>
                 <Grid item onChange={() => onChange()} >
                     <CustomizedSwitches />
-                </Grid>
-                
+                </Grid>                
             </Grid>
+            {/* Docs */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>Docs</Typography>
+                </Grid>
+                <Grid item >
+                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><FileLogo fill={white} /></Button></div>
+                </Grid>                
+            </Grid>
+            {/* Help */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>Help</Typography>
+                </Grid>
+                <Grid item >
+                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><InformationLogo fill={white} /></Button></div>
+                </Grid>                
+            </Grid>
+            {/* Hide/Show Status Bar */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>
+                        { switchToggleOn ? 'Hide Status Bar' : 'Show Status Bar'}
+                    </Typography>
+                </Grid>
+                <Grid item onChange={() => onStatusChange()}>
+                    <div style={{paddingRight: 25, marginTop: 4}} ><SwitchButton color="green"/></div>
+                </Grid>                
+            </Grid>
+            {/* View Status */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>View Status</Typography>
+                </Grid>
+                <Grid item >
+                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><LoupeIcon fill={white}/></Button></div>
+                </Grid>                
+            </Grid>
+                
+        {/* End of settings */}
         </Grid>
     )
 }

@@ -73,6 +73,10 @@ class SplitPanes extends React.Component {
         this.toggleAlpha();
     }
 
+    toggleSwitch = (isSwitched) => {
+        this.props.toggleSwitch(isSwitched)
+    }
+
     onToggle = (toggleVar) => {
         this.setState(state => ({
             isToggled: toggleVar
@@ -264,6 +268,7 @@ class SplitPanes extends React.Component {
                                     <div style={{height:'100%', width: '100%', color: white, backgroundColor: this.state.isToggled ? white : black2}}>
                                         <Settings
                                             toggleFunc={this.onToggle} 
+                                            toggleSwitch={this.toggleSwitch}
                                         />
                                     </div>
                                 </SplitterLayout>
