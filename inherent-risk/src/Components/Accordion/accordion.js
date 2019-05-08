@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import ListSubheader from '@material-ui/core/ListSubheader'
 import styled from 'styled-components'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
@@ -16,6 +17,7 @@ import CloudComputingLogo from '../icons/cloud-computing'
 
 // const black="#424242"
 const white="#ffffff"
+const grey = "rgb(200,200,200)"
 
 const StyledButton = styled(Button)`
   color: ${props => props.text};
@@ -56,6 +58,12 @@ function CustomizedExpansionPanel(props) {
 
   return (
     <div>
+      <ListSubheader 
+          component="div" 
+          style={{color: grey}}
+      >
+          CONTROLS
+      </ListSubheader>
       {/* Buttons */}
       <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
         <div style={{paddingRight: 25, marginTop: 4, left: 10}} ><SaveFileIcon fill={white} /></div>
