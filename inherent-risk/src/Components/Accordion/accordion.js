@@ -14,6 +14,7 @@ import CalculateIcon from '../icons/calculate'
 import ContractIcon from '../icons/contract'
 import CloudComputingLogo from '../icons/cloud-computing'
 // import BlueprintIcon from '../icons/blueprint'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 
 // const black="#424242"
 const white="#ffffff"
@@ -49,6 +50,7 @@ function CustomizedExpansionPanel(props) {
 
   const {classes} = props
   const [isMoved, setIsMoved] = useState(false)
+  const [nextPane, setNextPane] = useState(false)
 
   function movePane() {
     let newValue = !isMoved
@@ -56,11 +58,17 @@ function CustomizedExpansionPanel(props) {
     props.movingButtons(newValue);
   }
 
+  function nextPaneFunc() {
+    let newValue = !nextPane
+    setNextPane(newValue)
+    props.nextPane(newValue);
+  }
+
   return (
     <div>
       <ListSubheader 
           component="div" 
-          style={{color: grey}}
+          style={{color: grey,}}
       >
           CONTROLS
       </ListSubheader>
@@ -86,6 +94,11 @@ function CustomizedExpansionPanel(props) {
         <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Generate Report</Typography>
       </StyledButton>
 
+      {/* Next */}
+      <StyledButton onClick={() => nextPaneFunc()} >
+        <div style={{paddingRight: 25, marginTop: 4,}} ><ArrowForwardIosIcon fill={white}/></div>
+        <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Next</Typography>
+      </StyledButton>
 
       {/* Move pane button */}
       <StyledButton onClick={() => movePane()} style={{position: "absolute", bottom: 0, left: 0}}>
