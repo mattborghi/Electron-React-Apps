@@ -147,3 +147,12 @@ Electron + React + Python project.
 ## node-react-xterm
 
 As the name suggest, react front-end app that connects with node back-end and uses xterm.js. Guided through [this blog](https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0) and [this one](https://www.ctolib.com/topics-137727.html).
+
+## xterm-webpack
+
+This repo shows how to use XTerm.js with Webpack. Based on [this repo](https://github.com/parisk/xterm-webpack).
+
+
+## react-webpack-flask-template
+
+Template which incorporates React and Webpack with Python Flask. Based on [this blog](https://itnext.io/a-template-for-creating-a-full-stack-web-application-with-flask-npm-webpack-and-reactjs-be2294b111bd) and [this repo](https://github.com/Eyongkevin/hello_template).
