@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { devMiddleware } = require('./serve.config');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -26,9 +27,15 @@ module.exports = {
       /^((fs)|(path)|(os)|(crypto)|(source-map-support))$/,
       /vs(\/|\\)language(\/|\\)typescript(\/|\\)lib/
     ),
-    new webpack.ContextReplacementPlugin(
-      /monaco-editor(\\|\/)esm(\\|\/)vs(\\|\/)editor(\\|\/)common(\\|\/)services/
+    new MonacoWebpackPlugin(
+    //   {
+    //   languages: 'javascript',
+    // }
     ),
+  
+    // new webpack.ContextReplacementPlugin(
+    //   /monaco-editor(\\|\/)esm(\\|\/)vs(\\|\/)editor(\\|\/)common(\\|\/)services/
+    // ),
   ].concat(
     process.env.NODE_ENV === 'production'
       ? [
