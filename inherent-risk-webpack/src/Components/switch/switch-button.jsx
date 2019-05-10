@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import Switch from '@material-ui/core/Switch';
-// import Grid from '@material-ui/core/Grid';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import purple from '@material-ui/core/colors/purple'
+import Switch from '@material-ui/core/Switch'
 
 const styles = theme => ({
   colorSwitchBase: {

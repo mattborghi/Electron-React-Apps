@@ -1,5 +1,7 @@
 :global {
     @import '~react-splitter-layout/lib/index.css';
+    @import '~xterm/dist/xterm.css';
+    @import '../Components/styles/global.css';
 }
 // Define a variable as blue
 $bg: #424242;

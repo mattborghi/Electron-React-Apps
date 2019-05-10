@@ -15,9 +15,9 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 // import StarBorder from '@material-ui/icons/StarBorder';
-import FolderLogo from '../icons/open-folder'
-import ClosedFolderLogo from '../icons/closed-folder'
-import DocLogo from '../icons/doc-logo'
+import FolderLogo from '../icons/open-folder.jsx'
+import ClosedFolderLogo from '../icons/closed-folder.jsx'
+import DocLogo from '../icons/doc-logo.jsx'
 
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Typography from '@material-ui/core/Typography'
 import ListSubheader from '@material-ui/core/ListSubheader'
-import CustomizedSwitches from '../switch/on-off-button'
-import SwitchButton from '../switch/switch-button'
+import CustomizedSwitches from '../switch/on-off-button.jsx'
+import SwitchButton from '../switch/switch-button.jsx'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-import FileLogo from '../icons/file'
-import InformationLogo from '../icons/information'
-import LoupeIcon from '../icons/loupe'
+import FileLogo from '../icons/file.jsx'
+import InformationLogo from '../icons/information.jsx'
+import LoupeIcon from '../icons/loupe.jsx'
 
 function Settings(props){
 

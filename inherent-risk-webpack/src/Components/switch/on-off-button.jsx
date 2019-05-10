@@ -1,18 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import Switch from '@material-ui/core/Switch';
-import Grid from '@material-ui/core/Grid';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import purple from '@material-ui/core/colors/purple'
+import Switch from '@material-ui/core/Switch'
+import Grid from '@material-ui/core/Grid'
 import On from './img/on_dark.png'
 import Off from './img/off.png'
-
-
-// const styleTopRight = {
-//     position: "absolute",
-//     right: 20,
-//     top: 0,
-// }
 
 const styles = theme => ({
   colorSwitchBase: {

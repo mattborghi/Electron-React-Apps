@@ -14,9 +14,9 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import ToolBox from './toolbox';
+import ToolBox from './toolbox.jsx';
 import TextField from '@material-ui/core/TextField';
-import LaTeX from './block-latex';
+import LaTeX from './block-latex.jsx';
 
 
 const styles = {

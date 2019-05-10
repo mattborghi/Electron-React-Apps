@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import SwipeableViews from 'react-swipeable-views'
+import AppBar from '@material-ui/core/AppBar'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 // import TerminalShell from '../shell/Shell'
 // import TerminalSh from '../shell/Terminal'
-import XTerminal from '../shell/xterm-reactv2'
-import ListIcon from '../icons/list-icon'
-import ErrorIcon from '../icons/error-icon'
-import TerminalIcon from '../icons/terminal-icon'
-import PythonIcon from '../icons/python-icon'
-import DownloadIcon from '../icons/download-icon'
-import UploadIcon from '../icons/upload-icon'
+import XTerminal from '../shell/xterm-reactv2.jsx'
+import ListIcon from '../icons/list-icon.jsx'
+import ErrorIcon from '../icons/error-icon.jsx'
+import TerminalIcon from '../icons/terminal-icon.jsx'
+import PythonIcon from '../icons/python-icon.jsx'
+import DownloadIcon from '../icons/download-icon.jsx'
+import UploadIcon from '../icons/upload-icon.jsx'
 
 function TabContainer({ children, dir }) {
   return (

@@ -1,17 +1,17 @@
-import React from 'react';
-// import  NestedList from '../NestedList/nested-list.jsx';
-// import CustomizedExpansionPanel from '../Accordion/accordion';
-// import FullWidthTabs from '../Tabs/tabs';
-// import TextFields from '../Form/select-range';
-// import Settings from '../Settings/settings'
-// import SimpleAppBar from '../AppBar/appbar';
+import React from 'react'
+import  NestedList from '../NestedList/nested-list.jsx'
+import CustomizedExpansionPanel from '../Accordion/accordion.jsx'
+import FullWidthTabs from '../Tabs/tabs.jsx'
+import TextFields from '../Form/select-range.jsx'
+import Settings from '../Settings/settings.jsx'
+import SimpleAppBar from '../AppBar/appbar.jsx'
 // import '~react-splitter-layout/lib/index.css';
 // import '../../styles/splitter.css'
-import SplitterLayout from 'react-splitter-layout';
-import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Fab from '@material-ui/core/Fab';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import SplitterLayout from 'react-splitter-layout'
+import ArrowBackwardIosIcon from '@material-ui/icons/ArrowBackIos'
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import Fab from '@material-ui/core/Fab'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 const white = '#ffffff'
 // const orange = '#ff5722'
@@ -184,18 +184,18 @@ class SplitPanes extends React.Component {
                             <SplitterLayout vertical>
                                 { this.state.toggleProject &&
                                     <div id="outside-nested-list" style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }} >
-                                        {/* <NestedList 
+                                        <NestedList 
                                             isToggled={this.state.isToggled} 
-                                        /> */}
+                                        />
                                     </div>
                                 }
                                 { this.state.movingButtonsValue &&
                                     <div style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }}>
-                                        {/* <CustomizedExpansionPanel 
+                                        <CustomizedExpansionPanel 
                                             bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
                                             textColor={this.state.isToggled ? 'primary' : 'secondary'} 
                                             movingButtons={this.onMovingButtons}
-                                        /> */}
+                                        />
                                     </div>
                                 }
                             </SplitterLayout>
@@ -214,13 +214,13 @@ class SplitPanes extends React.Component {
                                     onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
                                 >
                                 
-                                    <div style={{maxWidth: "100%", height:"100%", backgroundColor: this.state.isToggled ? white : black2}}>
-                                        {/* <SimpleAppBar 
+                                    <div id="ppal-screen" style={{maxWidth: "100%", height:"100%", backgroundColor: this.state.isToggled ? white : black2}}>
+                                        <SimpleAppBar 
                                                 themeSelected={this.state.isToggled}
                                                 toggleRightPane={this.onToggleRightPane}
                                                 toggleTerminal={this.onToggleTerminal}
                                                 toggleProject={this.onToggleProject}
-                                        /> */}
+                                        />
                                         <br />
                                         {/* Left Arrow */}    
                                         <Fab 
@@ -246,16 +246,20 @@ class SplitPanes extends React.Component {
                                         >
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
                                         </Fab>
-                                            {/* { this.state.nextPane &&
+                                            { this.state.nextPane &&
                                                 <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
-                                            } */}
+                                            }
                                             {/* { !this.state.nextPane &&
-                                                Modify the file in order to incorporate React Router?
+                                                'Modify the file in order to incorporate React Router?'
                                             } */}
                                         </div>
                                     { this.state.toggleTerminal && 
                                         <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
-                                            {/* <FullWidthTabs bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} changeSize={this.onChangeSize} /> */}
+                                            <FullWidthTabs 
+                                                    bgColor={this.state.isToggled ? white : black2} 
+                                                    toggleValue={this.state.isToggled} 
+                                                    changeSize={this.onChangeSize}
+                                            />
                                         </div>
                                     }
                                 </SplitterLayout>
@@ -265,19 +269,19 @@ class SplitPanes extends React.Component {
                                 <SplitterLayout vertical >
                                     { !this.state.movingButtonsValue &&
                                         <div style={{marginRight: 20, height:'100%', width: '100%', backgroundColor: this.state.isToggled ? white : black2}} > 
-                                            {/* <CustomizedExpansionPanel 
+                                            <CustomizedExpansionPanel 
                                                 bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
                                                 textColor={this.state.isToggled ? 'primary' : 'secondary'} 
                                                 movingButtons={this.onMovingButtons}
                                                 nextPane={this.onNextPane}
-                                            /> */}
+                                            />
                                         </div>
                                     }
                                     <div style={{height:'100%', width: '100%', color: white, backgroundColor: this.state.isToggled ? white : black2}}>
-                                        {/* <Settings
+                                        <Settings
                                             toggleFunc={this.onToggle} 
                                             toggleSwitch={this.toggleSwitch}
-                                        /> */}
+                                        />
                                     </div>
                                 </SplitterLayout>
                             )}

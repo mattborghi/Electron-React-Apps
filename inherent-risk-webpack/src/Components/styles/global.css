@@ -49,7 +49,12 @@
 ::-webkit-scrollbar-thumb:horizontal:hover,
 ::-webkit-scrollbar-thumb:vertical:hover { background: #999; }
 ::-webkit-scrollbar-thumb:horizontal:active,
-::-webkit-scrollbar-thumb:vertical:active { background: #777; }
+::-webkit-scrollbar-thumb:vertical:active { background: #424242; }
+
+/* The only scrollbar there is (in the ppal screen) is overlayed over the div */
+#ppal-screen {
+  overflow-y: overlay;
+}
 
 /* html {
   font-family: 'Nunito Sans', sans-serif;

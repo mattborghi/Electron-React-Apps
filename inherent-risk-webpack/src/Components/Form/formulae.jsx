@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import DropdownMultiple from './components/DropdownMultiple.jsx';
 import Dropdown from './Dropdown.jsx';
 import Grid from '@material-ui/core/Grid';
-import FullScreenDialog from './equation-creator';
+import FullScreenDialog from './equation-creator.jsx';
 
 
 class FormulaeElem extends Component {

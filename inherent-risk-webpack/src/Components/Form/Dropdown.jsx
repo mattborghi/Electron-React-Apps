@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import '../styles/global.css';
+// import '../styles/global.css';
 // import LaTeX from './block-latex';
-import Ascii from './block-ascii';
+import Ascii from './block-ascii.jsx';
 import Grid from '@material-ui/core/Grid'
 
 class Dropdown extends Component{

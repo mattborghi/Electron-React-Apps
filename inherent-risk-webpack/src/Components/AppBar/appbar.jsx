@@ -5,9 +5,9 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 // import TerminalNewIcon from '../icons/terminal-new'
-import ConsoleIcon from '../icons/console'
-import StructureIcon from '../icons/project-structure'
-import SettingsIcon from '../icons/settings'
+import ConsoleIcon from '../icons/console.jsx'
+import StructureIcon from '../icons/project-structure.jsx'
+import SettingsIcon from '../icons/settings.jsx'
 import Button from '@material-ui/core/Button'
 
 const white = "#ffffff"

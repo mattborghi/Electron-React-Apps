@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
-import Ranking from './ranking'
-import Formulae from './formulae';
-import Materiality from './materiality';
-import Use from './use';
-import Uncertainty from './uncertainty';
-import Complexity from './complexity';
+import Ranking from './ranking.jsx'
+import Formulae from './formulae-main.jsx';
+import Materiality from './materiality.jsx';
+import Use from './use.jsx';
+import Uncertainty from './uncertainty.jsx';
+import Complexity from './complexity.jsx';
 // import { Paper } from '@material-ui/core';
 // import Grid from '@material-ui/core/Grid';
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 // import ReactDOM from 'react-dom';
 // import Draggable from 'react-draggable';
-import { Terminal } from 'vscode-xterm';
-import * as fit from 'xterm/lib/addons/fit/fit';
-import 'xterm/dist/xterm.css';
+import { Terminal } from 'vscode-xterm'
+import * as fit from 'xterm/lib/addons/fit/fit'
+// import 'xterm/dist/xterm.css';
 
 // import './styles.css';
 

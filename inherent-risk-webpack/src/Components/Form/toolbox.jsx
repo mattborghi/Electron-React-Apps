@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextButtons from './button';
+import TextButtons from './button.jsx';
 import Grid from '@material-ui/core/Grid';
   
 
