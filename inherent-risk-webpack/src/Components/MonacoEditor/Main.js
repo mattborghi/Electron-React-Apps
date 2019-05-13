@@ -3,7 +3,7 @@
 import 'babel-polyfill';
 import * as React from 'react';
 import dedent from 'dedent';
-import Editor from './Editor.jsx';
+import Editor from './Editor.js';
 
 const files = {
   'App.js': dedent`import React, { Component } from 'react';

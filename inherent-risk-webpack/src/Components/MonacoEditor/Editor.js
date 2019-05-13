@@ -5,8 +5,8 @@ import { SimpleEditorModelResolverService } from 'monaco-editor/esm/vs/editor/st
 import { StaticServices } from 'monaco-editor/esm/vs/editor/standalone/browser/standaloneServices';
 import * as React from 'react';
 import debounce from 'lodash/debounce';
-import TypingsWorker from './workers/typings.worker';
-import ESLintWorker from './workers/eslint.worker';
+import TypingsWorker from './workers/typings.worker.js';
+import ESLintWorker from './workers/eslint.worker.js';
 import light from './themes/light';
 import dark from './themes/dark';
 // import './Editor.css';

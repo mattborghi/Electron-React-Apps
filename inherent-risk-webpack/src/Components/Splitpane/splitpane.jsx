@@ -5,7 +5,7 @@ import FullWidthTabs from '../Tabs/tabs.jsx'
 import TextFields from '../Form/select-range.jsx'
 import Settings from '../Settings/settings.jsx'
 import SimpleAppBar from '../AppBar/appbar.jsx'
-import MonacoEditor from '../MonacoEditor/Main.jsx'
+import MonacoEditor from '../MonacoEditor/MonacoEditor.js'
 // import '~react-splitter-layout/lib/index.css';
 // import '../../styles/splitter.css'
 import SplitterLayout from 'react-splitter-layout'
