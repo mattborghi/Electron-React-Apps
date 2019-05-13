@@ -3,10 +3,23 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Test from './Component/test.jsx'
+import './Component/style.css'
 
-const render = Component => ReactDOM.render(<Component />, window.root);
+ReactDOM.render(
+  <div className="wrapper">
+    <div className="button-container">
+      <App/>
+    </div>
+    <div className="button">
+      <Test />
+    </div>
+  </div>
+, window.root);
 
-render(App);
+// render(App);
+
+
 
 /* $FlowFixMe */
 if (module.hot) {
