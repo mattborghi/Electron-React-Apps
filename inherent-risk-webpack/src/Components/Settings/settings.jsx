@@ -9,17 +9,21 @@ import FileLogo from '../icons/file.jsx'
 import InformationLogo from '../icons/information.jsx'
 import LoupeIcon from '../icons/loupe.jsx'
 import FullScreenDialog from '../PopUp/pop-up.jsx'
+import ListIcon from '../icons/list-icon.jsx'
+import ErrorIcon from '../icons/error-icon.jsx'
 
 function Settings(props){
 
-    const styleBars = { width: '80%', color: 'white',}
-
     const white="#ffffff"
     const grey = "rgb(200,200,200)"
-    // const green = "rgb(200,150,200)"
+    const green = "rgb(200,150,200)"
     // const { classes } = props
     const [toggleOn, setToggleOn] = useState(true)
     const [switchToggleOn, setSwitchToggleOn] = useState(true)
+
+    const style = {
+        styleBars: { width: '80%', backgroundColor: green}
+    }
 
     function onChange() {
         let isToggled = toggleOn 
@@ -68,7 +72,7 @@ function Settings(props){
                     <CustomizedSwitches />
                 </Grid>                
             </Grid>
-            <hr style={styleBars}/>
+            <hr style={style.styleBars}/>
             {/* Hide/Show Status Bar */}
             <Grid 
                 container
@@ -99,7 +103,7 @@ function Settings(props){
                     <div style={{ marginTop: 4}} ><FullScreenDialog fill={white}/></div>
                 </Grid>                
             </Grid>
-            <hr style={styleBars}/>
+            <hr style={style.styleBars}/>
             {/* Docs */}
             <Grid 
                 container
@@ -126,6 +130,36 @@ function Settings(props){
                 </Grid>
                 <Grid item >
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><InformationLogo fill={white} /></Button></div>
+                </Grid>                
+            </Grid>
+
+            <hr style={style.styleBars}/>
+            {/* ToDo */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>ToDo</Typography>
+                </Grid>
+                <Grid item>
+                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><ListIcon fill={white} /></Button></div>
+                </Grid>                
+            </Grid>
+            {/* Error Console */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>Error Logs</Typography>
+                </Grid>
+                <Grid item >
+                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><ErrorIcon fill={white} /></Button></div>
                 </Grid>                
             </Grid>
         

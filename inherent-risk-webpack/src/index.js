@@ -24,9 +24,9 @@ class App extends React.Component {
         return(
             <div>
                 <SplitPanes toggleSwitch={this.toggleSwitch} />
-                { this.state.isSwitchToggled &&
+                {/* { this.state.isSwitchToggled &&
                     <LinearDeterminate />
-                }
+                } */}
             </div>
         )
     }

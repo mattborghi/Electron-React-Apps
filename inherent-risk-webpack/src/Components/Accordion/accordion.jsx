@@ -96,10 +96,10 @@ function CustomizedExpansionPanel(props) {
       </StyledButton>
 
       {/* Move pane button */}
-      <StyledButton onClick={() => movePane()} style={{position: "absolute", bottom: 0, left: 0}}>
+      {/* <StyledButton onClick={() => movePane()} style={{position: "absolute", bottom: 0, left: 0}}>
         <div style={{paddingRight: 25, marginTop: 4,}} ><MoveWindowIcon fill={white} className={classes.icon}/></div>
         <Typography style={{textTransform: "none", fontSize: 15, fontFamily: 'Open Sans',}}>Move Pane</Typography>
-      </StyledButton>
+      </StyledButton> */}
       
     </div>
   );

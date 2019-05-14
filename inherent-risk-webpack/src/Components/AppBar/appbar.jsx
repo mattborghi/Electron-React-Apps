@@ -9,6 +9,7 @@ import ConsoleIcon from '../icons/console.jsx'
 import StructureIcon from '../icons/project-structure.jsx'
 import SettingsIcon from '../icons/settings.jsx'
 import Button from '@material-ui/core/Button'
+import logo_transparentDark from '../images/logo_transparent_dark.png';
 
 const white = "#ffffff"
 const green = "rgb(150,200,150)"
@@ -23,6 +24,10 @@ const styles = {
   },
   typography: {
       marginTop: 0, 
+  },
+  logo: {
+    position: 'absolute',
+    right: 10,
   }
 };
 
@@ -71,6 +76,16 @@ function SimpleAppBar(props) {
               <Button onClick={() => rightSidebar()}>
                 { toggleRightPane ? <SettingsIcon fill={green} /> : <SettingsIcon fill={white} /> }
               </Button>
+            </div>
+
+            // UniversalMC Logo
+            <div className={classes.logo}>
+                {/* { this.state.turnedOn &&  */}
+                    <img src={logo_transparentDark} alt="logo" width={120} ></img>
+                {/* }
+                { !this.state.turnedOn && 
+                    <img src={logo_transparent} alt="logo" width={200}></img>
+                } */}
             </div>
 
             
