@@ -11,8 +11,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 const routing = (
     <Router>
       <div>
-        <Route exact path="/" component={PageOne} />
-        <Route path="/second" component={PageTwo} />
+        <Route exact path="/" component={PageTwo} />
+        <Route path="/second" component={PageOne} />
       </div>
     </Router>
   )
