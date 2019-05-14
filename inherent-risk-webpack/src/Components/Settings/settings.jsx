@@ -8,8 +8,11 @@ import Button from '@material-ui/core/Button'
 import FileLogo from '../icons/file.jsx'
 import InformationLogo from '../icons/information.jsx'
 import LoupeIcon from '../icons/loupe.jsx'
+import FullScreenDialog from '../PopUp/pop-up.jsx'
 
 function Settings(props){
+
+    const styleBars = { width: '80%', color: 'white',}
 
     const white="#ffffff"
     const grey = "rgb(200,200,200)"
@@ -65,6 +68,38 @@ function Settings(props){
                     <CustomizedSwitches />
                 </Grid>                
             </Grid>
+            <hr style={styleBars}/>
+            {/* Hide/Show Status Bar */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+            >
+                <Grid item xs={6}>
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans', textAlign: 'center'}}>
+                        { switchToggleOn ? 'Hide Status Bar' : 'Show Status Bar'}
+                    </Typography>
+                </Grid>
+                <Grid item onChange={() => onStatusChange()}>
+                    <div style={{paddingRight: 25, marginTop: 4}} ><SwitchButton color="green"/></div>
+                </Grid>                
+            </Grid>
+            {/* View Status */}
+            <Grid 
+                container
+                direction="row"
+                justify="space-evenly"
+                alignItems="center"
+            >
+                <Grid item >
+                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>View Status</Typography>
+                </Grid>
+                <Grid item >
+                    <div style={{ marginTop: 4}} ><FullScreenDialog fill={white}/></div>
+                </Grid>                
+            </Grid>
+            <hr style={styleBars}/>
             {/* Docs */}
             <Grid 
                 container
@@ -75,7 +110,7 @@ function Settings(props){
                 <Grid item >
                     <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>Docs</Typography>
                 </Grid>
-                <Grid item >
+                <Grid item>
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><FileLogo fill={white} /></Button></div>
                 </Grid>                
             </Grid>
@@ -93,36 +128,7 @@ function Settings(props){
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><InformationLogo fill={white} /></Button></div>
                 </Grid>                
             </Grid>
-            {/* Hide/Show Status Bar */}
-            <Grid 
-                container
-                direction="row"
-                justify="space-around"
-                alignItems="center"
-            >
-                <Grid item >
-                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>
-                        { switchToggleOn ? 'Hide Status Bar' : 'Show Status Bar'}
-                    </Typography>
-                </Grid>
-                <Grid item onChange={() => onStatusChange()}>
-                    <div style={{paddingRight: 25, marginTop: 4}} ><SwitchButton color="green"/></div>
-                </Grid>                
-            </Grid>
-            {/* View Status */}
-            <Grid 
-                container
-                direction="row"
-                justify="space-around"
-                alignItems="center"
-            >
-                <Grid item >
-                    <Typography style={{textTransform: "none", fontSize: 18, fontFamily: 'Open Sans',}}>View Status</Typography>
-                </Grid>
-                <Grid item >
-                    <div style={{paddingRight: 25, marginTop: 4}} ><Button><LoupeIcon fill={white}/></Button></div>
-                </Grid>                
-            </Grid>
+        
                 
         {/* End of settings */}
         </Grid>

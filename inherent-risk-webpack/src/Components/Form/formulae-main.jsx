@@ -52,7 +52,7 @@ const styles = theme => ({
         <Grid
         container
         direction="row"
-        justify="flex-start"
+        justify="space-between"
         alignItems="baseline"
         > 
         <Grid item xs={3} >

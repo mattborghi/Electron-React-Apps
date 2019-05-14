@@ -67,7 +67,9 @@ class TextFields extends React.Component {
     }
     
     return (
-      <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
+      <div className={classes.root} style={{backgroundColor: this.props.bgColor, width: '100%', marginTop: 40, padding: 20}}>
+      {/* The padding allows not overlapping against sides  */}
+      {/* Margin top makes the bar to not overlap against the formulae */}
         {/* <Grid container> */}
             <Formulae />
             <hr style={hrStyle.horizontalRule} />

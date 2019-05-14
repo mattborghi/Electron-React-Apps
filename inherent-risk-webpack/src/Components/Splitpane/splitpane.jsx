@@ -5,7 +5,7 @@ import FullWidthTabs from '../Tabs/tabs.jsx'
 import TextFields from '../Form/select-range.jsx'
 import Settings from '../Settings/settings.jsx'
 import SimpleAppBar from '../AppBar/appbar.jsx'
-import MonacoEditor from '../MonacoEditor/MonacoEditor.js'
+// import MonacoEditor from '../MonacoEditor/MonacoEditor.js'
 // import '~react-splitter-layout/lib/index.css';
 // import '../../styles/splitter.css'
 import SplitterLayout from 'react-splitter-layout'
@@ -215,7 +215,7 @@ class SplitPanes extends React.Component {
                                     onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
                                 >
                                 
-                                    <div id="ppal-screen" style={{maxWidth: "100%", height:"100%", backgroundColor: this.state.isToggled ? white : black2}}>
+                                    <div id="ppal-screen" style={{width: "100%", height:"100%", backgroundColor: this.state.isToggled ? white : black2}}>
                                         <SimpleAppBar 
                                                 themeSelected={this.state.isToggled}
                                                 toggleRightPane={this.onToggleRightPane}
@@ -250,10 +250,10 @@ class SplitPanes extends React.Component {
                                             { this.state.nextPane &&
                                                 <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
                                             }
-                                            { !this.state.nextPane &&
-                                                // 'Modify the file in order to incorporate React Router?'
+                                            {/* { !this.state.nextPane &&
+                                                'Modify the file in order to incorporate React Router?'
                                                 <MonacoEditor />
-                                            }
+                                            } */}
                                         </div>
                                     { this.state.toggleTerminal && 
                                         <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>

@@ -55,7 +55,7 @@ function SimpleAppBar(props) {
   
   return (
     <div className={classes.root}>
-        <AppBar className={classes.appbar} position="static" color={props.themeSelected ? "primary" : "secondary"}>
+        <AppBar className={classes.appbar} position="absolute" color={props.themeSelected ? "primary" : "secondary"}>
             <Toolbar>
             <Typography className={classes.typography} variant="h6" color={props.themeSelected ? "secondary" : "primary"}>
                 MODEL INHERENT RISK

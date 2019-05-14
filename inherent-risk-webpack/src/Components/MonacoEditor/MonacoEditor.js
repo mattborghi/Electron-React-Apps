@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import dedent from "dedent";
 
 class MonacoEditor extends Component {
   // @todo: Use typescript to handle propTypes via monaco.d.ts
@@ -65,7 +66,69 @@ class MonacoEditor extends Component {
     const { language, theme } = this.props;
 
     const editor = window.monaco.editor.create(this.ref, {
-      value: "// @note: Ayoub test editor",
+      value: dedent`Product:
+                Exp:
+                  type: expiry_payoff
+                  input:
+                    underlier: s1
+                  contract_data:
+                    k: 0.95
+                    derivative_type: c
+
+                early01:
+                  type: early_exercise
+                  input:
+                    underlier: s1
+                  equation: k
+                  contract_data:
+                    k: 1
+                  others:
+                    class: callable
+
+              Schedule:
+                # Observation settings:
+                obs: {to: 0, tn: 252, f: 1}
+                Exp:
+                  expiry: [252]
+                  payment: 0
+                early01:
+                  ee_sch: [20, 30]
+
+              Process:
+                s1:
+                  type: default
+                  equation: euler
+                  market_data:
+                    initial: 100
+                    mu: 0.03
+                    sigma: 0.05
+
+              Market data:
+                discount_value: 0.02
+
+              Algorithmic data:
+                MC parameters:
+                  paths: 50
+
+                Process parameters:
+                  steps_per_year: 252
+                  random_number_generator:
+                    type: mersenne
+                    moment_matching: False
+                    antithetic: False
+
+              Output requests:
+                Calculation request:
+                  computation_time: True
+                  fair_value: True
+                  simulation_stats: False
+                  store_simulations: True
+                Engine verbose:
+                  print_iterations: False
+                  computation_time: True
+                  fair_value_stats: True
+                  print_simu_stats: False
+                  print_last_event_log: True`,
       language,
       theme
     });

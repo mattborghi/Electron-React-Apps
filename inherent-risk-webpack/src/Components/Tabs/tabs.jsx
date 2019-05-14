@@ -112,7 +112,7 @@ class FullWidthTabs extends React.Component {
           </Tabs>
 
           {/* Show/Hide button */} <Button onClick={this.changeTabs} style={{position: 'absolute', right: 0, marginTop: 4, textTransform: "None"}}>
-          {this.state.pressedTabs ? <>Hide <UploadIcon className={classes.tabIcon}/></> : <>Show <DownloadIcon className={classes.tabIcon}/></> }
+          {this.state.pressedTabs ? <>Hide <DownloadIcon className={classes.tabIcon}/></> : <>Show <UploadIcon className={classes.tabIcon}/></> }
           </Button>
         </AppBar>
         <SwipeableViews

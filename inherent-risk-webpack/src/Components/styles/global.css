@@ -12,7 +12,7 @@
 /* body */
 #custom-scrollbar {
   overflow: auto;
-  color: rgb(68, 68, 68);
+  color: rgb(68, 68, 68, 1);
   border: 1px solid #ddd;
   margin: 20px;
   padding: 20px;
@@ -43,13 +43,13 @@
 } */
 ::-webkit-scrollbar { width: 12px; height: 12px; }
 ::-webkit-scrollbar:horizontal { display: none; }
-::-webkit-scrollbar-track { background: #f2f2f2; }
-::-webkit-scrollbar-thumb { background: rgb(221, 221, 221); }
-:hover::-webkit-scrollbar-thumb { background: rgb(187, 187, 187); }
+::-webkit-scrollbar-track { background:rgb(242,242,242, 0); }
+::-webkit-scrollbar-thumb { background: rgb(221, 221, 221, 0.8); }
+:hover::-webkit-scrollbar-thumb { background: rgb(187, 187, 187, 0.6); }
 ::-webkit-scrollbar-thumb:horizontal:hover,
 ::-webkit-scrollbar-thumb:vertical:hover { background: #999; }
 ::-webkit-scrollbar-thumb:horizontal:active,
-::-webkit-scrollbar-thumb:vertical:active { background: #424242; }
+::-webkit-scrollbar-thumb:vertical:active { background: #999; }
 
 /* The only scrollbar there is (in the ppal screen) is overlayed over the div */
 #ppal-screen {
