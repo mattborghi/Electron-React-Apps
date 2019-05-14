@@ -8,11 +8,11 @@ import UniversalMCBlue from './img/universal-mc-logo-blue.png'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import TLogo from './icons/nyt-logo'
-import PlusLogo from './icons/PlusLogo'
 import OpenFolder from './icons/open-folder'
 import FolderList from './components/left-pane'
 import { Link } from "react-router-dom"
 import MenuListComposition from './components/menu-button'
+import FormDialog from './components/newProduct/popup.jsx'
 
 const theme = createMuiTheme({
   palette: {
@@ -38,12 +38,6 @@ const styles = theme => ({
     },
   });
 
-// const WhiteSystem = glamorous(PlusIcon)({
-//     "> path": {
-//       fill: "white"
-//     }
-//   });
-
 const logoClass = theme => ({
   height: 24,
   width: 24,
@@ -51,11 +45,18 @@ const logoClass = theme => ({
 })
 
 const style = {
-  color: white,
-  width: 250,
-  height: 50,
-  fontSize: 16,
-  marginLeft: 570,
+  button: {
+    color: white,
+    width: 250,
+    height: 50,
+    fontSize: 16,
+  },
+  div: {
+    paddingRight: 25, 
+    marginTop: theme.spacing.unit,
+  }
+
+  
 }
 
 class PageTwo extends React.Component {
@@ -66,21 +67,19 @@ class PageTwo extends React.Component {
     }
   }
 
-    changeColor = (enterORleave) => {
-      // console.log(word, number)
-      if (enterORleave === 'enter'){
-        this.setState ({
-            overImage: true
-        });
-      }
-      if (enterORleave === 'leave'){
-        this.setState ({
-          overImage: false
+  changeColor = (enterORleave) => {
+    // console.log(word, number)
+    if (enterORleave === 'enter'){
+      this.setState ({
+          overImage: true
+      });
+    }
+    if (enterORleave === 'leave'){
+      this.setState ({
+        overImage: false
       }); 
     }
-    // console.log(this.state.overImage)
-}
-
+  }
 
 render(){
 // const { classes } = props;
@@ -118,22 +117,18 @@ render(){
 
 
       <Grid container
-        justify="flex-start"
-        alignItems="flex-start"
+        justify="center"
+        alignItems="center"
         direction="column"
         style={{marginTop: 50}}
         id="button-container"
       >
 
-        <Button style={style} >
+        <FormDialog fill={orange} logoClass={logoClass} style={style}  />
+        
+        <Button  style={{marginLeft: -130}} >
         {/* className={classes.margin} */}
-          <div style={{paddingRight: 25, marginTop: theme.spacing.unit}} ><PlusLogo fill={orange} style={logoClass} /></div>
-          <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Create New Project</Typography>
-        </Button >
-
-        <Button  style={style} >
-        {/* className={classes.margin} */}
-        <div style={{paddingRight: 25, marginTop: theme.spacing.unit, marginLeft: -130}}><OpenFolder fill={orange} style={logoClass} /></div>
+        <div style={{marginTop: theme.spacing.unit, paddingRight: 25,}}><OpenFolder fill={orange} style={logoClass} /></div>
           <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Open</Typography>
         </Button >
 
