@@ -76,8 +76,7 @@ class SignComponent extends React.Component {
                     themeColor: 'dark',
                 }
             );
-        }
-        
+        }  
     }
 
     render() {

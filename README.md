@@ -152,7 +152,10 @@ As the name suggest, react front-end app that connects with node back-end and us
 
 This repo shows how to use XTerm.js with Webpack. Based on [this repo](https://github.com/parisk/xterm-webpack).
 
-
 ## react-webpack-flask-template
 
 Template which incorporates React and Webpack with Python Flask. Based on [this blog](https://itnext.io/a-template-for-creating-a-full-stack-web-application-with-flask-npm-webpack-and-reactjs-be2294b111bd) and [this repo](https://github.com/Eyongkevin/hello_template).
+
+## inherent-risk-webpack
+
+Merging inherent-risk project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
