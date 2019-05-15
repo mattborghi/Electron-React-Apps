@@ -9,7 +9,14 @@ import ConsoleIcon from '../icons/console.jsx'
 import StructureIcon from '../icons/project-structure.jsx'
 import SettingsIcon from '../icons/settings.jsx'
 import Button from '@material-ui/core/Button'
-import logo_transparentDark from '../images/logo_transparent_dark.png';
+import logo_transparentDark from '../images/logo_transparent_dark.png'
+import logo_transparentGreen from '../images/logo_transparent_green.png'
+import Icon, {Stack} from '@mdi/react'
+import { mdiFileTree, 
+         mdiBlockHelper,
+         mdiConsole,
+         mdiTune 
+        } from '@mdi/js'
 
 const white = "#ffffff"
 const green = "rgb(150,200,150)"
@@ -68,20 +75,70 @@ function SimpleAppBar(props) {
             </Toolbar>
             <div style={{position: "absolute", left: 0, top: 10 }} >
               <Button onClick={() => projectToggle()}> 
-                { toggleProject ? <StructureIcon fill={green} /> : <StructureIcon fill={white} /> }
+                {/* { toggleProject ? <StructureIcon fill={green} /> : <StructureIcon fill={white} /> } */}
+                { !toggleProject &&
+                <Stack size={1}>
+                  <Icon 
+                    path={mdiFileTree}
+                    size={1}
+                    color={'white'}
+                  />
+                  <Icon path={mdiBlockHelper} color="white"/> 
+                </Stack>
+                }
+                { toggleProject &&
+                  <Icon 
+                    path={mdiFileTree}
+                    size={1}
+                    color={'white'}
+                  />
+                }
               </Button>
-              <Button onClick={() => terminalToggle()} > 
-                { toggleTerminal ? <ConsoleIcon fill={green} /> : <ConsoleIcon fill={white} /> }
-              </Button>
+              {/* <Button onClick={() => terminalToggle()} > 
+                { !toggleProject &&
+                <Stack size={1}>
+                  <Icon 
+                    path={mdiConsole}
+                    size={1}
+                    color={'white'}
+                  />
+                  <Icon path={mdiBlockHelper} color="white"/> 
+                </Stack>
+                }
+                { toggleProject &&
+                  <Icon 
+                    path={mdiConsole}
+                    size={1}
+                    color={'white'}
+                  />
+                }
+              </Button> */}
               <Button onClick={() => rightSidebar()}>
-                { toggleRightPane ? <SettingsIcon fill={green} /> : <SettingsIcon fill={white} /> }
+                {/* { toggleRightPane ? <SettingsIcon fill={green} /> : <SettingsIcon fill={white} /> } */}
+                { !toggleRightPane &&
+                <Stack size={1}>
+                  <Icon 
+                    path={mdiTune}
+                    size={1}
+                    color={'white'}
+                  />
+                  <Icon path={mdiBlockHelper} color="white"/> 
+                </Stack>
+                }
+                { toggleRightPane &&
+                  <Icon 
+                    path={mdiTune}
+                    size={1}
+                    color={'white'}
+                  />
+                }
               </Button>
             </div>
 
-            // UniversalMC Logo
+            {/* UniversalMC Logo */}
             <div className={classes.logo}>
                 {/* { this.state.turnedOn &&  */}
-                    <img src={logo_transparentDark} alt="logo" width={120} ></img>
+                    <img src={logo_transparentGreen} alt="logo" width={120} ></img>
                 {/* }
                 { !this.state.turnedOn && 
                     <img src={logo_transparent} alt="logo" width={200}></img>

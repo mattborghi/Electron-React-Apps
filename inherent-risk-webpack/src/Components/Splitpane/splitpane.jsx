@@ -40,7 +40,7 @@ class SplitPanes extends React.Component {
             movingButtonsValue: false,
             toggleProject: true,
             toggleTerminal: true,
-            nextPane: false,
+            nextPaneCounter: 0,
         };
     }
     
@@ -94,7 +94,7 @@ class SplitPanes extends React.Component {
 
     onNextPane = (toggleVar) => {
         this.setState(state => ({
-            nextPane: toggleVar
+            nextPaneCounter: toggleVar
         }))
     }
 
@@ -195,6 +195,7 @@ class SplitPanes extends React.Component {
                                 <ProgressStatusPanel 
                                     bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
                                     textColor={this.state.isToggled ? 'primary' : 'secondary'}
+                                    nextPaneCounter={this.state.nextPaneCounter}
                                 />
                                 
                                 {/* { this.state.movingButtonsValue &&

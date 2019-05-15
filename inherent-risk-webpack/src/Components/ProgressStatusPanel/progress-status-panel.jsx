@@ -58,7 +58,7 @@ function ProgressBarPanel(props){
             
             
             <Grid item>
-                <VerticalLinearStepper />
+                <VerticalLinearStepper nextPaneCounter={props.nextPaneCounter}/>
             </Grid>
             
         {/* End of settings */}

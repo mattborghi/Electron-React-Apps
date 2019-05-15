@@ -28,9 +28,13 @@ const styles = theme => ({
   //   color: "grey",
   // },
   whole: {
-    width: '130%',
-    marginLeft: 0,
+    width: '100%',
+    marginLeft: 10,
     paddingLeft: 10,
+  },
+  content: {
+    fontStyle: 'italic',
+    color: 'grey'
   }
 });
 
@@ -100,33 +104,39 @@ function getStepContent(step) {
 }
 
 class VerticalLinearStepper extends React.Component {
-  state = {
-    activeStep: 0,
-  };
+  // constructor(props) {
+  //   super(props)
+    // state = {
+    //   activeStep: this.props.nextPaneCounter,
+    // };
+  // }
+  
 
-  handleNext = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep + 1,
-    }));
-  };
+  // handleNext = () => {
+  //   this.setState(state => ({
+  //     activeStep: state.activeStep + 1,
+  //   }));
+  // };
 
-  handleBack = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep - 1,
-    }));
-  };
+  // handleBack = () => {
+  //   this.setState(state => ({
+  //     activeStep: state.activeStep - 1,
+  //   }));
+  // };
 
-  handleReset = () => {
-    this.setState({
-      activeStep: 0,
-    });
-  };
+  // handleReset = () => {
+  //   this.setState({
+  //     activeStep: 0,
+  //   });
+  // };
 
   render() {
+    
     const { classes } = this.props;
     const steps = getSteps();
-    const { activeStep } = this.state;
-
+    const activeStep  = this.props.nextPaneCounter;
+    // console.log(activeStep)
+    // console.log(this.props.nextPaneCounter)
     return (
       <MuiThemeProvider theme={theme}>
       <div className={classes.root} id="stepper-div">
@@ -142,8 +152,12 @@ class VerticalLinearStepper extends React.Component {
                     classes: { root: classes.stepIcon }
                   }} */}
               <StepContent>
-                <Typography>{getStepContent(index)}</Typography>
-                <div className={classes.actionsContainer}>
+                <Typography 
+                  classes={{
+                    root: classes.content
+                  }}
+                >{getStepContent(index)}</Typography>
+                {/* <div className={classes.actionsContainer}>
                   <div>
                     <Button
                       disabled={activeStep === 0}
@@ -161,19 +175,19 @@ class VerticalLinearStepper extends React.Component {
                       {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </Button>
                   </div>
-                </div>
+                </div> */}
               </StepContent>
             </Step>
           ))}
         </Stepper>
-        {activeStep === steps.length && (
+        {/* {activeStep === steps.length && (
           <Paper square elevation={0} className={classes.resetContainer}>
             <Typography>All steps completed - you&apos;re finished</Typography>
             <Button onClick={this.handleReset} className={classes.button}>
               Reset
             </Button>
           </Paper>
-        )}
+        )} */}
       </div>
       </MuiThemeProvider>
     );

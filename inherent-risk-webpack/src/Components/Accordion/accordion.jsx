@@ -4,12 +4,22 @@ import ListSubheader from '@material-ui/core/ListSubheader'
 import styled from 'styled-components'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
+// Icons
 import MoveWindowIcon from '../icons/move-window.jsx'
 import SaveFileIcon from '../icons/save-file.jsx'
 import CalculateIcon from '../icons/calculate.jsx'
 import ContractIcon from '../icons/contract.jsx'
 import CloudComputingLogo from '../icons/cloud-computing.jsx'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
+import FolderIcon from '@material-ui/icons/Folder'
+import SaveIcon from '@material-ui/icons/Save'
+import FindInPageIcon from '@material-ui/icons/FindInPage'
+import TimelineIcon from '@material-ui/icons/Timeline'
+// List
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 
 // const black="#424242"
 const white="#ffffff"
@@ -34,18 +44,29 @@ const styles = {
     left: 0,
     position: "absolute",
   },
-icon: {
-  width: 15,
-  height: 15,
-  marginBottom: -2
-}
+  icon: {
+    width: 15,
+    height: 15,
+    // marginBottom: -2
+  },
+  inline: {
+    display: 'inline',
+  },
+  lista: {
+    width: '100%',
+    // maxWidth: 360,
+    // backgroundColor: theme.palette.background.paper,
+  },
+  avatar: {
+    color: 'white'
+  },
 }
 
 function CustomizedExpansionPanel(props) {
 
   const {classes} = props
   const [isMoved, setIsMoved] = useState(false)
-  const [nextPane, setNextPane] = useState(false)
+  const [nextPaneCounter, setNextPaneCounter] = useState(0)
 
   function movePane() {
     let newValue = !isMoved
@@ -54,54 +75,93 @@ function CustomizedExpansionPanel(props) {
   }
 
   function nextPaneFunc() {
-    let newValue = !nextPane
-    setNextPane(newValue)
+    let newValue = nextPaneCounter + 1
+    if (newValue > 7) {
+      newValue = 0
+    }
+    setNextPaneCounter(newValue)
     props.nextPane(newValue);
   }
 
   return (
     <div>
-      <ListSubheader 
-          component="div" 
-          style={{color: grey,}}
-      >
+      {/* Title */}
+      <ListSubheader component="div" style={{color: grey,}} >
           CONTROLS
       </ListSubheader>
-      {/* Buttons */}
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
-        <div style={{paddingRight: 25, marginTop: 4, left: 10}} ><SaveFileIcon fill={white} /></div>
-        <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Save</Typography>
-      </StyledButton>
 
+      {/* Buttons */}
+      <List className={classes.lista}>
+       
+       <ListItem alignItems="flex-start" button={true} >
+        {/* <ListItemAvatar > */}
+          <SaveIcon color="primary" />
+        {/* </ListItemAvatar> */}
+        <ListItemText primary="Save" />
+      </ListItem>
+
+      <ListItem alignItems="flex-start" button={true}>
+        {/* <ListItemAvatar > */}
+          <FolderIcon color="primary" />
+        {/* </ListItemAvatar> */}
+        <ListItemText primary="Load" />
+      </ListItem>
+
+      <ListItem alignItems="flex-start" button={true}>
+        <TimelineIcon color="primary" />
+        {/* <ListItemAvatar>
+          <CalculateIcon fill={white} />
+        </ListItemAvatar> */}
+        <ListItemText primary="Calculate Risk" />
+      </ListItem>
+
+      <ListItem alignItems="flex-start" button={true}>
+        {/* <ListItemAvatar> */}
+        <FindInPageIcon color="primary" />
+          {/* <ContractIcon fill={white} /> */}
+        {/* </ListItemAvatar> */}
+        <ListItemText primary="Generate Report" />
+      </ListItem>
+
+      <ListItem alignItems="flex-start" button onClick={() => nextPaneFunc()}>
+        {/* <ListItemAvatar> */}
+          <ArrowForwardIosIcon color="primary" />
+        {/* </ListItemAvatar> */}
+        <ListItemText primary="Next" />
+      </ListItem>
+     
+    
   
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+      {/* <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
         <div style={{paddingRight: 25, marginTop: 4}} ><CloudComputingLogo fill={white} /></div>
         <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Load</Typography>
-      </StyledButton>
+      </StyledButton> */}
 
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+      {/* <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
         <div style={{paddingRight: 25, marginTop: 4}} ><CalculateIcon fill={white} /></div>
         <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Calculate Risk</Typography>
-      </StyledButton>
+      </StyledButton> */}
 
-      <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
+      {/* <StyledButton color={props.bgColor} text={props.textColor} className={classes.root} >
         <div style={{paddingRight: 25, marginTop: 4}} ><ContractIcon fill={white} /></div>
         <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Generate Report</Typography>
-      </StyledButton>
+      </StyledButton> */}
 
       {/* Next */}
-      <StyledButton onClick={() => nextPaneFunc()} >
+      {/* <StyledButton onClick={() => nextPaneFunc()} >
         <div style={{paddingRight: 25, marginTop: 4,}} ><ArrowForwardIosIcon fill={white}/></div>
         <Typography style={{textTransform: "none", fontSize: 20, fontFamily: 'Open Sans',}}>Next</Typography>
-      </StyledButton>
+      </StyledButton> */}
+      
 
       {/* Move pane button */}
       {/* <StyledButton onClick={() => movePane()} style={{position: "absolute", bottom: 0, left: 0}}>
         <div style={{paddingRight: 25, marginTop: 4,}} ><MoveWindowIcon fill={white} className={classes.icon}/></div>
         <Typography style={{textTransform: "none", fontSize: 15, fontFamily: 'Open Sans',}}>Move Pane</Typography>
       </StyledButton> */}
-      
+    </List>
     </div>
+    
   );
 }
 

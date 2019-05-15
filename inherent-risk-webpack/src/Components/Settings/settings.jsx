@@ -5,12 +5,29 @@ import CustomizedSwitches from '../switch/on-off-button.jsx'
 import SwitchButton from '../switch/switch-button.jsx'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import Icon from '@mdi/react'
+// Icons
+import { mdiLightbulb, 
+         mdiLightbulbOn, 
+         mdiFile, 
+         mdiHelpBox, 
+         mdiFormatListBulletedSquare, 
+         mdiAlertCircle
+        } from '@mdi/js'
 import FileLogo from '../icons/file.jsx'
 import InformationLogo from '../icons/information.jsx'
-import LoupeIcon from '../icons/loupe.jsx'
+// import LoupeIcon from '../icons/loupe.jsx'
 import FullScreenDialog from '../PopUp/pop-up.jsx'
 import ListIcon from '../icons/list-icon.jsx'
 import ErrorIcon from '../icons/error-icon.jsx'
+import HighlightIcon from '@material-ui/icons/Highlight'
+import Off from '../switch/img/off.png'
+import LoupeIcon from '@material-ui/icons/Loupe'
+// List
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 
 function Settings(props){
 
@@ -22,7 +39,18 @@ function Settings(props){
     const [switchToggleOn, setSwitchToggleOn] = useState(true)
 
     const style = {
-        styleBars: { width: '80%', backgroundColor: green}
+        styleBars: { width: '80%', backgroundColor: green},
+        inline: {
+            display: 'inline',
+        },
+        lista: {
+            width: '100%',
+            // maxWidth: 360,
+            // backgroundColor: theme.palette.background.paper,
+        },
+        avatar: {
+            color: 'white'
+        },
     }
 
     function onChange() {
@@ -43,23 +71,85 @@ function Settings(props){
 
 
     return(
-        <Grid 
+        <div>
+        {/* Title */}
+        <ListSubheader 
+            component="div" 
+            style={{color: grey}}
+        >
+            SETTINGS
+        </ListSubheader>
+
+        {/* Buttons */}
+        <List >
+
+        {/* Theme */}
+        <ListItem alignItems="flex-start" button={true} onClick={() => onChange()} divider>
+            <Icon 
+                path={toggleOn ? mdiLightbulb : mdiLightbulbOn}
+                size={1}
+                color={toggleOn ? 'white' : 'black'}
+            />
+            <ListItemText primary="Theme" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}} />
+        </ListItem>
+        {/* View Status */}
+        <ListItem alignItems="flex-start" button={true} divider>
+            <LoupeIcon color={toggleOn ? "primary" : "secondary"} />
+            <ListItemText primary="View Status" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}}/>
+        </ListItem>
+        {/* Docs */}
+        <ListItem alignItems="flex-start" button={true} >
+            <Icon 
+                path={mdiFile}
+                size={1}
+                color={toggleOn ? 'white' : 'black'}
+            />
+            <ListItemText primary="Documentation" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}} />
+        </ListItem>
+        {/* Help */}
+        <ListItem alignItems="flex-start" button={true} divider>
+            <Icon 
+                path={mdiHelpBox}
+                size={1}
+                color={toggleOn ? 'white' : 'black'}
+            />
+            <ListItemText primary="Help" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}} />
+        </ListItem>
+        {/* ToDo */}
+        <ListItem alignItems="flex-start" button onClick={() => nextPaneFunc()} >
+            <Icon 
+                path={mdiFormatListBulletedSquare}
+                size={1}
+                color={toggleOn ? 'white' : 'black'}
+            />
+            <ListItemText primary="ToDo" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}} />
+        </ListItem>
+        {/* Error Logs */}
+        <ListItem alignItems="flex-start" button onClick={() => nextPaneFunc()} >
+            <Icon 
+                path={mdiAlertCircle}
+                size={1}
+                color={toggleOn ? 'white' : 'black'}
+            />
+            <ListItemText primary="Error Logs" primaryTypographyProps={{color: toggleOn ? 'primary' : 'secondary'}} />
+        </ListItem>
+        {/* <Grid 
             container 
             direction="column"
             justify="flex-start"
             alignItems="flex-start"
-        >
+        > */}
             {/* Settings Title */}
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
                 <ListSubheader 
                     component="div" 
                     style={{color: grey}}
                 >
                     SETTINGS
                 </ListSubheader>
-            </Grid>
+            </Grid> */}
             {/* Theme */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -72,9 +162,9 @@ function Settings(props){
                     <CustomizedSwitches />
                 </Grid>                
             </Grid>
-            <hr style={style.styleBars}/>
+            <hr style={style.styleBars}/> */}
             {/* Hide/Show Status Bar */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -88,9 +178,9 @@ function Settings(props){
                 <Grid item onChange={() => onStatusChange()}>
                     <div style={{paddingRight: 25, marginTop: 4}} ><SwitchButton color="green"/></div>
                 </Grid>                
-            </Grid>
+            </Grid> */}
             {/* View Status */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-evenly"
@@ -103,9 +193,9 @@ function Settings(props){
                     <div style={{ marginTop: 4}} ><FullScreenDialog fill={white}/></div>
                 </Grid>                
             </Grid>
-            <hr style={style.styleBars}/>
+            <hr style={style.styleBars}/> */}
             {/* Docs */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -117,9 +207,9 @@ function Settings(props){
                 <Grid item>
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><FileLogo fill={white} /></Button></div>
                 </Grid>                
-            </Grid>
+            </Grid> */}
             {/* Help */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -133,9 +223,9 @@ function Settings(props){
                 </Grid>                
             </Grid>
 
-            <hr style={style.styleBars}/>
+            <hr style={style.styleBars}/> */}
             {/* ToDo */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -147,9 +237,9 @@ function Settings(props){
                 <Grid item>
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><ListIcon fill={white} /></Button></div>
                 </Grid>                
-            </Grid>
+            </Grid> */}
             {/* Error Console */}
-            <Grid 
+            {/* <Grid 
                 container
                 direction="row"
                 justify="space-around"
@@ -161,11 +251,13 @@ function Settings(props){
                 <Grid item >
                     <div style={{paddingRight: 25, marginTop: 4}} ><Button><ErrorIcon fill={white} /></Button></div>
                 </Grid>                
-            </Grid>
+            </Grid> */}
         
                 
         {/* End of settings */}
-        </Grid>
+        {/* </Grid> */}
+        </List>
+        </div>
     )
 }
 
