@@ -8,6 +8,7 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
@@ -23,7 +24,36 @@ const styles = theme => ({
   resetContainer: {
     padding: theme.spacing.unit * 3,
   },
+  // stepIcon: {
+  //   color: "grey",
+  // },
+  whole: {
+    width: '130%',
+    marginLeft: 0,
+    paddingLeft: 10,
+  }
 });
+
+const green = 'rgb(150,200,150)'
+const black2 = 'rgb(66,66,66)'
+const white = 'rgb(255,255,255)'
+const dark_grey = 'rgb(119,136,153)'
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      // light: green,
+      main: green,
+      // dark: black2,
+      // contrastText: white,
+    },
+  },
+  typography: { 
+      useNextVariants: true
+  },
+});
+
 
 function getSteps() {
   return [
@@ -98,11 +128,19 @@ class VerticalLinearStepper extends React.Component {
     const { activeStep } = this.state;
 
     return (
-      <div className={classes.root}>
-        <Stepper activeStep={activeStep} orientation="vertical" >
+      <MuiThemeProvider theme={theme}>
+      <div className={classes.root} id="stepper-div">
+        <Stepper activeStep={activeStep} orientation="vertical"
+          classes={{
+            root: classes.whole
+          }}
+        >
           {steps.map((label, index) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
+              {/* StepIconProps={{
+                    classes: { root: classes.stepIcon }
+                  }} */}
               <StepContent>
                 <Typography>{getStepContent(index)}</Typography>
                 <div className={classes.actionsContainer}>
@@ -137,6 +175,7 @@ class VerticalLinearStepper extends React.Component {
           </Paper>
         )}
       </div>
+      </MuiThemeProvider>
     );
   }
 }

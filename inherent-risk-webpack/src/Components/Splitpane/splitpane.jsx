@@ -191,10 +191,12 @@ class SplitPanes extends React.Component {
                                         />
                                     </div>
                                 }
+                                
                                 <ProgressStatusPanel 
                                     bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
-                                    textColor={this.state.isToggled ? 'primary' : 'secondary'} 
+                                    textColor={this.state.isToggled ? 'primary' : 'secondary'}
                                 />
+                                
                                 {/* { this.state.movingButtonsValue &&
                                     <div style={{height: '100%', backgroundColor: this.state.isToggled ? white : black2  }}>
                                         <CustomizedExpansionPanel 

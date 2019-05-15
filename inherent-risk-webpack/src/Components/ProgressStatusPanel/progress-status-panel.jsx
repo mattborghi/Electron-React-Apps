@@ -21,11 +21,7 @@ function ProgressBarPanel(props){
     // const { classes } = props
     const [toggleOn, setToggleOn] = useState(true)
     const [switchToggleOn, setSwitchToggleOn] = useState(true)
-
-    const style = {
-        styleBars: { width: '80%', backgroundColor: green}
-    }
-
+    
     function onChange() {
         let isToggled = toggleOn 
         if(isToggled){
@@ -60,11 +56,11 @@ function ProgressBarPanel(props){
                 </ListSubheader>
             </Grid>
             
+            
             <Grid item>
                 <VerticalLinearStepper />
-
             </Grid>
-                
+            
         {/* End of settings */}
         </Grid>
     )
