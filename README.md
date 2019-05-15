@@ -158,4 +158,34 @@ Template which incorporates React and Webpack with Python Flask. Based on [this 
 
 ## inherent-risk-webpack
 
-Merging inherent-risk project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![Inherent-risk-webpack](screens/inherent-risk-webpack.png)
+
+## sign-in-webpack
+
+Merging ```material-ui-sign-in``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![sign-in-webpack](screens/sign-in-webpack.png)
+
+## project-pool-webpack
+
+Merging ```material-ui-new-project-window``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![project-pool-webpack](screens/project-pool-webpack.png)
+
+## product-creator-webpack
+
+React app that incorporates monaco-editor and bricks in order to create product.
+
+## contract-creator-webpack
+
+## test-creator-webpack
+
+_Wait for product-creator_
+
+## test-runner-webpack
+
+## document-generator-webpack
+
+*Wait for test-runner*
