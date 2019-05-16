@@ -116,7 +116,6 @@ class SplitPanes extends React.Component {
         this.setState(state => ({
             codeMonaco: newCode
         }))
-        console.log(this.state.codeMonaco)
     }
 
     onChangeSize = (toggled) => {
