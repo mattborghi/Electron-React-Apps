@@ -261,12 +261,12 @@ class SplitPanes extends React.Component {
                                             {/* } */}
                                             {/* { !this.state.nextPane &&
                                                 'Modify the file in order to incorporate React Router?' */}
-                                        <SplitterLayout primaryIndex={0} percentage secondaryInitialSize={50} customClassName="main-separator"
+                                        {/* <SplitterLayout primaryIndex={0} percentage secondaryInitialSize={50} customClassName="main-separator"
                                                 onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
                                         >    
-                                            <div style={{paddingTop: 45, width: '100%', overflowY: 'hidden',}}><DetailedExpansionPanel /></div>
+                                            <div style={{paddingTop: 45, width: '100%', overflowY: 'hidden',}}><DetailedExpansionPanel /></div> */}
                                             <div style={{height: '100%', overflowY: 'hidden', paddingTop: 45}}><MonacoEditor /></div>
-                                        </SplitterLayout>   
+                                        {/* </SplitterLayout>    */}
                                             {/* } */}
                                         </div>
                                     {/* { this.state.toggleTerminal && 

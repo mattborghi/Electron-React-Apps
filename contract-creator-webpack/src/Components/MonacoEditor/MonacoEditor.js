@@ -68,68 +68,99 @@ class MonacoEditor extends Component {
 
     const editor = window.monaco.editor.create(this.ref, {
       value: dedent`Product:
-                Exp:
-                  type: expiry_payoff
-                  input:
-                    underlier: s1
-                  contract_data:
-                    k: 0.95
-                    derivative_type: c
+                    Exp:
+                      type: expiry_payoff
+                      input:
+                        underlier: asian1
+                      contract_data:
+                        k:
+                        derivative_type:
 
-                early01:
-                  type: early_exercise
-                  input:
-                    underlier: s1
-                  equation: k
-                  contract_data:
-                    k: 1
-                  others:
-                    class: callable
+                    Asian:
+                      type: average
+                      input:
+                        underlier: basket1
+                      output:
+                        name: asian1
 
-              Schedule:
-                # Observation settings:
-                obs: {to: 0, tn: 252, f: 1}
-                Exp:
-                  expiry: [252]
-                  payment: 0
-                early01:
-                  ee_sch: [20, 30]
 
-              Process:
-                s1:
-                  type: default
-                  equation: euler
-                  market_data:
-                    initial: 100
-                    mu: 0.03
-                    sigma: 0.05
+                    Basket:
+                      type: weighted_basket
+                      input:
+                        underlier1: s1
+                        underlier2: s2
+                        underlier3: s3
+                      output:
+                        name: basket1
+                      contract_data:
+                        w_underlier1:
+                        w_underlier2:
+                        w_underlier3:
 
-              Market data:
-                discount_value: 0.02
+                  Schedule:
+                    # Observation settings:
+                    obs: {to: , tn: , f: }
+                    BasketAsian:
+                      expiry:
+                      payment:
+                    Asian:
+                      average: {to: , tn: , f: }
+                    Basket:
+                      basket: {to: , tn: , f: }
 
-              Algorithmic data:
-                MC parameters:
-                  paths: 50
+                  Process:
+                    s1:
+                      type: default
+                      equation: euler
+                      market_data:
+                        initial:
+                        mu:
+                        sigma:
 
-                Process parameters:
-                  steps_per_year: 252
-                  random_number_generator:
-                    type: mersenne
-                    moment_matching: False
-                    antithetic: False
+                    s2:
+                      type: default
+                      equation: euler
+                      market_data:
+                        initial:
+                        mu:
+                        sigma:
 
-              Output requests:
-                Calculation request:
-                  computation_time: True
-                  fair_value: True
-                  simulation_stats: False
-                  store_simulations: True
-                Engine verbose:
-                  print_iterations: False
-                  computation_time: True
-                  fair_value_stats: True
-                  print_simu_stats: False
-                  print_last_event_log: True`,
+                    s3:
+                      type: default
+                      equation: euler
+                      market_data:
+                        initial:
+                        mu:
+                        sigma:
+
+
+                  Market data:
+                    discount_value:
+
+                  Algorithmic data:
+                    MC parameters:
+                      paths:
+
+                    Process parameters:
+                      steps_per_year:
+                      random_number_generator:
+                        type: mersenne
+                        moment_matching: False
+                        antithetic: False
+
+                  Output requests:
+                    Event verbose:
+                      print_event_verbose: False
+                    Engine verbose:
+                      print_iterations: False
+                      computation_time: True
+                      fair_value_stats: True
+                      print_simu_stats: False
+                    Calculation request:
+                      fair_value: True
+                      simulation_stats: True
+
+`,
       language,
       theme,
       automaticLayout,
