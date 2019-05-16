@@ -90,7 +90,7 @@ class FullScreenDialog extends React.Component {
                 <CloseIcon />
               </IconButton>
               <Typography variant="h6" color="primary" className={classes.flex}>
-                {this.props.title}
+                Pattern view
               </Typography>
               <Button color="primary" onClick={this.handleClose}>
                 Close
@@ -117,6 +117,8 @@ class FullScreenDialog extends React.Component {
                 {this.props.code}
             </code>
             </pre> */}
+
+            <Typography variant="subtitle1" color="primary"> {this.props.title} </Typography>
 
             <SyntaxHighlighter 
                 language='yaml' 

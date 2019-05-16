@@ -43,11 +43,17 @@ const styles = theme => ({
     backgroundColor: grey,
   },
   column: {
-    flexBasis: '50.33%',
+    // flexBasis: '50.33%',
+    paddingRight: 20,
   },
   title: {
-    flexBasis: '10%',
+    // flexBasis: '10%',
+    width: '50%',
     // fontSize: theme.typography.pxToRem(15),
+  },
+  subtitle: {
+    // flexBasis: '50%',
+    paddingLeft: 30,
   },
   helper: {
     borderLeft: `2px solid ${theme.palette.divider}`,
@@ -86,8 +92,10 @@ function DetailedExpansionPanel(props) {
 
   const patternCodes = {
     process: {
-      rng: dedent`empty rng patter code`,
-      another: dedent`another pattern`,
+      euler: dedent`empty rng patter code`,
+      milstein: dedent`another pattern`,
+      gbm: dedent`gbm patter code`,
+      custom: dedent`custom pattern code`
     },
     product: {
       expiryPayoff: dedent`BasketAsian:
@@ -114,69 +122,6 @@ function DetailedExpansionPanel(props) {
     <div className={classes.root}>
     {/* Patterns AppBar */}
     <SimpleAppBar title={"Patterns"} />
-      {/* Process */}
-      <ExpansionPanel defaultExpanded>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <div className={classes.column}>
-            <Typography className={classes.heading}>Process</Typography>
-          </div>
-          <div className={classes.column}>
-            <Typography className={classes.secondaryHeading}>Select process' patterns in order to assembly pattern structures</Typography>
-          </div>
-        </ExpansionPanelSummary>
-        {/* RNG */}
-        <ExpansionPanelDetails className={classes.details}>
-          <div className={classes.column} />
-          <SvgIcon color="primary" viewBox="0 0 512 512">
-            <path d="M0.001,373.649l234.144,135.146V310.78L0.001,175.583V373.649z M438.154,108.645v20.806  c0,15.412-29.509,27.901-65.96,27.901c-36.408,0-65.936-12.489-65.936-27.901V95.027h0.209  c2.213,14.542,30.741,26.063,65.724,26.063c36.454,0,65.96-12.501,65.96-27.858c0-15.431-29.506-27.895-65.96-27.895  c-2.891,0-5.755,0.088-8.55,0.253l-42.446-24.496v26.174c0,15.412-29.483,27.9-65.909,27.9c-22.889,0-43.047-4.938-54.889-12.443  c-1.68-1.722-3.754-3.402-6.249-4.969c-3.099-3.234-4.821-6.761-4.821-10.488V41.94l-41.023,23.676  c-2.959-0.139-5.941-0.279-8.994-0.279c-36.407,0-65.936,12.464-65.936,27.895c0,15.357,29.529,27.858,65.936,27.858  c34.983,0,63.537-11.521,65.749-26.063h0.186v34.424c0,15.412-29.483,27.901-65.934,27.901c-36.407,0-65.936-12.489-65.936-27.901  v-20.528l-50.789,29.276L257.52,273.794L490.917,139.08L438.154,108.645z M321.732,194.875c0,15.412-29.53,27.878-65.936,27.878  c-36.429,0-65.958-12.467-65.958-27.878v-34.426h0.208c2.216,14.545,30.745,26.084,65.75,26.084  c34.985,0,63.511-11.539,65.749-26.084h0.187V194.875L321.732,194.875z M277.824,312.537v196.304L512,373.649V177.353  L277.824,312.537z M255.285,58.904c36.429,0,65.909-12.469,65.909-27.872c0-15.388-29.483-27.873-65.909-27.873  c-36.432,0-65.959,12.485-65.959,27.873C189.326,46.435,218.853,58.904,255.285,58.904"/>
-          </SvgIcon>
-          {/* <div className={classes.title}>
-            <Typography >
-              RNG
-            </Typography>
-          </div> */}
-          <div className={classes.column}>
-            <Button size="small" onClick={() => onClick(patternCodes.process.rng) }>Add</Button> 
-          </div>
-          <div className={classNames(classes.column, classes.helper)}>
-            <Typography variant="caption">
-              This is a Random Number Generator.
-              <br />
-              <FullScreenDialog title={'RNG'} code={patternCodes.process.rng}/>
-            </Typography>
-          </div>
-        </ExpansionPanelDetails>
-        <ExpansionPanelActions className={classes.actions}>
-          <Button size="small">Remove</Button>
-          <Button size="small" color="primary">Add</Button>
-        </ExpansionPanelActions>
-        <Divider />
-        {/* Another process pattern */}
-        <ExpansionPanelDetails className={classes.details}>
-          <div className={classes.column} />
-          <div className={classes.column}>
-            <Button size="small" onClick={() => onClick(patternCodes.process.another) }>Add</Button> 
-          </div>
-          <div className={classNames(classes.column, classes.helper)}>
-            <Typography variant="caption">
-              This is another patthern.
-              <br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
-                Learn more
-              </a>
-            </Typography>
-          </div>
-        </ExpansionPanelDetails>
-        <Divider />
-        {/* <ExpansionPanelActions className={classes.actions}>
-          <Button size="small">Cancel</Button>
-          <Button size="small" color="primary">
-            Save
-          </Button>
-        </ExpansionPanelActions> */}
-      </ExpansionPanel>
-
-      {/* ************************************************************** */}
 
       {/* Product */}
       <ExpansionPanel defaultExpanded>
@@ -184,7 +129,7 @@ function DetailedExpansionPanel(props) {
           <div className={classes.column}>
             <Typography className={classes.heading}>Product</Typography>
           </div>
-          <div className={classes.column}>
+          <div className={classes.subtitle}>
             <Typography className={classes.secondaryHeading}>Select product's patterns in order to assembly pattern structures</Typography>
           </div>
         </ExpansionPanelSummary>
@@ -213,9 +158,7 @@ function DetailedExpansionPanel(props) {
             <Typography variant="caption">
               This is an Average pattern.
               <br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
-                Learn more
-              </a>
+              <FullScreenDialog title={'Average'} code={patternCodes.product.average}/>
             </Typography>
           </div>
         </ExpansionPanelDetails>
@@ -230,13 +173,68 @@ function DetailedExpansionPanel(props) {
             <Typography variant="caption">
               This is a Basket pattern.
               <br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
-                Learn more
-              </a>
+              <FullScreenDialog title={'Basket'} code={patternCodes.product.basket}/>
             </Typography>
           </div>
         </ExpansionPanelDetails>
         <Divider />
+      </ExpansionPanel>
+
+      {/* ************************************************************** */}
+
+      {/* Process */}
+      <ExpansionPanel defaultExpanded>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          <div className={classes.column}>
+            <Typography className={classes.heading}>Process</Typography>
+          </div>
+          <div className={classes.subtitle}>
+            <Typography className={classes.secondaryHeading}>Select process' patterns in order to assembly pattern structures</Typography>
+          </div>
+        </ExpansionPanelSummary>
+        
+        {/* RNG */}
+        <ExpansionPanelDetails className={classes.details}>
+          <div className={classes.column} />
+            <Typography >
+              Random Number Generator
+            </Typography>
+          <div className={classNames(classes.column, classes.helper)}>
+            <Typography variant="caption">
+              This is a Random Number Generator.
+              <br />
+              <FullScreenDialog title={'RNG'} code={patternCodes.process.rng}/>
+            </Typography>
+          </div>
+          <ExpansionPanelActions className={classes.actions}>
+            <Button size="small">Remove</Button>
+            <Button size="small" color="primary" onClick={() => onClick(patternCodes.process.rng)}>Add</Button>
+          </ExpansionPanelActions>
+        </ExpansionPanelDetails>
+        
+        <Divider />
+        
+        {/* Another process pattern */}
+        <ExpansionPanelDetails className={classes.details}>
+          <div className={classes.column} />
+          <div className={classes.column}>
+            <Button size="small" onClick={() => onClick(patternCodes.process.another) }>Add</Button> 
+          </div>
+          <div className={classNames(classes.column, classes.helper)}>
+            <Typography variant="caption">
+              This is another patthern.
+              <br />
+              <FullScreenDialog title={'Another process pattern'} code={patternCodes.process.another}/>
+            </Typography>
+          </div>
+        </ExpansionPanelDetails>
+        <Divider />
+        {/* <ExpansionPanelActions className={classes.actions}>
+          <Button size="small">Cancel</Button>
+          <Button size="small" color="primary">
+            Save
+          </Button>
+        </ExpansionPanelActions> */}
       </ExpansionPanel>
     </div>
   );
