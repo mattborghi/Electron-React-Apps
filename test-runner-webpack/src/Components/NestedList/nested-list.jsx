@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -15,98 +13,108 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 // import StarBorder from '@material-ui/icons/StarBorder';
-import FolderLogo from '../icons/open-folder.jsx'
-import ClosedFolderLogo from '../icons/closed-folder.jsx'
-import DocLogo from '../icons/doc-logo.jsx'
+import Checkbox from '@material-ui/core/Checkbox';
 
-// Like https://github.com/brunobertolini/styled-by
-const styledBy = (property, mapping) => props => mapping[props[property]];
-
-const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true,
-  },
-});
-
-const styles = {
+const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    color: styledBy('isToggled', {
-      false: 'white',
-      true: '#424242'
-    }), 
+    backgroundColor: theme.palette.background.paper,
   },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
   },
-  icon:  { color: styledBy('isToggled', {
-        false: '#ffffff',
-        true: '#424242'
-  }), 
+  item: {
+    marginBottom: 0,
   },
-  item:  { color: styledBy('isToggled', {
-    false: 'primary',
-    true: 'secondary'
-  }), 
-  },
-  title:  { color: styledBy('isToggled', {
-    false: 'rgb(200,200,200)',
-    true: 'grey'
-}), 
-  fontWeigth: 'bold',
-  fontSize: 14,
-  textTransform: 'uppercase'
-},
-}
+});
 
+class NestedList extends React.Component {
 
-function NestedList(props) {
+  constructor(props){
+    super(props);    
+    this.state = {
+      open: false,  
+    };
+  }
 
-  const [open, setOpen] = useState(true)
-
-  const handleClick = () => {
-    setOpen(!open)
+  handleClick = () => {
+    let newState = !this.state.open
+    this.setState(state => ({ open: newState }));
+    // this.props.test(newState)
   };
 
-    const { classes, isToggled, ...other } = props
+
+  render() {
+    const { classes } = this.props; 
 
     return (
-      <div className={classes.root} {...other} > 
-
       <List
         component="nav"
-        subheader={<ListSubheader component="div" className={classes.title}>Project</ListSubheader>}
+        subheader={<ListSubheader component="div">Tests and Contracts List</ListSubheader>}
         className={classes.root}
       >
-        <ListItem button onClick={handleClick}>
-          <ListItemIcon>
-            {open ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
-          </ListItemIcon>
-          
-          <ListItemText inset primary="CallableNote" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-          {open ? <ExpandLess /> : <ExpandMore />}
+        {/* <ListItem button>          
+          <Checkbox/>
+          <ListItemText inset primary="Sent mail" />
+        </ListItem> */}
+
+        <ListItem button onClick={this.handleClick} >
+          <Checkbox/>
+          <ListItemText inset primary="One Dimension" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemIcon>
-                <DocLogo className={classes.icon} />
-              </ListItemIcon>
-              <ListItemText inset primary="ProductSample" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <ListItemIcon>
-                <DocLogo className={classes.icon} />
-              </ListItemIcon>
-              <ListItemText inset primary="Sth" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+            <ListItem button className={classes.nested}> 
+              <Checkbox/>
+              <ListItemText inset primary="Contract A" />
             </ListItem>
           </List>
         </Collapse>
+
+        <ListItem button onClick={this.handleClick}>    
+          <Checkbox/>
+          <ListItemText inset primary="Contour" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}>  
+              <Checkbox/>
+              <ListItemText inset primary="Contract A" />       
+            </ListItem>
+            <ListItem button className={classes.nested}>  
+              <Checkbox/>
+              <ListItemText inset primary="Contract B" />       
+            </ListItem>
+          </List>
+        </Collapse>
+
+        <ListItem button onClick={this.handleClick}>    
+          <Checkbox/>
+          <ListItemText inset primary="Comparison" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}> 
+              <Checkbox/>
+              <ListItemText inset primary="Contract C" />
+            </ListItem>
+          </List>
+        </Collapse>
+
       </List>
-      </div>
     );
-  // }
+  }
 }
+
+NestedList.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(NestedList);

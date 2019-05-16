@@ -7,6 +7,7 @@ import Settings from '../Settings/settings.jsx'
 import SimpleAppBar from '../AppBar/appbar.jsx'
 import ProgressStatusPanel from '../ProgressStatusPanel/progress-status-panel.jsx'
 import MonacoEditor from '../MonacoEditor/MonacoEditor.js'
+import NewTable from '../Table/material-table.jsx'
 import DetailedExpansionPanel from '../Patterns/expansion-panel.jsx'
 // import '~react-splitter-layout/lib/index.css';
 // import '../../styles/splitter.css'
@@ -257,8 +258,8 @@ class SplitPanes extends React.Component {
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
                                         </Fab>
                                          
+                                        <NewTable />
 
-                                        
 
 
                                         </div>
