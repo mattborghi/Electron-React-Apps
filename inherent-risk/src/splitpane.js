@@ -44,6 +44,7 @@ class SplitPanes extends React.Component {
             movingButtonsValue: false,
             toggleProject: true,
             toggleTerminal: true,
+            nextPane: false,
         };
     }
     
@@ -73,6 +74,10 @@ class SplitPanes extends React.Component {
         this.toggleAlpha();
     }
 
+    toggleSwitch = (isSwitched) => {
+        this.props.toggleSwitch(isSwitched)
+    }
+
     onToggle = (toggleVar) => {
         this.setState(state => ({
             isToggled: toggleVar
@@ -88,6 +93,12 @@ class SplitPanes extends React.Component {
     onMovingButtons = (toggleVar) => {
         this.setState(state => ({
             movingButtonsValue: toggleVar
+        }))
+    }
+
+    onNextPane = (toggleVar) => {
+        this.setState(state => ({
+            nextPane: toggleVar
         }))
     }
 
@@ -196,7 +207,7 @@ class SplitPanes extends React.Component {
                             </SplitterLayout>
                         </div>
                     )}
-                    <div>
+                    <div >
                         <SplitterLayout primaryIndex={0} primaryMinSize={80} secondaryMinSize={20} percentage secondaryInitialSize={20} customClassName="custom-scrollbar">
                             <div>
                                 <SplitterLayout 
@@ -209,13 +220,14 @@ class SplitPanes extends React.Component {
                                     onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
                                 >
                                 
-                                    <div style={{maxWidth: "100%", backgroundColor: theme.palette.primary.dark}}>
+                                    <div style={{maxWidth: "100%", height:"100%", backgroundColor: this.state.isToggled ? white : black2}}>
                                         <SimpleAppBar 
                                                 themeSelected={this.state.isToggled}
                                                 toggleRightPane={this.onToggleRightPane}
                                                 toggleTerminal={this.onToggleTerminal}
                                                 toggleProject={this.onToggleProject}
                                         />
+                                        <br />
                                         {/* Left Arrow */}    
                                         <Fab 
                                             color="inherit" 
@@ -228,7 +240,6 @@ class SplitPanes extends React.Component {
                                         >
                                         {this.state.sidebarLeftVisible? <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> : <ArrowForwardIosIcon style={{left: 16, position: "relative"}}/> }
                                         </Fab>
-                                        
                                         {/* Right Arrow */}
                                         <Fab 
                                             color="inherit" 
@@ -241,7 +252,12 @@ class SplitPanes extends React.Component {
                                         >
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
                                         </Fab>
-                                            <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
+                                            { this.state.nextPane &&
+                                                <TextFields bgColor={this.state.isToggled ? white : black2} toggleValue={this.state.isToggled} />
+                                            }
+                                            {/* { !this.state.nextPane &&
+                                                Modify the file in order to incorporate React Router?
+                                            } */}
                                         </div>
                                     { this.state.toggleTerminal && 
                                         <div style={{backgroundColor: this.state.isToggled ? white : black2, height: '100%'}}>
@@ -250,11 +266,6 @@ class SplitPanes extends React.Component {
                                     }
                                 </SplitterLayout>
                             </div>
-                                
-                            {/* <SplitterLayout vertical percentage primaryIndex={0} secondaryInitialSize={50} primaryMinSize={40} secondaryMinSize={30}>
-                                <div>
-                                    <ToolBox />
-                                </div>*/}
                             {this.state.sidebarRightVisible &&
                             (
                                 <SplitterLayout vertical >
@@ -264,18 +275,18 @@ class SplitPanes extends React.Component {
                                                 bgColor={this.state.isToggled ? 'secondary' : 'primary'}  
                                                 textColor={this.state.isToggled ? 'primary' : 'secondary'} 
                                                 movingButtons={this.onMovingButtons}
+                                                nextPane={this.onNextPane}
                                             />
                                         </div>
                                     }
                                     <div style={{height:'100%', width: '100%', color: white, backgroundColor: this.state.isToggled ? white : black2}}>
                                         <Settings
                                             toggleFunc={this.onToggle} 
+                                            toggleSwitch={this.toggleSwitch}
                                         />
                                     </div>
                                 </SplitterLayout>
                             )}
-                            {/* </SplitterLayout> */}
-                            
                         </SplitterLayout>
                     </div>
                 </SplitterLayout>

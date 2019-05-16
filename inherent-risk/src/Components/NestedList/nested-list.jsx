@@ -79,21 +79,9 @@ function NestedList(props) {
         subheader={<ListSubheader component="div" className={classes.title}>Project</ListSubheader>}
         className={classes.root}
       >
-        {/* <ListItem button>
-          <ListItemIcon>
-            <SendIcon className={classes.icon}/>
-          </ListItemIcon>
-          <ListItemText inset primary="Sent mail" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary'}}/>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon className={classes.icon} />
-          </ListItemIcon>
-          <ListItemText inset primary="Drafts" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-        </ListItem> */}
         <ListItem button onClick={handleClick}>
           <ListItemIcon>
-            {open ? <ClosedFolderLogo className={classes.icon} /> : <FolderLogo className={classes.icon} /> }
+            {open ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
           </ListItemIcon>
           
           <ListItemText inset primary="CallableNote" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />

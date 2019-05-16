@@ -12,13 +12,28 @@ import ReactDOM from 'react-dom';
 
 class App extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            isSwitchToggled: true
+        }
+    }
+
+    toggleSwitch = (switchValue) => {
+        this.setState({
+            isSwitchToggled: switchValue
+        })
+    }
+
     render() {
 
         return(
             <div>
-                <SplitPanes  />
+                <SplitPanes toggleSwitch={this.toggleSwitch} />
                 {/* themeColor={this.state.themeColor} */}
-                <LinearDeterminate />
+                { this.state.isSwitchToggled &&
+                    <LinearDeterminate />
+                }
             </div>
         )
     }

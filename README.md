@@ -147,3 +147,47 @@ Electron + React + Python project.
 ## node-react-xterm
 
 As the name suggest, react front-end app that connects with node back-end and uses xterm.js. Guided through [this blog](https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0) and [this one](https://www.ctolib.com/topics-137727.html).
+
+## xterm-webpack
+
+This repo shows how to use XTerm.js with Webpack. Based on [this repo](https://github.com/parisk/xterm-webpack).
+
+## react-webpack-flask-template
+
+Template which incorporates React and Webpack with Python Flask. Based on [this blog](https://itnext.io/a-template-for-creating-a-full-stack-web-application-with-flask-npm-webpack-and-reactjs-be2294b111bd) and [this repo](https://github.com/Eyongkevin/hello_template).
+
+# Project Windows 
+
+## sign-in-webpack :white_check_mark:
+
+Merging ```material-ui-sign-in``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![sign-in-webpack](screens/sign-in-webpack.png)
+
+## project-pool-webpack :white_check_mark:
+
+Merging ```material-ui-new-project-window``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![project-pool-webpack](screens/project-pool-webpack.png)
+
+## product-creator-webpack :construction:
+
+React app that incorporates monaco-editor and bricks in order to create product.
+
+## inherent-risk-webpack :white_check_mark:
+
+Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![Inherent-risk-webpack](screens/inherent-risk-webpack.png)
+
+## contract-creator-webpack :construction:
+
+## test-creator-webpack :checkered_flag:
+
+_Wait for product-creator_
+
+## test-runner-webpack :construction:
+
+## document-generator-webpack :checkered_flag:
+
+*Wait for test-runner*

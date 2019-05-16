@@ -2,3 +2,5 @@ node_modules/
 contents/
 package-lock.json
 yarn.lock
+__pycache__/
+*.pyc

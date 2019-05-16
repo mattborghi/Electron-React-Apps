@@ -1,0 +1,24 @@
+:global {
+    // @import '~react-splitter-layout/lib/index.css';
+    // @import '~xterm/dist/xterm.css';
+    // @import '../Components/styles/global.css';
+    // @import '../Components/MonacoEditor/Editor.css';
+    @import '../styles/index.css'
+    // // Icons for Gooey menu
+    // @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+}
+// Define a variable as blue
+$bg: #424242;
+
+// change the background color of the body
+body {
+    background: $bg;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif;
+}

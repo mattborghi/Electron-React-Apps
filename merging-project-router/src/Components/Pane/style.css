@@ -1,0 +1,37 @@
+.gutter {
+    background-color: #eee;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('./grips/vertical.png');
+    cursor: col-resize;
+}
+
+.gutter.gutter-vertical {
+    background-image: url('./grips/horizontal.png');
+    cursor: row-resize;
+}
+
+.split {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.split,
+.gutter.gutter-horizontal {
+    float: left;
+}
+
+.split,
+.gutter.gutter-horizontal {
+    height: 300px;
+}
+
+.split {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

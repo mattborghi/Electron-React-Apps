@@ -76,6 +76,19 @@ const files = {
       width: 128,
     }
   });`,
+  'test.py': dedent`import random
+    min = 1
+    max = 6
+
+    roll_again = "yes"
+
+    while roll_again == "yes" or roll_again == "y":
+        print "Rolling the dices..."
+        print "The values are...."
+        print random.randint(min, max)
+        print random.randint(min, max)
+
+        roll_again = raw_input("Roll the dices again?")`,
 };
 
 type State = {
@@ -137,8 +150,65 @@ export default class App extends React.Component<{}, State> {
           value={this.state.files[this.state.current]}
           onOpenPath={this._handleOpenPath}
           onValueChange={this._handleValueChange}
+          theme='ayu-dark'
         />
       </div>
     );
   }
 }
+
+// import React from 'react';
+// import dedent from 'dedent'
+// import MonacoEditor from 'react-monaco-editor';
+
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       code: dedent`// type your code... 
+//               editorDidMount(editor, monaco) {
+//                 console.log("editorDidMount", editor);
+//                 editor.focus();
+//               }`,
+//     }
+//   }
+//   editorDidMount(editor, monaco) {
+//     console.log('editorDidMount', editor);
+//     editor.focus();
+//   }
+//   onChange(newValue, e) {
+//     console.log('onChange', newValue, e);
+//   }
+//   render() {
+//     const code = this.state.code;
+//     // Monaco editor options
+//     const options = {
+//         automaticLayout: false,
+//         cursorStyle: 'line',
+//         fontSize: '14px',
+//         glyphMargin: true,
+//         lineHeight: '16px',
+//         readOnly: false,
+//         renderLineHighlight: 'none',
+//         roundedSelection: false,
+//         selectOnLineNumbers: false,
+//         minimap: {
+//             enabled: true,
+//         },
+//     };
+
+//     return (
+//       <MonacoEditor
+//         width="100%"
+//         height="100vh"
+//         language="javascript"
+//         theme="vs-dark"
+//         value={code}
+//         options={options}
+//         onChange={this.onChange}
+//         editorDidMount={this.editorDidMount}
+//       />
+//     );
+//   }
+// }
+

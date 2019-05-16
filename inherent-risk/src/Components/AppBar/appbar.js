@@ -34,30 +34,23 @@ function SimpleAppBar(props) {
   const [toggleTerminal, setToggleTerminal] = useState(true)
   
   function rightSidebar() {
-    let isToggledRightPane = toggleRightPane
-    if (isToggledRightPane)
-      setToggleRightPane(false)
-    else
-      setToggleRightPane(true)
-    props.toggleRightPane(toggleRightPane)
+    let newValue = !toggleRightPane
+    setToggleRightPane(newValue)
+    props.toggleRightPane(newValue)
   }
 
   function projectToggle() {
-    let isToggled = toggleProject
-    if (isToggled)
-      setToggleProject(false)
-    else
-      setToggleProject(true)
-    props.toggleProject(toggleProject)
+    let newValue = !toggleProject
+    setToggleProject(newValue)
+    // Send the data using the new value avoiding asynchronous issues.
+    // Instead of sending toggleProject directly.
+    props.toggleProject(newValue)
   }
 
   function terminalToggle() {
-    let isToggled = toggleTerminal
-    if (isToggled)
-      setToggleTerminal(false)
-    else
-      setToggleTerminal(true)
-    props.toggleTerminal(toggleTerminal)
+    let newValue = !toggleTerminal
+    setToggleTerminal(newValue)
+    props.toggleTerminal(newValue)
   }
   
   return (

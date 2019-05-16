@@ -66,7 +66,7 @@ function PageOne() {
       </Grid>
 
       <div style={{bottom:10, left: 30, position: "absolute",}} >
-      <Link to='/second'>
+      <Link to='/'>
         <Button size="large">
           <TLogo fill={orange} style={logoClass} />
           Checkout version 2!
