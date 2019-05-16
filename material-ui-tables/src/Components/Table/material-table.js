@@ -52,11 +52,11 @@ class NewTable extends Component {
         columns={[
            
            
-            {title: 'Test Name', render: rowData => this.props.rowState,},
-            // {title: 'Test Name', render: rowData => rowData.name + ' ' + rowData.surname,},
+            // {title: 'Test Name', render: rowData => this.props.rowState,},
+            {title: 'Test Name', render: rowData => rowData.name + ' ' + rowData.surname,},
             // {title: 'Test Name', render: rowData => { if (this.props.rowState) {rowData.name} }},
-            // {title: 'Birth Year',  field: 'birthYear', type: 'numeric' },
-            // {title: 'Contract', field: 'contract', lookup: { 1: 'Contract A', 2: 'Contract B', 3: 'Contract C'},},
+            {title: 'Birth Year',  field: 'birthYear', type: 'numeric' },
+            {title: 'Contract', field: 'contract', lookup: { 1: 'Contract A', 2: 'Contract B', 3: 'Contract C'},},
             {
             title: 'Progress',
             field: 'successScore',

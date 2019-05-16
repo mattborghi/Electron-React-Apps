@@ -17,7 +17,8 @@ class SplitPanes extends React.Component {
     constructor(props) {
         super(props);
            this.state = {
-           checkboxState: new Map(),
+           checkboxState: false,
+        //    new Map(),
         };
     }
 
@@ -52,8 +53,8 @@ class SplitPanes extends React.Component {
             <div>
                 <SplitPane split="vertical" minSize={200} maxSize={300} defaultSize="15%">
                     <div>
-                        {/* <NestedList test={this.onTest}/> */}
-                        <NestedList2 checked={this.Onchecked} data={checkboxes} />
+                        <NestedList test={this.onTest}/>
+                        {/* <NestedList2 checked={this.Onchecked} data={checkboxes} /> */}
                     </div>
                     <div>
                         <SplitPane split="vertical" defaultSize="20%" primary="second" allowResize={false}>
