@@ -92,6 +92,7 @@ function DetailedExpansionPanel(props) {
 
   const patternCodes = {
     process: {
+      rng: dedent`empty rng pattern`,
       euler: dedent`empty rng patter code`,
       milstein: dedent`another pattern`,
       gbm: dedent`gbm patter code`,
@@ -124,7 +125,8 @@ function DetailedExpansionPanel(props) {
     <SimpleAppBar title={"Patterns"} />
 
       {/* Product */}
-      <ExpansionPanel defaultExpanded>
+      <ExpansionPanel >
+      {/* defaultExpanded */}
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <div className={classes.column}>
             <Typography className={classes.heading}>Product</Typography>
@@ -183,7 +185,7 @@ function DetailedExpansionPanel(props) {
       {/* ************************************************************** */}
 
       {/* Process */}
-      <ExpansionPanel defaultExpanded>
+      <ExpansionPanel >
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <div className={classes.column}>
             <Typography className={classes.heading}>Process</Typography>
