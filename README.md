@@ -156,36 +156,38 @@ This repo shows how to use XTerm.js with Webpack. Based on [this repo](https://g
 
 Template which incorporates React and Webpack with Python Flask. Based on [this blog](https://itnext.io/a-template-for-creating-a-full-stack-web-application-with-flask-npm-webpack-and-reactjs-be2294b111bd) and [this repo](https://github.com/Eyongkevin/hello_template).
 
-## inherent-risk-webpack
+# Project Windows 
 
-Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
-
-![Inherent-risk-webpack](screens/inherent-risk-webpack.png)
-
-## sign-in-webpack
+## sign-in-webpack :white_check_mark:
 
 Merging ```material-ui-sign-in``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
 
 ![sign-in-webpack](screens/sign-in-webpack.png)
 
-## project-pool-webpack
+## project-pool-webpack :white_check_mark:
 
 Merging ```material-ui-new-project-window``` project with the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
 
 ![project-pool-webpack](screens/project-pool-webpack.png)
 
-## product-creator-webpack
+## product-creator-webpack :construction:
 
 React app that incorporates monaco-editor and bricks in order to create product.
 
-## contract-creator-webpack
+## inherent-risk-webpack :white_check_mark:
 
-## test-creator-webpack
+Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mattborghi/Minimal-Webpack-Configuration).
+
+![Inherent-risk-webpack](screens/inherent-risk-webpack.png)
+
+## contract-creator-webpack :construction:
+
+## test-creator-webpack :checkered_flag:
 
 _Wait for product-creator_
 
-## test-runner-webpack
+## test-runner-webpack :construction:
 
-## document-generator-webpack
+## document-generator-webpack :checkered_flag:
 
 *Wait for test-runner*
