@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/styles';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+// import { withStyles } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
@@ -18,6 +18,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import FolderLogo from '../icons/open-folder.jsx'
 import ClosedFolderLogo from '../icons/closed-folder.jsx'
 import DocLogo from '../icons/doc-logo.jsx'
+import Checkbox from '@material-ui/core/Checkbox';
 
 // Like https://github.com/brunobertolini/styled-by
 const styledBy = (property, mapping) => props => mapping[props[property]];
@@ -31,7 +32,6 @@ const theme = createMuiTheme({
 const styles = {
   root: {
     width: '100%',
-    maxWidth: 360,
     color: styledBy('isToggled', {
       false: 'white',
       true: '#424242'
@@ -40,73 +40,160 @@ const styles = {
   nested: {
     paddingLeft: theme.spacing.unit * 4,
   },
-  icon:  { color: styledBy('isToggled', {
-        false: '#ffffff',
+  nested2: {
+    paddingLeft: theme.spacing.unit * 8,
+  },
+  icon:  { 
+    color: styledBy('isToggled', {
+        false: 'white',
         true: '#424242'
   }), 
   },
-  item:  { color: styledBy('isToggled', {
+  item:  { 
+    color: styledBy('isToggled', {
     false: 'primary',
     true: 'secondary'
   }), 
   },
-  title:  { color: styledBy('isToggled', {
-    false: 'rgb(200,200,200)',
-    true: 'grey'
-}), 
-  fontWeigth: 'bold',
-  fontSize: 14,
-  textTransform: 'uppercase'
-},
+  title:  { 
+    color: styledBy('isToggled', {
+      false: 'rgb(200,200,200)',
+      true: 'grey'
+    }), 
+    fontWeigth: 'bold',
+    fontSize: 14,
+    textTransform: 'uppercase'
+  },
 }
 
 
 function NestedList(props) {
 
-  const [open, setOpen] = useState(true)
+  const [openMain, setOpenMain] = useState(true)
+  const [openProduct, setOpenProduct] = useState(false)
+  const [openContracts, setOpenContracts] = useState(false)
+  const [openTests, setOpenTests] = useState(false)
 
-  const handleClick = () => {
-    setOpen(!open)
+  const handleClickMain = () => {
+    setOpenMain(!openMain)
   };
 
-    const { classes, isToggled, ...other } = props
+  const handleClickProduct = () => {
+    setOpenProduct(!openProduct)
+  };
+
+  const handleClickContracts = () => {
+    setOpenContracts(!openContracts)
+  };
+
+  const handleClickTests = () => {
+    setOpenTests(!openTests)
+  };
+
+    const { classes, isToggled } = props
 
     return (
-      <div className={classes.root} {...other} > 
 
       <List
         component="nav"
         subheader={<ListSubheader component="div" className={classes.title}>Project</ListSubheader>}
         className={classes.root}
       >
-        <ListItem button onClick={handleClick}>
+        {/* Begin folder Main */}
+        <ListItem button onClick={handleClickMain} >
           <ListItemIcon>
-            {open ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
+            {openMain ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
           </ListItemIcon>
           
-          <ListItemText inset primary="CallableNote" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemIcon>
-                <DocLogo className={classes.icon} />
-              </ListItemIcon>
-              <ListItemText inset primary="ProductSample" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <ListItemIcon>
-                <DocLogo className={classes.icon} />
-              </ListItemIcon>
-              <ListItemText inset primary="Sth" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
-            </ListItem>
-          </List>
-        </Collapse>
+          <ListItemText inset primary="Basket Asian Option" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+          {openMain ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+
+
+          {/* Inside Folder Main */}
+          <Collapse in={openMain} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {/* Product */}
+              <ListItem button onClick={handleClickProduct} className={classes.nested} >
+                <ListItemIcon>
+                  {openProduct ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
+                </ListItemIcon>
+                
+                <ListItemText inset primary="Product" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+                {openProduct ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+
+                  {/* Inside Folder Product */}
+                  <Collapse in={openProduct} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      {/* First file */}
+                      <ListItem button className={classes.nested2}>
+                        <ListItemIcon>
+                          <DocLogo className={classes.icon}/>
+                        </ListItemIcon>
+                        <ListItemText inset primary="BasketAsianOption" />
+                      </ListItem>
+                      
+                      {/* Finish with items inside Product */}
+                    </List>
+                  </Collapse>
+                  {/* End folder Product */}
+
+              {/* Contracts */}
+              <ListItem button onClick={handleClickContracts} className={classes.nested} >
+                <ListItemIcon>
+                  {openContracts ? <FolderLogo className={classes.icon} /> : <ClosedFolderLogo className={classes.icon} /> }
+                </ListItemIcon>
+                
+                <ListItemText inset primary="Contracts" primaryTypographyProps={{ color: isToggled ? 'secondary' : 'primary' }} />
+                {openContracts ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+
+                  {/* Inside Folder Contract */}
+                  <Collapse in={openContracts} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      {/* First file */}
+                      <ListItem button className={classes.nested2}>
+                        <ListItemIcon>
+                          <DocLogo className={classes.icon}/>
+                        </ListItemIcon>
+                        <ListItemText inset primary="Contract A" />
+                      </ListItem>
+                      {/* Second file */}
+                      <ListItem button className={classes.nested2}>
+                        <ListItemIcon>
+                          <DocLogo className={classes.icon}/>
+                        </ListItemIcon>
+                        <ListItemText inset primary="Contract B" />
+                      </ListItem>
+                      {/* Third file */}
+                      <ListItem button className={classes.nested2}>
+                        <ListItemIcon>
+                          <DocLogo className={classes.icon}/>
+                        </ListItemIcon>
+                        <ListItemText inset primary="Contract C" />
+                      </ListItem>
+                      
+                      {/* Finish with items inside Contracts */}
+                    </List>
+                  </Collapse>
+                  {/* End folder Contract */}
+                  
+                  
+              {/* Finish with items inside folder */}
+
+            </List>
+          </Collapse>
+          {/* End folder Main */}
+
+          
+          
+
+          
+
       </List>
-      </div>
     );
-  // }
+
 }
 
 export default withStyles(styles)(NestedList);

@@ -15,6 +15,8 @@ import FolderIcon from '@material-ui/icons/Folder'
 import SaveIcon from '@material-ui/icons/Save'
 import FindInPageIcon from '@material-ui/icons/FindInPage'
 import TimelineIcon from '@material-ui/icons/Timeline'
+import Icon from '@mdi/react'
+import { mdiFile } from '@mdi/js'
 // List
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -108,26 +110,24 @@ function CustomizedExpansionPanel(props) {
       </ListItem>
 
       <ListItem alignItems="flex-start" button={true}>
-        <TimelineIcon color="primary" />
-        {/* <ListItemAvatar>
-          <CalculateIcon fill={white} />
-        </ListItemAvatar> */}
-        <ListItemText primary="Calculate Risk" />
-      </ListItem>
-
-      <ListItem alignItems="flex-start" button={true}>
-        {/* <ListItemAvatar> */}
-        <FindInPageIcon color="primary" />
-          {/* <ContractIcon fill={white} /> */}
-        {/* </ListItemAvatar> */}
-        <ListItemText primary="Generate Report" />
+        {/* <TimelineIcon color="primary" /> */}
+        <Icon path={mdiFile}
+          size={1}
+          // horizontal
+          // vertical
+          // rotate={90}
+          color="white"
+          // spin
+        />
+        
+        <ListItemText primary="New" />
       </ListItem>
 
       <ListItem alignItems="flex-start" button onClick={() => nextPaneFunc()}>
         {/* <ListItemAvatar> */}
           <ArrowForwardIosIcon color="primary" />
         {/* </ListItemAvatar> */}
-        <ListItemText primary="Next" />
+        <ListItemText primary="Test Creator" />
       </ListItem>
      
     
