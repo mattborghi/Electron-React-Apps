@@ -170,9 +170,11 @@ Merging ```material-ui-new-project-window``` project with the [webpack repo](htt
 
 ![project-pool-webpack](screens/project-pool-webpack.png)
 
-## product-creator-webpack :construction:
+## product-creator-webpack :white_check_mark:
 
 React app that incorporates monaco-editor and bricks in order to create product.
+
+![product-creator-webpack](screens/product-creator-webpack.png)
 
 ## inherent-risk-webpack :white_check_mark:
 
@@ -182,9 +184,9 @@ Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mat
 
 ## contract-creator-webpack :construction:
 
-## test-creator-webpack :checkered_flag:
+## test-creator-webpack :white_check_mark:
 
-_Wait for product-creator_
+![test-creator-webpack](screens/test-creator-webpack.png)
 
 ## test-runner-webpack :construction:
 
