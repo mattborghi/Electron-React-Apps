@@ -30,16 +30,23 @@ const styles = theme => ({
 });
 
 class NestedList extends React.Component {
-  state = {
-    open: false,
-  };
+
+  constructor(props){
+    super(props);    
+    this.state = {
+      open: false,  
+    };
+  }
 
   handleClick = () => {
-    this.setState(state => ({ open: !state.open }));
+    let newState = !this.state.open
+    this.setState(state => ({ open: newState }));
+    this.props.test(newState)
   };
 
+
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props; 
 
     return (
       <List
@@ -54,7 +61,7 @@ class NestedList extends React.Component {
 
         <ListItem button onClick={this.handleClick} >
           <Checkbox/>
-          <ListItemText inset primary="Test A" />
+          <ListItemText inset primary="One Dimension" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
 
@@ -69,7 +76,7 @@ class NestedList extends React.Component {
 
         <ListItem button onClick={this.handleClick}>    
           <Checkbox/>
-          <ListItemText inset primary="Test B" />
+          <ListItemText inset primary="Contour" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
 
@@ -77,7 +84,26 @@ class NestedList extends React.Component {
           <List component="div" disablePadding>
             <ListItem button className={classes.nested}>  
               <Checkbox/>
-              <ListItemText inset primary="Contract B" />
+              <ListItemText inset primary="Contract A" />       
+            </ListItem>
+            <ListItem button className={classes.nested}>  
+              <Checkbox/>
+              <ListItemText inset primary="Contract B" />       
+            </ListItem>
+          </List>
+        </Collapse>
+
+        <ListItem button onClick={this.handleClick}>    
+          <Checkbox/>
+          <ListItemText inset primary="Comparison" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button className={classes.nested}> 
+              <Checkbox/>
+              <ListItemText inset primary="Contract C" />
             </ListItem>
           </List>
         </Collapse>

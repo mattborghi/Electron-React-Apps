@@ -11,14 +11,52 @@ import Contourplot from '../Plots/contourPlot';
 import DiffPlot from '../Plots/diffPlot';
 
 class NewTable extends Component {
+
+    constructor(props) {
+        super(props);   
+    }
+
+    // render() {
+    //     let {productsList} =  this.props.rowState;
+    //     return (
+    //       <table>
+    //         <tbody>
+    //           { productsList.map((product, i) =>{
+    //             return(
+    //               <tr key={i+1}>
+    //                 <td>{i+1}</td>
+    //                 <td>{product.name}</td>
+    //                 <td>
+    //                     <div class="checkbox checkbox-circle checkbox-color-scheme">
+    //                         <label class="checkbox-checked">
+    //                             <input type="checkbox" value={product.name} checked={product.isChecked} onChange={this.onAddingItem(i)}/> <span class="label-text">Add ?</span>
+    //                         </label>
+    //                     </div>
+    //                 </td>
+    //             </tr>
+    //             )
+    //           })}
+              
+    //         </tbody>
+    //       </table>
+    //     )
+    //   }
+
   render() {
+    let {productsList} =  this.props.rowState;
+    console.log (this.props.rowState)
+    // console.log (this.props.data)
     return (
       <div style={{ maxWidth: '100%' }}>
         <MaterialTable
         columns={[
-            {title: 'Test Name', render: rowData => rowData.name + ' ' + rowData.surname,},
+           
+           
+            {title: 'Test Name', render: rowData => this.props.rowState,},
+            // {title: 'Test Name', render: rowData => rowData.name + ' ' + rowData.surname,},
+            // {title: 'Test Name', render: rowData => { if (this.props.rowState) {rowData.name} }},
             // {title: 'Birth Year',  field: 'birthYear', type: 'numeric' },
-            {title: 'Contract', field: 'contract', lookup: { 1: 'Contract A', 2: 'Contract B', 3: 'Contract C'},},
+            // {title: 'Contract', field: 'contract', lookup: { 1: 'Contract A', 2: 'Contract B', 3: 'Contract C'},},
             {
             title: 'Progress',
             field: 'successScore',
@@ -46,7 +84,7 @@ class NewTable extends Component {
         ]}
         data={[
             {
-            name: 'One Dimension',
+            name: 'One_Dimension',
             surname: 'Plot',
             // birthYear: 1987,
             contract: 1,
@@ -79,8 +117,8 @@ class NewTable extends Component {
                 tooltip: 'Show Preview',
                 render: rowData => {
                 return (
-                    <div>               
-                        {rowData.plot}  
+                    <div>                                       
+                        {rowData.plot}                  
                     </div>
                 )
                 },
