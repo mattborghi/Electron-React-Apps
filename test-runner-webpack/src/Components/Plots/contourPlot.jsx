@@ -14,7 +14,7 @@ class Contourplot extends React.Component {
     };
 
     return (   
-      <div style={{paddingLeft: 100}} >      
+      <div style={{paddingLeft: 50}} >      
       <Plot
         data={[
           {         

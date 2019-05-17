@@ -16,7 +16,7 @@ class OneDimension extends React.Component {
     };
 
     return (  
-      <div style={{paddingLeft: 100}} >   
+      <div style={{paddingLeft: 50}} >   
       <Plot
         data={[
           { x: [50, 72.22222222, 94.44444444, 116.66666667, 138.88888889, 161.11111111, 183.33333333, 205.55555556, 227.77777778, 250], 

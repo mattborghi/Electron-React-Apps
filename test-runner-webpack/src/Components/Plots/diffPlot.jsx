@@ -91,7 +91,7 @@ class DiffPlot extends React.Component {
     };
 
     return (   
-      <div style={{paddingLeft: 100}} >      
+      <div style={{paddingLeft: 50}} >      
       <Plot
         data={[trace1,trace2,trace3]}
         layout={ layout }          

@@ -182,13 +182,17 @@ Merging ```inherent-risk``` project to the [webpack repo](https://github.com/mat
 
 ![Inherent-risk-webpack](screens/inherent-risk-webpack.png)
 
-## contract-creator-webpack :construction:
+## contract-creator-webpack :white_check_mark:
+
+![Contract-creator-webpack](screens/contract-creator-webpack.png)
 
 ## test-creator-webpack :white_check_mark:
 
 ![test-creator-webpack](screens/test-creator-webpack.png)
 
-## test-runner-webpack :construction:
+## test-runner-webpack :white_check_mark:
+
+![test-runner-webpack](screens/test-runner-webpack.png)
 
 ## document-generator-webpack :checkered_flag:
 

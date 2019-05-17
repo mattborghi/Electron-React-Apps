@@ -72,7 +72,6 @@ function NestedList(props) {
   const [openMain, setOpenMain] = useState(true)
   const [openProduct, setOpenProduct] = useState(false)
   const [openContracts, setOpenContracts] = useState(false)
-  const [openTests, setOpenTests] = useState(false)
 
   const handleClickMain = () => {
     setOpenMain(!openMain)
@@ -86,9 +85,6 @@ function NestedList(props) {
     setOpenContracts(!openContracts)
   };
 
-  const handleClickTests = () => {
-    setOpenTests(!openTests)
-  };
 
     const { classes, isToggled } = props
 

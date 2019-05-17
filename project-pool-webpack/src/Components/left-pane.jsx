@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
+import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
@@ -11,11 +12,15 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button'
 import FolderIcon from '@material-ui/icons/Folder';
 
+
 const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+  },
+  subheader: {
+    fontSize: 20,
   },
 });
 
@@ -81,11 +86,13 @@ class FolderList extends React.Component {
 
     render(){
 
-    // const { classes } = props;
+    const { classes } = this.props;
 
 
     return (
-    <List > 
+    <List 
+      subheader={<ListSubheader component="div" className={classes.subheader}>Recent Projects</ListSubheader>}
+    > 
         {/* className={classes.root} */}
       <Button style={{width: '100%', textTransform: "none", backgroundColor: this.state.backButtonColor_one}} onMouseEnter={() => this.handleChange('enter', 'one')} onMouseLeave={() => this.handleChange('exit', 'one')}>
       <ListItem>

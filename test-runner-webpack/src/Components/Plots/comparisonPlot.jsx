@@ -14,7 +14,7 @@ class Comparisonplot extends React.Component {
       yaxis: {title: 'Fair Value'}
     };
     return (   
-      <div style={{paddingLeft: 100}} >      
+      <div style={{paddingLeft: 50}} >      
       <Plot
         data={[ 
           { x: [1, 2, 3, 4], y: [1, 1, 2, 3], type: 'scatter', mode: 'lines+points', marker: {color: 'red'} , name:'FairValue MC'},

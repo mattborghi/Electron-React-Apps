@@ -179,7 +179,7 @@ class SplitPanes extends React.Component {
         return (
             <MuiThemeProvider theme = { theme }>
             <div id="first-separator" >
-                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={80} percentage customClassName="custom-scrollbar" >
+                <SplitterLayout primaryIndex={0} primaryMinSize={10} secondaryMinSize={50} secondaryInitialSize={75} percentage customClassName="custom-scrollbar" >
                     {/* Hiding sidebar */}
                     {this.state.sidebarLeftVisible && 
                     (
@@ -257,9 +257,10 @@ class SplitPanes extends React.Component {
                                         >
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
                                         </Fab>
-                                         
-                                        <NewTable />
-
+                                        
+                                        <div style={{paddingTop: 50,}}>
+                                            <NewTable />
+                                        </div>
 
 
                                         </div>

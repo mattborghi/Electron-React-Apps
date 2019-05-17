@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
+import TransparentDark from './images/universal-mc-logo-orange.png';
+import TextDark from './images/universal-text.png';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -29,6 +31,13 @@ const styles = theme => ({
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+  },
+  logo: {
+    // marginTop: theme.spacing.unit * 8,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -66,9 +75,13 @@ function SignIn(props) {
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        {/* <Avatar className={classes.avatar}> */}
+          {/* <LockOutlinedIcon /> */}
+          <div style={{paddingBottom: 50, }} className={classes.logo}>
+            <img src={TransparentDark} alt="logo" width={100} height={100}></img>
+            <img src={TextDark} alt="logo" width={150} height={30}></img>
+          </div>
+        {/* </Avatar> */}
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>

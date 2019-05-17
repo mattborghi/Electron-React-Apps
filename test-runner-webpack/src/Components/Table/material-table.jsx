@@ -44,19 +44,23 @@ class NewTable extends Component {
 
   render() {
     // let {productsList} =  this.props.rowState;
-    console.log (this.props.rowState)
+    // console.log (this.props.rowState)
     // console.log (this.props.data)
     return (
       <div style={{ maxWidth: '100%' }}>
         <MaterialTable
         columns={[
            
-           
+            
             // {title: 'Test Name', render: rowData => this.props.rowState,},
-            {title: 'Test Name', render: rowData => rowData.name + ' ' + rowData.surname,},
+            {title: 'Test Name', render: rowData => rowData.testName,},
+            {title: 'Product', render: rowData => rowData.product,},
+            {title: 'Plot Type', render: rowData => rowData.plotType,},
+            {title: 'Contract', render: rowData => rowData.contract,},
+            {title: 'Status', render: rowData => rowData.status,},
             // {title: 'Test Name', render: rowData => { if (this.props.rowState) {rowData.name} }},
-            {title: 'Birth Year',  field: 'birthYear', type: 'numeric' },
-            {title: 'Contract', field: 'contract', lookup: { 1: 'Contract A', 2: 'Contract B', 3: 'Contract C'},},
+            // {title: 'Birth Year',  field: 'birthYear', type: 'numeric' },
+            
             {
             title: 'Progress',
             field: 'successScore',
@@ -84,29 +88,42 @@ class NewTable extends Component {
         ]}
         data={[
             {
-            name: 'One_Dimension',
-            surname: 'Plot',
-            // birthYear: 1987,
-            contract: 1,
+            testName: 'Benchmarking',
+            product: 'Basket Asian Option',
+            plotType: 'Comparison plot',
+            contract: 'Contract C',
+            status: 'Running',
+            successScore: 50,
+            plot: <DiffPlot />,
+            },
+            {
+            testName: 'Limiting Case',
+            product: 'Basket Asian Option',
+            plotType: 'Features plot',
+            contract: 'Contract A',
+            status: 'Error',
             successScore: 20,
             plot: <OneDimension /> ,
             },
             {
-            name: 'Contour',
-            surname: 'Plot',
-            // birthYear: 2017,
-            contract: 2,
-            successScore: 90,
-            plot: <Contourplot /> ,
+            testName: 'Limiting Case',
+            product: 'Basket Asian Option',
+            plotType: 'Features plot',
+            contract: 'Contract B',
+            status: 'Stopped',
+            successScore: 10,
+            plot: <OneDimension /> ,
             },
             {
-            name: 'Comparison',
-            surname: 'Plot',
-            // birthYear: 1986,
-            contract: 3,
-            successScore: 70,
-            plot: <DiffPlot /> ,
+            testName: 'Convergence',
+            product: 'Basket Asian Option',
+            plotType: 'Contour plot',
+            contract: 'Contract C',
+            status: 'Finished',
+            successScore: 100,
+            plot: <Contourplot /> ,
             },
+            
         ]}
         
         title="Custom Render Example"
