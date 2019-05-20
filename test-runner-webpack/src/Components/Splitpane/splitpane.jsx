@@ -234,7 +234,7 @@ class SplitPanes extends React.Component {
                                         />
                                         <br />
                                         {/* Left Arrow */}    
-                                        <Fab 
+                                        {/* <Fab 
                                             color="inherit" 
                                             aria-label="Add" 
                                             style={styles.buttonLeft} 
@@ -244,9 +244,9 @@ class SplitPanes extends React.Component {
                                             onMouseLeave={() => this.toggleAlpha()}
                                         >
                                         {this.state.sidebarLeftVisible? <ArrowBackwardIosIcon style={{left: 20, position: "relative"}}/> : <ArrowForwardIosIcon style={{left: 16, position: "relative"}}/> }
-                                        </Fab>
+                                        </Fab> */}
                                         {/* Right Arrow */}
-                                        <Fab 
+                                        {/* <Fab 
                                             color="inherit" 
                                             aria-label="Add" 
                                             style={styles.buttonRight} 
@@ -256,7 +256,7 @@ class SplitPanes extends React.Component {
                                             onMouseLeave={() => this.toggleAlpha()}
                                         >
                                             {this.state.sidebarRightVisible? <ArrowForwardIosIcon style={{right: 13, position: "relative"}}/> : <ArrowBackwardIosIcon style={{right: 10, position: "relative"}}/> }
-                                        </Fab>
+                                        </Fab> */}
                                         
                                         <div style={{paddingTop: 50,}}>
                                             <NewTable />
