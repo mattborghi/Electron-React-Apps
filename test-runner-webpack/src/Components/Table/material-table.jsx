@@ -402,7 +402,8 @@ class NewTable extends Component {
             pageSize: 13,
             paging: false,
             selection: true,
-            searchFieldAlignment: 'left'
+            searchFieldAlignment: 'left',
+            search: true,
 
         }}
 
