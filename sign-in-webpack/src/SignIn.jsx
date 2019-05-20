@@ -107,6 +107,9 @@ function SignIn(props) {
           >
             Sign in
           </Button>
+          <Typography component="h5" variant="subtitle2" fontWeight="fontWeightRegular" style={{paddingTop: 10, left: '35%', position: 'relative', }} >
+            New user? <a style={{color: '#fe5b27'}} href="#">Sign up!</a>
+          </Typography>
         </form>
       </Paper>
     </main>
