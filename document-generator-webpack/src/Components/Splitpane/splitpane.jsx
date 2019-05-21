@@ -7,7 +7,7 @@ import Settings from '../Settings/settings.jsx'
 import SimpleAppBar from '../AppBar/appbar.jsx'
 import ProgressStatusPanel from '../ProgressStatusPanel/progress-status-panel.jsx'
 import MonacoEditor from '../MonacoEditor/MonacoEditor.js'
-import NewTable from '../Table/material-table.jsx'
+import DocumentTemplate from '../DocumentTemplate/document-template.jsx'
 import DetailedExpansionPanel from '../Patterns/expansion-panel.jsx'
 // import '~react-splitter-layout/lib/index.css';
 // import '../../styles/splitter.css'
@@ -42,7 +42,7 @@ class SplitPanes extends React.Component {
             movingButtonsValue: false,
             toggleProject: true,
             toggleTerminal: true,
-            nextPaneCounter: 0,
+            nextPaneCounter: 5,
         };
     }
     
@@ -230,7 +230,7 @@ class SplitPanes extends React.Component {
                                                 toggleRightPane={this.onToggleRightPane}
                                                 toggleTerminal={this.onToggleTerminal}
                                                 toggleProject={this.onToggleProject}
-                                                title={"TEST RUNNER"}
+                                                title={"DOCUMENT GENERATOR"}
                                         />
                                         <br />
                                         {/* Left Arrow */}    
@@ -259,7 +259,7 @@ class SplitPanes extends React.Component {
                                         </Fab> */}
                                         
                                         <div style={{paddingTop: 50,}}>
-                                            <NewTable />
+                                            <DocumentTemplate />
                                         </div>
 
 

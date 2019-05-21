@@ -1,11 +1,10 @@
 :global {
-    // @import '~react-splitter-layout/lib/index.css';
-    // @import '~xterm/dist/xterm.css';
-    // @import '../Components/styles/global.css';
-    // @import '../Components/MonacoEditor/Editor.css';
-    @import '../styles/index.css';
+    @import '~react-splitter-layout/lib/index.css';
+    @import '~xterm/dist/xterm.css';
+    @import '../Components/styles/global.css';
+    @import '../Components/MonacoEditor/Editor.css';
     // // Icons for Gooey menu
-    // @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+    @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 }
 // Define a variable as blue
 $bg: #424242;
@@ -22,12 +21,3 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Roboto', sans-serif;
 }
-
-
-
-// a {
-//   color: rgb(150,200,150);
-// }
-// a:hover {
-//    color: rgb(49,160,68);
-// }
