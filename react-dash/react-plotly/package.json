@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "highcharts": "^7.1.1",
+    "highcharts": "^9.0.0",
     "plotly.js": "^1.47.1",
     "plotly.js-basic-dist": "^1.47.2",
     "react": "^16.8.6",
