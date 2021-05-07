@@ -9,7 +9,7 @@
   "author": "Matias Borghi",
   "license": "MIT",
   "dependencies": {
-    "electron": "^4.0.8",
+    "electron": "^9.1.0",
     "modernizr": "^3.7.0"
   }
 }
