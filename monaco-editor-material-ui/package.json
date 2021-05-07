@@ -45,7 +45,7 @@
     "core-js": "^3.0.0",
     "dedent": "^0.7.0",
     "idb-keyval": "^3.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "monaco-editor": "^0.14.3",
     "prettier": "^1.16.4",
     "react": "^16.8.5",
